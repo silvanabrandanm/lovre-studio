@@ -1,0 +1,917 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lovre — Unifying four products into one platform · Case 01</title>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,400;9..144,500&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<style>
+/* ──────────────────────── BASE ──────────────────────── */
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --ivory:#FFFFFF;
+  --teal:#044AB3;
+  --teal-soft:#2D6FD1;
+  --charcoal:#1A1714;
+  --charcoal-soft:#3A332E;
+  --muted:#8A8480;
+  --line:#E8E2D8;
+  --line-strong:#D8D0C2;
+  --dark:#044AB3;
+  --dark-2:#0E1716;
+}
+html,body{background:var(--ivory);color:var(--charcoal);font-family:'Inter',sans-serif;font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
+
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%;height:auto}
+
+/* ──────────────────────── LAYOUT ──────────────────────── */
+.wrap-narrow{max-width:880px;margin:0 auto;padding:0 24px}
+.wrap{max-width:1640px;margin:0 auto;padding:0 24px}
+.wrap-wide{max-width:1640px;margin:0 auto;padding:0 24px}
+.wrap-full{max-width:100%;padding:0}
+.wrap > .h-section,
+.wrap > .case-title,
+.wrap > .lede,
+.wrap > .body-prose{max-width:780px}
+.wrap > .lede{max-width:640px}
+
+section{padding:6rem 0}
+section.tight{padding:4rem 0}
+section.bare{padding:0}
+section.no-pad-top{padding-top:0}
+
+/* ──────────────────────── NAV ──────────────────────── */
+.nav{
+  position:sticky;top:20px;z-index:50;
+  background:rgba(250,248,244,.6);
+  backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);
+  border:1px solid rgba(26,23,20,.08);
+  border-radius:999px;
+  max-width:1100px;width:calc(100% - 40px);margin:20px auto 0;padding:0 8px;
+}
+.nav-inner{
+  max-width:none;margin:0;padding:0 8px 0 16px;
+  display:grid;grid-template-columns:1fr auto 1fr;align-items:center;height:60px;
+}
+.nav-links{grid-column:2}
+
+.nav-right{display:flex;align-items:center;gap:12px;grid-column:3;justify-self:end}
+.lang-switch{display:inline-flex;align-items:center;border:0.5px solid var(--border);border-radius:999px;padding:3px;background:transparent}
+.lang-switch button{appearance:none;border:0;background:transparent;font-family:'Inter',sans-serif;font-size:11px;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;color:var(--muted);padding:6px 10px;border-radius:999px;cursor:pointer;line-height:1;transition:background .2s ease,color .2s ease}
+.lang-switch button:hover{color:var(--charcoal)}
+.lang-switch button.active{background:var(--teal);color:var(--ivory)}
+
+.nav .logo{
+  display:flex;align-items:center;gap:10px;
+  font-family:'Geist','Inter',sans-serif;font-weight:600;font-size:22px;
+  color:var(--charcoal);letter-spacing:0;line-height:1;
+}
+.nav-links{display:flex;gap:32px;align-items:center}
+.nav-links a{
+  font-family:'Inter',sans-serif;font-size:14px;color:var(--charcoal);
+  position:relative;padding:6px 0;
+}
+.nav-links a::after{
+  content:"";position:absolute;left:0;right:100%;bottom:0;
+  height:1px;background:var(--teal);transition:right .25s ease;
+}
+.nav-links a:hover::after{right:0}
+.btn-nav{
+  display:inline-flex;align-items:center;gap:10px;
+  background:var(--teal);color:#FFFFFF;border:1px solid var(--teal);
+  padding:11px 18px;border-radius:3px;
+  font-family:'Inter',sans-serif;font-size:13px;font-weight:500;line-height:1;letter-spacing:0.01em;
+  transition:background .2s ease, border-color .2s ease;
+}
+.btn-nav:hover{background:#033A8F;border-color:#033A8F}
+.btn-nav .arr{display:inline-block;transition:transform .2s ease}
+.btn-nav:hover .arr{transform:translateX(3px)}
+
+/* ─── Back link ─── */
+.backbar{padding:32px 24px 0;max-width:1640px;margin:0 auto}
+.back-link{
+  display:inline-flex;align-items:center;gap:10px;
+  font-family:'Inter',sans-serif;font-size:13px;color:var(--charcoal-soft);letter-spacing:0.02em;
+}
+.back-link .arr{display:inline-block;transition:transform .2s ease}
+.back-link:hover{color:var(--teal)}
+.back-link:hover .arr{transform:translateX(-3px)}
+
+/* ──────────────────────── HERO ──────────────────────── */
+.hero{padding:6rem 0 3rem}
+.eyebrow{
+  font-family:'Inter',sans-serif;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;
+  color:var(--teal);font-weight:500;
+  display:flex;align-items:center;gap:10px;margin-bottom:2rem;
+}
+.ln{display:inline-block;width:24px;height:1.5px;background:var(--teal)}
+.case-title{
+  font-family:'Fraunces',serif;font-weight:500;font-size:clamp(40px,5.5vw,68px);
+  line-height:1.05;letter-spacing:-0.015em;color:var(--charcoal);
+  max-width:900px;margin-bottom:3rem;
+}
+.case-title em{font-style:italic;font-weight:400;color:var(--teal)}
+.lede{
+  font-family:'Inter',sans-serif;font-size:19px;line-height:1.55;
+  color:var(--charcoal-soft);max-width:660px;font-weight:400;margin-bottom:4rem;
+}
+.meta-row{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:2rem;
+  padding-top:2rem;border-top:0.5px solid var(--line);
+}
+.meta-item{display:flex;flex-direction:column;gap:0.4rem}
+.meta-label{font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);font-weight:500}
+.meta-value{font-family:'Inter',sans-serif;font-size:14px;color:var(--charcoal);font-weight:500}
+
+/* ──────────────────────── HERO MOSAIC / MOCK ──────────────────────── */
+.hero-mosaic{padding:2rem 0 6rem}
+.hero-mock{
+  max-width:1280px;margin:0 auto;
+  background:#0F1716;border-radius:14px;overflow:hidden;
+  box-shadow:0 30px 80px -20px rgba(0,0,0,.35), 0 8px 24px -10px rgba(0,0,0,.18);
+  border:0.5px solid rgba(255,255,255,0.08);
+}
+.hero-mock-bar{
+  background:#161F1E;padding:12px 16px;display:flex;align-items:center;gap:7px;
+  border-bottom:0.5px solid rgba(255,255,255,0.06);
+}
+.hero-mock-bar .hm-dot{width:11px;height:11px;border-radius:50%;display:inline-block}
+.hero-mock-bar .d-r{background:#FF5F57}
+.hero-mock-bar .d-y{background:#FEBC2E}
+.hero-mock-bar .d-g{background:#28C840}
+.hero-mock-img{display:block;width:100%;height:auto}
+.cap{
+  font-family:'Inter',sans-serif;font-size:12px;color:var(--muted);
+  margin-top:1rem;letter-spacing:0.02em;
+}
+
+/* ──────────────────────── SECTION HEADINGS ──────────────────────── */
+.section-eyebrow{
+  font-family:'Inter',sans-serif;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;
+  color:var(--teal);font-weight:500;margin-bottom:1.5rem;
+  display:flex;align-items:center;gap:10px;
+}
+.h-section{
+  font-family:'Fraunces',serif;font-weight:500;font-size:clamp(28px,3.6vw,42px);
+  line-height:1.15;letter-spacing:-0.01em;color:var(--charcoal);max-width:780px;margin-bottom:2rem;
+}
+.h-section em{font-style:italic;font-weight:400;color:var(--teal)}
+.body-prose{font-size:17px;line-height:1.7;color:var(--charcoal-soft);max-width:680px}
+.body-prose + .body-prose{margin-top:1.25rem}
+.body-prose strong{color:var(--charcoal);font-weight:600}
+
+/* ──────────────────────── STATS ROW ──────────────────────── */
+.stat-row{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:2rem;
+  border-top:0.5px solid var(--line);padding-top:3rem;
+}
+.stat-item{display:flex;flex-direction:column;gap:0.6rem}
+.stat-num{
+  font-family:'Fraunces',serif;font-weight:400;font-size:48px;
+  color:var(--charcoal);line-height:1;letter-spacing:-0.02em;
+}
+.stat-num em{font-style:italic;color:var(--teal);font-weight:500}
+.stat-label{font-size:13px;color:var(--charcoal-soft);line-height:1.45}
+
+/* ──────────────────────── CONTEXT GRID ──────────────────────── */
+.context-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start}
+.context-grid .ctx-col .section-eyebrow{margin-bottom:1.25rem}
+
+/* ──────────────────────── QUOTE ──────────────────────── */
+section.quote-block{
+  background:var(--ivory);padding:10rem 0;
+  border-top:0.5px solid var(--line);border-bottom:0.5px solid var(--line);
+}
+.quote{
+  font-family:'Fraunces',serif;font-weight:400;font-size:clamp(28px,3.4vw,40px);
+  line-height:1.25;letter-spacing:-0.005em;color:var(--charcoal);max-width:900px;margin:0 auto;font-style:italic;text-align:center;text-wrap:balance;
+}
+.quote em{font-style:normal;color:var(--teal);font-weight:500}
+.quote::before{content:"\201C";color:var(--teal);font-style:normal;margin-right:.05em}
+.quote::after{content:"\201D";color:var(--teal);font-style:normal;margin-left:.05em}
+.quote-attr{
+  font-family:'Inter',sans-serif;font-size:12px;letter-spacing:0.1em;
+  text-transform:uppercase;color:var(--muted);margin-top:2rem;text-align:center;
+}
+
+/* ──────────────────────── SIDE BY SIDE ──────────────────────── */
+.side-by-side{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
+.side-by-side + .side-by-side{margin-top:5rem}
+.sbs-image{
+  background:var(--line);border-radius:8px;overflow:hidden;
+  border:0.5px solid var(--line);box-shadow:0 14px 36px rgba(26,23,20,.06);
+}
+.sbs-image img{width:100%;height:auto;display:block}
+.sbs-text h3{
+  font-family:'Fraunces',serif;font-weight:500;font-size:28px;
+  line-height:1.2;color:var(--charcoal);margin-bottom:1.25rem;letter-spacing:-0.005em;
+}
+.sbs-text h3 em{font-style:italic;font-weight:400;color:var(--teal)}
+.sbs-text p{font-size:15.5px;line-height:1.65;color:var(--charcoal-soft)}
+.sbs-num{
+  font-family:'Inter',sans-serif;font-size:10px;letter-spacing:0.14em;text-transform:uppercase;
+  color:var(--muted);font-weight:500;display:block;margin-bottom:1rem;
+}
+.side-by-side.reverse .sbs-image{order:2}
+
+/* ──────────────────────── PAIRED GRID ──────────────────────── */
+.paired-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-top:3rem}
+.paired-grid .frame{
+  background:var(--line);border-radius:8px;overflow:hidden;
+  border:0.5px solid var(--line);box-shadow:0 14px 36px rgba(26,23,20,.06);
+}
+.paired-grid .frame img{width:100%;height:auto;display:block}
+.paired-grid .step-label{
+  font-family:'Inter',sans-serif;font-size:10px;letter-spacing:0.14em;text-transform:uppercase;
+  color:var(--muted);font-weight:500;display:block;margin-bottom:0.5rem;
+}
+.paired-grid .step-title{
+  font-family:'Fraunces',serif;font-weight:500;font-size:19px;color:var(--charcoal);
+  display:block;margin-bottom:1.25rem;letter-spacing:-0.005em;
+}
+
+/* ──────────────────────── SCROLLSHOT (browser scroll preview) ──────────────────────── */
+.scrollshot{
+  margin-top:clamp(2rem,4vw,3rem);margin-left:auto;margin-right:auto;max-width:1280px;
+  border-radius:12px;overflow:hidden;background:#ECEFF1;border:0.5px solid var(--line);
+  box-shadow:0 24px 64px -16px rgba(4,74,179,.18), 0 4px 12px rgba(0,0,0,.04);
+}
+.scrollshot-toolbar{
+  background:#E2E8EA;padding:10px 14px;display:flex;align-items:center;gap:10px;
+  border-bottom:0.5px solid #D2DADD;
+}
+.scrollshot-dots{display:flex;gap:6px;flex-shrink:0}
+.scrollshot-dots span{width:10px;height:10px;border-radius:50%;display:block}
+.scrollshot-dots .d-r{background:#FF5F57}
+.scrollshot-dots .d-y{background:#FEBC2E}
+.scrollshot-dots .d-g{background:#28C840}
+.scrollshot-url{
+  flex:1;background:#FAFBFC;border:0.5px solid #D2DADD;border-radius:5px;padding:5px 14px;
+  font-family:'Inter',sans-serif;font-size:12px;color:#6B7280;text-align:center;line-height:1.4;
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+}
+.scrollshot-viewport{
+  position:relative;width:100%;aspect-ratio:16/10;overflow:hidden;background:#FFFFFF;
+  cursor:ns-resize;touch-action:none;
+}
+.scrollshot-viewport img{
+  width:100%;height:auto;display:block;position:absolute;top:0;left:0;will-change:transform;
+  image-rendering:auto;image-rendering:smooth;image-rendering:high-quality;
+  transform:translateZ(0);-webkit-transform:translateZ(0);
+  backface-visibility:hidden;-webkit-backface-visibility:hidden;
+}
+.scrollshot-scrub{
+  position:absolute;top:10px;right:10px;bottom:10px;width:4px;border-radius:2px;
+  background:rgba(4,74,179,.10);overflow:hidden;pointer-events:none;opacity:0;transition:opacity .4s ease;
+}
+.scrollshot-scrub-thumb{
+  position:absolute;top:0;left:0;width:100%;height:20%;background:var(--teal);border-radius:2px;
+}
+.scrollshot.in-view .scrollshot-scrub{opacity:1}
+.scrollshot-hint{
+  position:absolute;left:50%;bottom:18px;transform:translateX(-50%);
+  background:rgba(4,74,179,.92);color:#FFFFFF;font-family:'Inter',sans-serif;
+  font-size:11px;font-weight:500;letter-spacing:0.06em;text-transform:uppercase;
+  padding:7px 14px;border-radius:999px;pointer-events:none;opacity:0;transition:opacity .5s ease;
+  backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);
+  display:inline-flex;align-items:center;gap:8px;
+}
+.scrollshot-hint .dot{width:5px;height:5px;border-radius:50%;background:#FFFFFF;animation:sh-pulse 1.4s ease-in-out infinite}
+.scrollshot.in-view .scrollshot-hint{opacity:1}
+.scrollshot.scrolled .scrollshot-hint{opacity:0}
+@keyframes sh-pulse{0%,100%{transform:translateY(0);opacity:1}50%{transform:translateY(3px);opacity:.5}}
+
+/* ──────────────────────── DARK OUTCOME ──────────────────────── */
+section.outcome-dark{
+  background:var(--dark);color:#FAF8F4;padding:7rem 0;position:relative;
+}
+.outcome-dark .section-eyebrow{color:#D6E3F7}
+.outcome-dark .section-eyebrow .ln{background:#D6E3F7}
+.outcome-dark .h-section{color:#FAF8F4;max-width:820px}
+.outcome-dark .h-section em{color:#D6E3F7}
+.outcome-dark .body-prose{color:#FFFFFF}
+.deploy{margin-top:4rem;padding-top:3rem;border-top:0.5px solid rgba(255,255,255,0.12)}
+.deploy-label{
+  font-family:'Inter',sans-serif;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;
+  color:#B7CBEC;font-weight:500;margin-bottom:1.5rem;
+}
+.deploy-pills{display:flex;flex-wrap:wrap;gap:10px}
+.deploy-pill{
+  display:inline-flex;align-items:center;padding:10px 18px;
+  border:0.5px solid rgba(255,255,255,0.18);border-radius:999px;
+  font-family:'Inter',sans-serif;font-size:13px;color:#FAF8F4;background:rgba(255,255,255,0.03);
+  transition:background .2s ease,border-color .2s ease;
+}
+.deploy-pill:hover{background:rgba(127,205,199,0.10);border-color:rgba(127,205,199,.5)}
+
+/* ──────────────────────── CREDITS / META ──────────────────────── */
+.credits{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:2rem;
+  border-top:0.5px solid var(--line);padding-top:3rem;
+}
+.credit-item{display:flex;flex-direction:column;gap:0.6rem}
+.credit-label{font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);font-weight:500}
+.credit-item p{font-family:'Inter',sans-serif;font-size:14px;color:var(--charcoal);line-height:1.6}
+
+/* ──────────────────────── DESIGN/PAGER CARD ──────────────────────── */
+.design-card{
+  background:var(--ivory);border:0.5px solid var(--line);border-radius:6px;
+  padding:3rem;display:flex;justify-content:space-between;align-items:center;gap:3rem;margin-top:4rem;
+}
+.design-card h3{
+  font-family:'Fraunces',serif;font-weight:500;font-size:24px;line-height:1.3;
+  color:var(--charcoal);margin-bottom:0.75rem;
+}
+.design-card h3 em{font-style:italic;font-weight:400;color:var(--teal)}
+.design-card p{font-size:14.5px;color:var(--muted);line-height:1.55;max-width:520px}
+.design-cta{
+  display:flex;align-items:center;gap:8px;font-family:'Inter',sans-serif;
+  font-size:14px;font-weight:500;color:var(--teal);white-space:nowrap;flex-shrink:0;
+}
+.design-cta svg{width:18px;height:18px;transition:transform .2s ease}
+.design-cta:hover svg{transform:translateX(3px)}
+
+.figma-teaser{display:flex;align-items:center;justify-content:space-between;gap:2rem;flex-wrap:wrap;padding:1.75rem 2.5rem;background:var(--ivory);border:0.5px solid var(--line,var(--border));border-radius:6px;transition:border-color .2s ease}
+.figma-teaser:hover{border-color:var(--teal)}
+.figma-teaser p{font-family:'Fraunces',Georgia,serif;font-style:italic;font-weight:400;font-size:1.35rem;color:var(--charcoal);margin:0}
+
+
+/* ──────────────────────── FOOTER ──────────────────────── */
+footer.site-footer{background:#FFFFFF;padding:32px 0 36px;border-top:0.5px solid var(--line)}
+.footer-inner{
+  max-width:1640px;margin:0 auto;padding:0 24px;
+  display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;
+}
+.footer-inner .logo{display:flex;align-items:center;gap:10px;font-family:'Geist','Inter',sans-serif;font-weight:600;font-size:22px;color:var(--charcoal);line-height:1}
+.nav .logo img,.footer-inner .logo img{width:28px;height:28px;display:block}
+.footer-inner .links{display:flex;gap:28px;flex-wrap:wrap}
+.footer-inner .links a{font-family:'Inter',sans-serif;font-size:13px;color:var(--charcoal-soft)}
+.footer-inner .links a:hover{color:var(--teal)}
+.footer-inner .copy{font-family:'Inter',sans-serif;font-size:13px;color:var(--muted)}
+
+/* ──────────────────────── RESPONSIVE ──────────────────────── */
+@media (max-width:900px){
+  .wrap-narrow,.wrap,.wrap-wide{padding:0 1.5rem}
+  .nav-inner{padding:0 1.5rem}
+  .nav-links{display:none}
+  .backbar{padding:24px 1.5rem 0}
+  .footer-inner{padding:0 1.5rem}
+  .meta-row{grid-template-columns:repeat(2,1fr);gap:1.5rem}
+  .stat-row{grid-template-columns:repeat(2,1fr);gap:2rem}
+  .context-grid{grid-template-columns:1fr;gap:3rem}
+  .side-by-side{grid-template-columns:1fr;gap:2.5rem}
+  .side-by-side.reverse .sbs-image{order:0}
+  .paired-grid{grid-template-columns:1fr}
+  .credits{grid-template-columns:repeat(2,1fr);gap:2rem}
+  .design-card{flex-direction:column;align-items:flex-start;padding:2rem}
+  .outcome-dark{padding:6rem 0}
+  section{padding:4rem 0}
+}
+@media (prefers-reduced-motion: reduce){
+  .scrollshot-viewport img{transition:none}
+}
+</style>
+<style id="scroll-fx-css">
+@media (prefers-reduced-motion: no-preference){
+.js-reveal{opacity:0;transform:translateY(24px);transition:opacity .6s cubic-bezier(.2,.7,.2,1),transform .6s cubic-bezier(.2,.7,.2,1);will-change:opacity,transform}
+.js-reveal.js-in{opacity:1;transform:translateY(0)}
+}
+</style>
+</head>
+<body data-screen-label="Case 01 — RLDatix">
+
+<!-- ─── NAV ─── -->
+<header class="nav" data-screen-label="Nav">
+  <div class="nav-inner">
+    <a href="../index.html" class="logo" aria-label="Lovre — home"><img src="lovre-logo-128.png" alt="" />Lovre</a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="../index.html#services" data-i18n="nav_services">Services</a>
+      <a href="../index.html#work" data-i18n="nav_work">Work</a>
+      <a href="../index.html#about" data-i18n="nav_about">About</a>
+      <a href="../index.html#contact" data-i18n="nav_contact">Contact</a>
+    </nav>
+    <div class="nav-right">
+      <div class="lang-switch" role="group" aria-label="Language">
+        <button type="button" data-lang="en" class="active" aria-label="English">EN</button>
+        <button type="button" data-lang="es" aria-label="Español">ES</button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section class="backbar">
+  <a href="../index.html#work" class="back-link"><span class="arr">←</span> <span data-i18n="back_link">Back to all work</span></a>
+</section>
+
+<!-- ─── HERO ─── -->
+<section class="hero" data-screen-label="01 Hero">
+  <div class="wrap">
+    <div class="eyebrow"><span class="ln"></span>Case 01 · Healthcare governance · RLDatix</div>
+    <h1 class="case-title">Unifying four products into <em>one platform</em>.</h1>
+    <p class="lede">RLDatix serves more than 10,000 healthcare organizations. Their platform had grown through acquisitions — four products, four interfaces, four mental models. We were brought in to design the future where they felt like one, and to build the design system that now powers the entire ecosystem.</p>
+
+    <div class="meta-row">
+      <div class="meta-item">
+        <span class="meta-label">Client</span>
+        <span class="meta-value">RLDatix — healthcare governance</span>
+      </div>
+      <div class="meta-item">
+        <span class="meta-label">Role</span>
+        <span class="meta-value">Lead product designer + 1 senior</span>
+      </div>
+      <div class="meta-item">
+        <span class="meta-label">Timeline</span>
+        <span class="meta-value">12-month engagement · 2024–2025</span>
+      </div>
+      <div class="meta-item">
+        <span class="meta-label">Scope</span>
+        <span class="meta-value">Nova design system · platform unification · AI UX</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── HERO MOSAIC ─── -->
+<section class="hero-mosaic bare">
+  <div class="wrap-wide">
+    <div class="hero-mock">
+      <div class="hero-mock-bar" aria-hidden="true">
+        <span class="hm-dot d-r"></span>
+        <span class="hm-dot d-y"></span>
+        <span class="hm-dot d-g"></span>
+      </div>
+      <img class="hero-mock-img" src="img/case-01-01.jpg" alt="RLDatix Log In — Nova brand surface with luminous teal light streaks" />
+    </div>
+    <div class="wrap"><div class="cap">Nova · RLDatix unified platform — brand entry surface</div></div>
+  </div>
+</section>
+
+<!-- ─── STATS ─── -->
+<section class="tight" data-screen-label="02 At a glance">
+  <div class="wrap">
+    <div class="stat-row">
+      <div class="stat-item">
+        <span class="stat-num"><em>04</em></span>
+        <span class="stat-label">Products unified into one platform</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num">10K<em>+</em></span>
+        <span class="stat-label">Healthcare organizations on the platform</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num"><em>08</em></span>
+        <span class="stat-label">Products now running Nova in production</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num">04<em>mo</em></span>
+        <span class="stat-label">POC inside a 12-month engagement</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── CONTEXT ─── -->
+<section data-screen-label="03 Context">
+  <div class="wrap">
+    <div class="eyebrow"><span class="ln"></span>Context</div>
+    <div class="context-grid">
+      <div class="ctx-col">
+        <div class="section-eyebrow"><span class="ln"></span>01 — The brief</div>
+        <h2 class="h-section" style="font-size:clamp(24px,2.6vw,30px)">Four products. Four interfaces. One customer using them all.</h2>
+        <p class="body-prose">RLDatix had built a market-leading position in healthcare governance through organic growth and acquisitions. By 2025 the platform spanned Risk &amp; Safety, PolicyStat, Onesource, and Assure &amp; Survey — together covering the full risk lifecycle for hospitals, but each carrying its own interface, terminology, and patterns.</p>
+        <p class="body-prose">Customers using more than one product had to learn each separately. New buyers saw a fragmented experience. Internal teams couldn't share components or onboarding flows.</p>
+      </div>
+      <div class="ctx-col">
+        <div class="section-eyebrow"><span class="ln"></span>02 — The challenge</div>
+        <h2 class="h-section" style="font-size:clamp(24px,2.6vw,30px)">An earlier internal direction had stalled. We started over.</h2>
+        <p class="body-prose">Before we joined, an internal team had attempted a first version. The work had quality but was solving the wrong problem — it treated unification as a styling exercise, not a structural one.</p>
+        <p class="body-prose">We took the brief back to first principles. The question wasn't "how do we make four products look the same" — it was "what is the shared mental model a healthcare leader uses to navigate risk, and how does the platform mirror it?"</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── PULL QUOTE ─── -->
+<section class="quote-block bare" data-screen-label="04 Pull quote">
+  <div class="wrap">
+    <p class="quote">You don't unify enterprise software by changing the colors. You unify it by finding the workflow that was <em>already there</em>.</p>
+    <div class="quote-attr">Design principle · Nova</div>
+  </div>
+</section>
+
+<!-- ─── APPROACH ─── -->
+<section data-screen-label="05 Approach">
+  <div class="wrap">
+    <div class="eyebrow"><span class="ln"></span>03 — Approach</div>
+    <h2 class="h-section">Discovery before design.</h2>
+    <p class="body-prose">We worked alongside RLDatix's product owners and engineering leads — interviewing stakeholders across all four product lines to understand how clinicians, risk managers, and compliance officers actually moved through the system.</p>
+    <p class="body-prose">From there we built Nova — the design system that would carry the unified platform — and applied it to the workflows with the highest visibility at Summit: incident reporting, policy management, compliance audits, and the AI-assisted Smart Entry that became the keynote centerpiece.</p>
+    <p class="body-prose">Two designers worked with two RLDatix engineers in tight cycles: design Monday, prototype by Wednesday, review Friday.</p>
+  </div>
+</section>
+
+<!-- ─── SHOWCASE / SCROLLSHOT ─── -->
+<section class="tight" data-screen-label="06 Showcase">
+  <div class="wrap">
+    <div class="eyebrow"><span class="ln"></span>04 — Showcase</div>
+    <h2 class="h-section">Policy management, rebuilt as one long, legible surface.</h2>
+    <p class="body-prose" style="margin-bottom:0">A policy editor that holds an entire SOP — definitions, procedures, comments, attachments, standards, revision dates and approval signatures — without losing the reader. Scroll inside the window to explore the full screen.</p>
+    <div class="scrollshot" data-scrollshot>
+      <div class="scrollshot-toolbar">
+        <div class="scrollshot-dots">
+          <span class="d-r"></span>
+          <span class="d-y"></span>
+          <span class="d-g"></span>
+        </div>
+        <div class="scrollshot-url">app.rldatix.com/policy/edit/329999</div>
+        <div class="scrollshot-dots" style="visibility:hidden">
+          <span></span><span></span><span></span>
+        </div>
+      </div>
+      <div class="scrollshot-viewport">
+        <img src="img/case-01-edit-policy.jpg" alt="Edit Policy — the long-form policy editor: SOP, definitions, procedures, comments, attachments, standards, revision dates and approval signatures" />
+        <div class="scrollshot-scrub" aria-hidden="true">
+          <div class="scrollshot-scrub-thumb"></div>
+        </div>
+        <div class="scrollshot-hint">
+          <span class="dot"></span> Scroll to explore
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── SELECTED SCREENS ─── -->
+<section data-screen-label="07 Selected screens">
+  <div class="wrap">
+    <div class="eyebrow"><span class="ln"></span>05 — Selected screens</div>
+    <h2 class="h-section">A single mental model, scaled across roles and modules.</h2>
+
+    <div class="side-by-side" style="margin-top:3.5rem">
+      <div class="sbs-image"><img src="img/case-01-04.jpg" alt="Role-based home workspace" /></div>
+      <div class="sbs-text">
+        <span class="sbs-num">01 / Role-based home</span>
+        <h3>Each user enters a workspace shaped to their <em>role</em>.</h3>
+        <p>A policy reviewer sees policy work; a risk reporter sees incidents. The shell stays consistent — the priorities adapt. The same component library renders both views; only the data and tasks differ.</p>
+      </div>
+    </div>
+
+    <div class="side-by-side reverse">
+      <div class="sbs-image"><img src="img/case-01-05.jpg" alt="Information density — calm tables for review at scale" /></div>
+      <div class="sbs-text">
+        <span class="sbs-num">02 / Information density</span>
+        <h3>Calm tables for review at <em>scale</em>.</h3>
+        <p>Risk managers read hundreds of incidents per week. The Info Center pattern — built around a scannable table with consistent metadata — became the foundation for every list view in the platform.</p>
+      </div>
+    </div>
+
+    <div class="side-by-side">
+      <div class="sbs-image"><img src="img/case-01-06.jpg" alt="Compliance reporting designed for audit readiness" /></div>
+      <div class="sbs-text">
+        <span class="sbs-num">03 / Compliance reporting</span>
+        <h3>Designed to hold up to a <em>survey</em>.</h3>
+        <p>A reporting pattern built to be readable in a printed audit binder, in a board meeting, and in a Joint Commission survey window. One chart, layered metadata, defensible numbers.</p>
+      </div>
+    </div>
+
+    <div class="side-by-side reverse">
+      <div class="sbs-image"><img src="img/case-01-07.jpg" alt="Audit setup with question groups and reusable templates" /></div>
+      <div class="sbs-text">
+        <span class="sbs-num">04 / Audit setup</span>
+        <h3>From an hour to a few <em>minutes</em>.</h3>
+        <p>Setting up a compliance audit used to take a knowledgeable admin an hour. With Nova patterns — question groups, reusable templates, live previews — it now takes minutes.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── SMART ENTRY ─── -->
+<section class="tight" data-screen-label="08 Smart Entry">
+  <div class="wrap">
+    <div class="eyebrow"><span class="ln"></span>06 — The keynote moment</div>
+    <h2 class="h-section">Smart Entry — where the platform decided to lead with <em>AI</em>.</h2>
+    <p class="body-prose">A clinician describes what happened in plain language. Smart Entry parses the narrative and pre-fills the structured incident form. We designed the conversation to keep the human in control: every AI inference is visible, editable, and reversible.</p>
+
+    <div class="paired-grid">
+      <div>
+        <span class="step-label">A · The conversation</span>
+        <span class="step-title">"Tell me what happened."</span>
+        <div class="frame"><img src="img/case-01-08.jpg" alt="Smart Entry — conversational input from the clinician" /></div>
+      </div>
+      <div>
+        <span class="step-label">B · The structured record</span>
+        <span class="step-title">Auto-filled. Always editable.</span>
+        <div class="frame"><img src="img/case-01-09.jpg" alt="Smart Entry — structured incident form pre-filled by AI" /></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── OUTCOME (DARK) ─── -->
+<section class="outcome-dark bare" data-screen-label="09 Outcome">
+  <div class="wrap">
+    <div class="section-eyebrow"><span class="ln"></span>07 — Outcome</div>
+    <h2 class="h-section">Approved at Summit 2025 — and became the platform <em>direction</em>.</h2>
+    <p class="body-prose" style="max-width:680px">RLDatix leadership greenlit the work after the show-and-tell on February 13, 2025. What started as a proof of concept became the foundation for the platform's rollout — and the Nova design system shipped to production across the full product portfolio. Today, the same patterns we built for the POC are running in the hands of risk managers, compliance officers, and clinicians at thousands of healthcare organizations.</p>
+
+    <div class="deploy">
+      <div class="deploy-label">Now deployed across</div>
+      <div class="deploy-pills">
+        <span class="deploy-pill">Risk &amp; Safety</span>
+        <span class="deploy-pill">PolicyStat</span>
+        <span class="deploy-pill">Onesource</span>
+        <span class="deploy-pill">Assure &amp; Survey</span>
+        <span class="deploy-pill">Intelligent Contract</span>
+        <span class="deploy-pill">Credentialing</span>
+        <span class="deploy-pill">Assure Appraisal</span>
+        <span class="deploy-pill">DCIQ</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ─── FIGMA TEASER ─── -->
+<section class="tight" style="padding:2rem 0" data-screen-label="Figma teaser">
+  <div class="wrap">
+    <div class="figma-teaser">
+      <p data-i18n="figma_q">Want to see more of this project?</p>
+      <a href="https://www.figma.com/design/O4MCyQ9KQxSl7wnlFWSDQL/RLDatix-POC--Copy---Copy-?node-id=4966-169881&t=BamZumh0jhbuir7S-1" class="design-cta" target="_blank" rel="noopener">
+        View in Figma
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ─── CREDITS ─── -->
+<section data-screen-label="10 Credits">
+  <div class="wrap">
+    <div class="credits">
+      <div class="credit-item">
+        <span class="credit-label">Client</span>
+        <p>RLDatix<br/>Healthcare governance<br/>Chicago / London</p>
+      </div>
+      <div class="credit-item">
+        <span class="credit-label">Studio team</span>
+        <p>Belen Longhi<br/>Lead product designer<br/>+ 1 senior designer</p>
+      </div>
+      <div class="credit-item">
+        <span class="credit-label">Client team</span>
+        <p>Product owners<br/>2 engineers<br/>Tight weekly cycles</p>
+      </div>
+      <div class="credit-item">
+        <span class="credit-label">Year</span>
+        <p>POC: Jan – Jul 2025<br/>Engagement: 2024 – 2025<br/>Deployed in production</p>
+      </div>
+    </div>
+
+    <div class="design-card">
+      <div>
+        <h3>Next case — <em>HelloFresh</em>: bringing order to ingredient buying.</h3>
+        <p>Rebuilding the buyer's workflow across five European markets around a single planning surface.</p>
+      </div>
+      <a href="case-02-hellofresh.html" class="design-cta">
+        Next case
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ─── FOOTER ─── -->
+<footer class="site-footer" data-screen-label="Footer">
+  <div class="footer-inner">
+    <a href="../index.html" class="logo" aria-label="Lovre — home"><img src="lovre-logo-128.png" alt="" />Lovre</a>
+    <nav class="links" aria-label="Footer">
+      <a href="../index.html#services" data-i18n="nav_services">Services</a>
+      <a href="../index.html#work" data-i18n="nav_work">Work</a>
+      <a href="../index.html#about" data-i18n="nav_about">About</a>
+      <a href="../index.html#contact" data-i18n="nav_contact">Contact</a>
+    </nav>
+    <span class="copy" data-i18n="foot_copy">© 2026 Lovre</span>
+  </div>
+</footer>
+
+<script>
+/* Scroll-locked showcase — cursor over viewport scrolls the image; falls through at top/bottom */
+(function(){
+  var els = document.querySelectorAll('[data-scrollshot]');
+  if(!els.length) return;
+  var prefersReduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  els.forEach(function(root){
+    var viewport = root.querySelector('.scrollshot-viewport');
+    var img = root.querySelector('.scrollshot-viewport img');
+    var scrub = root.querySelector('.scrollshot-scrub');
+    var scrubThumb = root.querySelector('.scrollshot-scrub-thumb');
+    if(!viewport || !img) return;
+
+    var y = 0, maxY = 0, hasScrolled = false;
+
+    function setup(){
+      var rect = viewport.getBoundingClientRect();
+      var imgRenderedH = img.naturalHeight * (rect.width / img.naturalWidth);
+      maxY = Math.max(0, imgRenderedH - rect.height);
+      y = Math.min(y, maxY);
+      apply();
+    }
+    function apply(){
+      img.style.transform = 'translate3d(0, ' + (-y).toFixed(1) + 'px, 0)';
+      if(scrubThumb){
+        var trackH = scrub.offsetHeight, thumbH = scrubThumb.offsetHeight;
+        var t = maxY > 0 ? (y / maxY) : 0;
+        scrubThumb.style.transform = 'translate3d(0, ' + (t * (trackH - thumbH)).toFixed(1) + 'px, 0)';
+      }
+      if(!hasScrolled && y > 4){ hasScrolled = true; root.classList.add('scrolled'); }
+    }
+    if('IntersectionObserver' in window){
+      var io = new IntersectionObserver(function(entries){
+        entries.forEach(function(e){ root.classList.toggle('in-view', e.isIntersecting && e.intersectionRatio > 0.4); });
+      }, { threshold: [0, 0.4, 1] });
+      io.observe(root);
+    } else { root.classList.add('in-view'); }
+
+    if(prefersReduced){
+      img.style.position = 'static'; img.style.transform = 'none';
+      viewport.style.aspectRatio = 'auto'; viewport.style.cursor = 'default';
+      return;
+    }
+    viewport.addEventListener('wheel', function(e){
+      var dy = e.deltaY;
+      if((dy < 0 && y <= 0) || (dy > 0 && y >= maxY)) return;
+      e.preventDefault();
+      y = Math.max(0, Math.min(maxY, y + dy));
+      apply();
+    }, { passive: false });
+    var lastTouchY = null;
+    viewport.addEventListener('touchstart', function(e){ if(e.touches.length === 1) lastTouchY = e.touches[0].clientY; }, { passive: true });
+    viewport.addEventListener('touchmove', function(e){
+      if(lastTouchY === null) return;
+      var ny = e.touches[0].clientY, dy = lastTouchY - ny;
+      lastTouchY = ny;
+      if((dy < 0 && y <= 0) || (dy > 0 && y >= maxY)) return;
+      e.preventDefault();
+      y = Math.max(0, Math.min(maxY, y + dy));
+      apply();
+    }, { passive: false });
+    viewport.addEventListener('touchend', function(){ lastTouchY = null; });
+    viewport.addEventListener('touchcancel', function(){ lastTouchY = null; });
+
+    if(img.complete && img.naturalWidth){ setup(); } else { img.addEventListener('load', setup, { once: true }); }
+    window.addEventListener('resize', setup);
+  });
+})();
+</script>
+<style>
+  *{cursor:none !important}
+  .cursor-dot,.cursor-ring{position:fixed;top:0;left:0;border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%)}
+  .cursor-dot{width:8px;height:8px;background:#044AB3}
+  .cursor-ring{width:40px;height:40px;border:1.5px solid #044AB3;transition:width .2s ease,height .2s ease}
+  @media (hover:none){.cursor-dot,.cursor-ring{display:none}*{cursor:auto !important}}
+</style>
+<div class="cursor-dot" id="cursorDot"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+<script>
+(function(){
+  var dot=document.getElementById('cursorDot'), ring=document.getElementById('cursorRing');
+  var mx=0,my=0,rx=0,ry=0,hover=false;
+  window.addEventListener('mousemove',function(e){mx=e.clientX;my=e.clientY;dot.style.left=mx+'px';dot.style.top=my+'px';});
+  function loop(){
+    rx+=(mx-rx)*0.15; ry+=(my-ry)*0.15;
+    ring.style.left=rx+'px'; ring.style.top=ry+'px';
+    requestAnimationFrame(loop);
+  }
+  loop();
+  document.addEventListener('mouseover',function(e){
+    if(e.target.closest('a,button,[role="button"],input,select,textarea')){
+      if(!hover){hover=true;ring.style.width='64px';ring.style.height='64px';}
+    }
+  });
+  document.addEventListener('mouseout',function(e){
+    if(e.target.closest('a,button,[role="button"],input,select,textarea')){
+      if(!e.relatedTarget || !e.relatedTarget.closest('a,button,[role="button"],input,select,textarea')){
+        hover=false;ring.style.width='40px';ring.style.height='40px';
+      }
+    }
+  });
+})();
+</script>
+<script id="scroll-fx-js">
+(function(){
+var reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+if(!reduced){
+function isRepeatingGroup(el){
+if(el.children.length<2) return false;
+if(/grid|stats|approach|outcomes|pager|two-col|tabs|stat-row|credits/i.test(el.className||'')) return true;
+var tags=[].map.call(el.children,function(c){return c.tagName});
+return tags.every(function(t){return t===tags[0]});
+}
+var toObserve=[];
+document.querySelectorAll('section').forEach(function(sec){
+var host = sec.querySelector(':scope > .container, :scope > .wrap, :scope > .wrap-narrow, :scope > .wrap-wide') || sec;
+[].forEach.call(host.children,function(el){
+if(isRepeatingGroup(el)){
+[].forEach.call(el.children,function(g,i){
+g.classList.add('js-reveal');
+g.style.transitionDelay=Math.min(i,6)*0.08+'s';
+toObserve.push(g);
+});
+} else {
+el.classList.add('js-reveal');
+toObserve.push(el);
+}
+});
+});
+if('IntersectionObserver' in window){
+var io=new IntersectionObserver(function(entries){
+entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('js-in'); io.unobserve(e.target);} });
+},{threshold:0.15, rootMargin:'0px 0px -8% 0px'});
+toObserve.forEach(function(el){ io.observe(el); });
+} else {
+toObserve.forEach(function(el){ el.classList.add('js-in'); });
+}
+}
+if(!reduced && matchMedia('(pointer:fine)').matches){
+var target=window.scrollY, current=window.scrollY, raf=null, programmatic=false, resyncTimer=null;
+function loop(){
+current += (target-current)*0.11;
+if(Math.abs(target-current)<0.4){ current=target; }
+programmatic=true;
+window.scrollTo({top:current,left:0,behavior:'instant'});
+if(current!==target){ raf=requestAnimationFrame(loop); } else { raf=null; }
+}
+window.addEventListener('wheel',function(e){
+if(e.ctrlKey) return;
+e.preventDefault();
+var max=document.documentElement.scrollHeight-window.innerHeight;
+target=Math.max(0,Math.min(target+e.deltaY,max));
+if(!raf) raf=requestAnimationFrame(loop);
+},{passive:false});
+window.addEventListener('scroll',function(){
+if(programmatic){ programmatic=false; return; }
+clearTimeout(resyncTimer);
+resyncTimer=setTimeout(function(){
+target=window.scrollY; current=window.scrollY;
+},50);
+});
+}
+var darkEls=[];
+document.querySelectorAll('.process-dark, .case-banner.v-infinity, .case.cta-case, .outcome-dark').forEach(function(el){
+darkEls.push({el:el, target: getComputedStyle(el).backgroundColor});
+});
+if(darkEls.length){
+function toRgb(str){
+var m = str.match(/rgba?\((\d+),\s*(\d+),\s*(\d+)/);
+return m ? [parseInt(m[1]),parseInt(m[2]),parseInt(m[3])] : [250,248,244];
+}
+var ivory=[250,248,244];
+darkEls.forEach(function(item){ item.targetRgb = toRgb(item.target); });
+function clamp(v,a,b){return Math.max(a,Math.min(b,v));}
+function tick(){
+var vh=window.innerHeight;
+darkEls.forEach(function(item){
+var r=item.el.getBoundingClientRect();
+var t=clamp((vh-r.top)/(vh*0.6),0,1);
+var c=item.targetRgb;
+var rr=Math.round(ivory[0]+(c[0]-ivory[0])*t);
+var gg=Math.round(ivory[1]+(c[1]-ivory[1])*t);
+var bb=Math.round(ivory[2]+(c[2]-ivory[2])*t);
+item.el.style.backgroundColor='rgb('+rr+','+gg+','+bb+')';
+});
+requestAnimationFrame(tick);
+}
+tick();
+}
+})();
+</script>
+
+<script>
+(function(){
+  var DICT={
+    en:{nav_services:'Services',nav_work:'Work',nav_about:'About',nav_contact:'Contact',back_link:'Back to all work',foot_copy:'\u00A9 2026 Lovre',figma_q:'Want to see more of this project?'},
+    es:{nav_services:'Servicios',nav_work:'Trabajo',nav_about:'Nosotros',nav_contact:'Contacto',back_link:'Volver a proyectos',foot_copy:'\u00A9 2026 Lovre',figma_q:'\u00BFQuer\u00E9s ver m\u00E1s de este proyecto?'}
+  };
+  function apply(lang){
+    var d=DICT[lang]||DICT.en;
+    document.documentElement.setAttribute('lang', lang);
+    document.querySelectorAll('[data-i18n]').forEach(function(el){
+      var k=el.getAttribute('data-i18n');
+      if(d[k]) el.textContent=d[k];
+    });
+    document.querySelectorAll('.lang-switch button').forEach(function(b){
+      b.classList.toggle('active', b.getAttribute('data-lang')===lang);
+    });
+    try{localStorage.setItem('sb_lang', lang);}catch(e){}
+  }
+  document.querySelectorAll('.lang-switch button').forEach(function(b){
+    b.addEventListener('click', function(){ apply(b.getAttribute('data-lang')); });
+  });
+  var stored=null;
+  try{stored=localStorage.getItem('sb_lang');}catch(e){}
+  apply((stored==='es'||stored==='en')?stored:'en');
+})();
+</script>
+</body>
+</html>
