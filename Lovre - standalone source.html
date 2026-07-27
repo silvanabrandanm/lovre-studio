@@ -64,27 +64,27 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Inter:wght@400;500;600&family=Geist:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
   /* ---------- Tokens ---------- */
   :root{
     --ivory:#FFFFFF;
-    --ivory-2:#F0ECE4;
-    --ivory-3:#E8E2D8;
-    --teal:#044AB3;
-    --teal-dark:#033A8F;
-    --teal-tint:#EAF0FA;
-    --charcoal:#1A1714;
-    --body:#4A4640;
-    --muted:#8A8480;
-    --border:#E8E2D8;
+    --ivory-2:#F5F5F5;
+    --ivory-3:#EBEBEB;
+    --teal:#0E4F4F;
+    --teal-dark:#0A3838;
+    --teal-tint:#E0EDED;
+    --charcoal:#1A1A1A;
+    --body:#4A4A4A;
+    --muted:#8A8A8A;
+    --border:#EBEBEB;
 
     --fs-eyebrow:11px;
     --fs-caption:13px;
     --fs-body:16px;
 
-    --container: 1640px;
-    --gutter: 24px;
+    --container: 1240px;
+    --gutter: 32px;
     --section-y: clamp(4rem, 8vw, 6rem);
   }
 
@@ -262,53 +262,28 @@
   /* ---------- NAV ---------- */
   .nav{
     position:sticky;
-    top:20px;
+    top:0;
     z-index:50;
-    background:rgba(250,248,244,.6);
-    backdrop-filter: blur(18px);
-    -webkit-backdrop-filter: blur(18px);
-    border:1px solid rgba(26,23,20,.08);
-    border-radius:999px;
-    max-width:1100px;
-    width:calc(100% - 40px);
-    margin:20px auto 0;
-    padding:0 8px;
+    background:rgba(250,248,244,.86);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom:0.5px solid var(--border);
   }
   .nav-inner{
-    display:grid;
-    grid-template-columns: 1fr auto 1fr;
-    align-items:center;
-    height:60px;
-    padding-left:16px;
-    padding-right:8px;
-  }
-  .nav-links{
-    grid-column:2;
-  }
-  .nav-right{
     display:flex;
     align-items:center;
-    gap:36px;
-    grid-column:3;
-    justify-self:end;
+    justify-content:space-between;
+    height:72px;
   }
   .logo{
-    font-family:'Geist', system-ui, -apple-system, sans-serif;
-    font-weight:600;
-    font-size:22px;
+    font-family:'Fraunces', Georgia, serif;
+    font-weight:500;
+    font-size:18px;
     color:var(--charcoal);
-    letter-spacing:0;
+    letter-spacing:-0.01em;
     line-height:1;
-    display:flex;
-    align-items:center;
-    gap:10px;
   }
-  .logo img{
-    width:28px;
-    height:28px;
-    display:block;
-  }
-  .logo .it{font-size:22px}
+  .logo .it{font-size:18px}
 
   .nav-links{
     display:flex;
@@ -330,28 +305,12 @@
     background:var(--teal);
     transition:right .25s ease;
   }
-  .nav-links a:hover{color:var(--teal)}
   .nav-links a:hover::after{right:0}
 
   /* ---------- HERO ---------- */
   .hero{
-    position:relative;
-    overflow:hidden;
     padding-top: clamp(4rem, 9vw, 7rem);
     padding-bottom: clamp(4rem, 9vw, 6.5rem);
-  }
-  .hero .container{
-    display:block;
-    position:relative;
-    z-index:2;
-  }
-  #hero-fx{
-    position:absolute;
-    inset:0;
-    width:100%;
-    height:100%;
-    z-index:1;
-    pointer-events:none;
   }
   .hero h1{
     margin-top:1.75rem;
@@ -423,68 +382,77 @@
   }
 
   /* ---------- SERVICES ---------- */
-  #services{ background: #FAF8F4; }
-  #services .container{
-    max-width: 1280px;
-  }
   .services-grid{
     margin-top:3.5rem;
-    display:flex;
-    flex-direction:column;
-    gap:16px;
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap:24px;
   }
   .svc{
-    background:#FFFFFF;
-    border:1px solid #E4E1D6;
-    border-radius:10px;
-  }
-  .svc-header{
     display:flex;
-    align-items:center;
-    justify-content:space-between;
-    gap:16px;
-    width:100%;
-    background:none;
-    border:none;
-    text-align:left;
-    cursor:pointer;
-    padding:20px 24px;
+    flex-direction:column;
+    padding:36px 32px;
+    background:var(--ivory);
+    border:0.5px solid var(--border);
+    border-radius:6px;
+    transition: transform .25s ease, border-color .25s ease;
+  }
+  .svc:hover{transform:translateY(-2px);border-color:var(--teal)}
+  .svc.featured{
+    border:2px solid var(--teal);
+  }
+  .svc .row1{display:flex;justify-content:space-between;align-items:flex-start;gap:16px}
+  .svc h3{margin-top:18px}
+  .svc .price{
+    margin-top:14px;
     font-family:'Fraunces', Georgia, serif;
-    font-size:20px;
-    color:var(--charcoal);
-  }
-  .svc-header .chev{
-    flex:none;
-    transition: transform .3s ease;
+    font-size:1.25rem;
     color:var(--teal);
+    font-weight:500;
+    letter-spacing:-0.01em;
   }
-  .svc[data-open="true"] .svc-header .chev{ transform:rotate(180deg); }
-  .svc-panel{
-    display:grid;
-    grid-template-rows: 0fr;
-    transition: grid-template-rows .35s cubic-bezier(.2,.7,.2,1);
+  .svc .desc{margin-top:14px;color:var(--body);font-size:15px;line-height:1.65}
+  .svc .incl-label{
+    margin-top:24px;
+    font-size:11px;
+    letter-spacing:0.12em;
+    text-transform:uppercase;
+    color:var(--muted);
+    font-weight:500;
   }
-  .svc[data-open="true"] .svc-panel{ grid-template-rows: 1fr; }
-  .svc-panel-inner{
-    overflow:hidden;
-    min-height:0;
+  .svc ul.incl{
+    list-style:none;
+    margin:12px 0 0 0;
+    padding:0;
+    display:grid;gap:8px;
   }
-  .svc-panel-content{
-    padding:0 24px 24px;
+  .svc ul.incl li{
+    font-size:14px;
+    color:var(--body);
+    padding-left:18px;
+    position:relative;
+    line-height:1.55;
   }
-  .svc-meta{
-    display:block;
+  .svc ul.incl li::before{
+    content:"";
+    position:absolute;
+    left:0; top:10px;
+    width:8px;height:1px;
+    background:var(--teal);
+  }
+  .svc .learn{
+    margin-top:auto;
+    padding-top:28px;
     color:var(--teal);
-    font-size:13px;
-    font-weight:600;
-    letter-spacing:.02em;
-    margin-bottom:10px;
+    font-size:14px;
+    font-weight:500;
+    display:inline-flex;align-items:center;gap:8px;
+    align-self:flex-start;
   }
-  .svc-desc{
-    color:#6B6759;
-    font-size:15px;
-    line-height:1.65;
-  }
+  .svc .learn:hover{color:var(--teal-dark)}
+  .svc .learn .arr{transition:transform .2s ease}
+  .svc .learn:hover .arr{transform:translateX(4px)}
+
   /* ---------- WORK ---------- */
   .work-grid{
     margin-top:3.5rem;
@@ -503,7 +471,7 @@
   }
   .case:hover{border-color:var(--teal)}
   .case-visual{
-    height:420px;
+    height:280px;
     border-bottom:0.5px solid var(--border);
     background:var(--ivory-2);
     position:relative;
@@ -533,139 +501,8 @@
     user-select:none;
     pointer-events:none;
   }
-  .case-visual.has-shot{
-    background:#F5F5F7;
-    padding:48px 48px 0;
-    align-items:flex-end;
-  }
-  .case-visual .browser-frame{
-    width:100%;
-    background:#FFFFFF;
-    border:0.5px solid #C8DEDE;
-    border-radius:8px 8px 0 0;
-    overflow:hidden;
-    box-shadow: 0 8px 24px -12px rgba(14,79,79,.18);
-  }
-  .case-visual .browser-toolbar{
-    background:#DFF0F0;
-    padding:8px 12px;
-    display:flex;
-    align-items:center;
-    gap:10px;
-    border-bottom:0.5px solid #C8DEDE;
-  }
-  .case-visual .browser-dots{
-    display:flex;
-    gap:5px;
-    flex-shrink:0;
-  }
-  .case-visual .browser-dots span{
-    width:9px;
-    height:9px;
-    border-radius:50%;
-    display:block;
-  }
-  .case-visual .browser-dots .d-r{background:#E8A090}
-  .case-visual .browser-dots .d-y{background:#E8CE90}
-  .case-visual .browser-dots .d-g{background:#90C890}
-  .case-visual .browser-url{
-    flex:1;
-    background:#FFFFFF;
-    border-radius:4px;
-    padding:4px 10px;
-    font-family:'Inter', sans-serif;
-    font-size:10px;
-    color:#8A8480;
-    text-align:center;
-    line-height:1.4;
-    letter-spacing:0;
-    text-transform:none;
-    white-space:nowrap;
-    overflow:hidden;
-    text-overflow:ellipsis;
-  }
-  .case-visual .shot{
-    display:block;
-    width:100%;
-    height:auto;
-    max-height:340px;
-    object-fit:contain;
-    object-position:top center;
-  }
-  .case-visual.has-shot .num{
-    z-index:2;
-    background:rgba(255,255,255,.7);
-    backdrop-filter: blur(6px);
-    -webkit-backdrop-filter: blur(6px);
-    padding:5px 10px;
-    border-radius:3px;
-    top:20px;
-    left:24px;
-    letter-spacing:0.08em;
-    text-transform:uppercase;
-  }
-  .case-visual.v2{
-    background:#111111;
-    padding:2rem 2rem 0;
-    align-items:flex-end;
-    justify-content:center;
-  }
-  .case-visual.v2 .num{
-    z-index:2;
-    background:rgba(255,255,255,.12);
-    color:#FFFFFF;
-    padding:5px 10px;
-    border-radius:3px;
-    top:20px;
-    left:24px;
-    letter-spacing:0.08em;
-    text-transform:uppercase;
-    backdrop-filter: blur(6px);
-    -webkit-backdrop-filter: blur(6px);
-  }
-  .case-visual.v2 .mac-window{
-    width:88%;
-    background:#FFFFFF;
-    border-radius:16px 16px 0 0;
-    overflow:hidden;
-    box-shadow:0 24px 80px rgba(0,0,0,0.7);
-  }
-  .case-visual.v2 .mac-titlebar{
-    background:#F5F5F5;
-    padding:10px 14px;
-    border-bottom:0.5px solid #E8E8E8;
-    display:flex;
-    align-items:center;
-    gap:6px;
-  }
-  .case-visual.v2 .mac-dots{
-    display:flex;
-    gap:6px;
-  }
-  .case-visual.v2 .mac-dots span{
-    width:10px;
-    height:10px;
-    border-radius:50%;
-    display:block;
-  }
-  .case-visual.v2 .mac-dots .d-r{background:#FF5F57}
-  .case-visual.v2 .mac-dots .d-y{background:#FEBC2E}
-  .case-visual.v2 .mac-dots .d-g{background:#28C840}
-  .case-visual.v2 .mac-shot{
-    display:block;
-    width:100%;
-    max-height:300px;
-    height:300px;
-    object-fit:cover;
-    object-position:top center;
-  }
+  .case-visual.v2{background: var(--ivory-3);}
   .case-visual.v3{background: var(--teal);}
-  .case-visual.v3.has-img{padding:0;overflow:hidden;background:#0F1115}
-  .case-visual.v3 .case-img{
-    display:block;width:100%;height:100%;
-    object-fit:cover;object-position:top center;
-  }
-  .case-visual.v3.has-img .num{color:#fff;background:rgba(0,0,0,.35);padding:6px 10px;border-radius:6px;backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
   .case-visual.v3 .glyph{color: var(--ivory)}
   .case-visual.v3 .num{color: var(--ivory)}
   .case-body{
@@ -691,37 +528,18 @@
   .case-link:hover h3{color:var(--teal)}
 
   .case.cta-case{
-    background: var(--teal);
-    border:0.5px dashed var(--teal-dark);
+    background: var(--ivory-3);
+    border:0.5px dashed var(--teal);
   }
   .case.cta-case .case-visual{
     background:transparent;
     border-bottom:0;
     height:auto;
-    min-height:0;
-    padding:32px 32px 0;
-    display:block;
-    align-items:initial;
-  }
-  .case.cta-case .case-visual .num{
-    position:static;
-    display:inline-block;
-    color:#D6E3F7;
-    color:var(--teal);
-    font-family:'Fraunces', Georgia, serif;
-    font-size:11px;
-    font-weight:500;
-    letter-spacing:0;
-    text-transform:none;
-    background:transparent;
-    padding:0;
+    padding-bottom:0;
   }
   .case.cta-case .case-body{
     padding-top:24px;
   }
-  .case.cta-case .meta{color:#D6E3F7}
-  .case.cta-case h3{color:var(--ivory)}
-  .case.cta-case .summary{color:var(--ivory)}
 
   /* ---------- PROCESS ---------- */
   .process-grid{
@@ -734,9 +552,6 @@
   .step{
     padding:36px 28px 0 0;
     border-right:0.5px solid var(--border);
-  }
-  .step + .step{
-    padding-left:28px;
   }
   .step:last-child{border-right:0;padding-right:0}
   .step .n{
@@ -771,28 +586,24 @@
   .bio .sig{
     margin-top:1.5rem;
     display:flex;
-    align-items:flex-start;
-    gap:20px;
+    align-items:center;
+    gap:14px;
     padding-top:1.5rem;
     border-top:0.5px solid var(--border);
   }
-  .sig .photo{
-    width:72px;height:72px;border-radius:50%;
-    object-fit:cover;
-    flex-shrink:0;
+  .sig .avatar{
+    width:44px;height:44px;border-radius:50%;
+    background: var(--teal-tint);
+    display:flex;align-items:center;justify-content:center;
+    font-family:'Fraunces',Georgia,serif;
+    color:var(--teal);
+    font-style:italic;
+    font-weight:500;
+    font-size:18px;
   }
-  .sig .who{display:flex;flex-direction:column;gap:2px}
-  .sig .who .n{font-family:'Fraunces',Georgia,serif;font-weight:500;font-size:19px;color:var(--charcoal)}
-  .sig .who .role{font-size:13px;font-weight:500;color:var(--teal)}
-  .sig .who .cred{font-size:14px;color:var(--body);line-height:1.5;max-width:42ch;margin-top:4px}
-  .sig .who .li-link{font-size:13px;color:var(--teal);text-decoration:none;display:inline-flex;align-items:center;gap:5px;margin-top:6px;width:fit-content}
-  .sig .who .li-link:hover{text-decoration:underline}
-  .sig .who .studio{font-size:13px;color:var(--muted);margin-top:10px}
-  @media (max-width:560px){
-    .bio .sig{flex-direction:column;align-items:center;text-align:center}
-    .sig .who{align-items:center}
-    .sig .who .li-link{margin-left:auto;margin-right:auto}
-  }
+  .sig .who{display:flex;flex-direction:column}
+  .sig .who .n{font-size:14px;font-weight:500;color:var(--charcoal)}
+  .sig .who .r{font-size:13px;color:var(--muted)}
 
   .regions{
     margin-top:1.75rem;
@@ -885,6 +696,7 @@
     text-align:left;
     padding-top: clamp(5rem, 10vw, 8rem);
     padding-bottom: clamp(5rem, 10vw, 8rem);
+    border-top:0.5px solid var(--border);
   }
   .footer-cta h2{
     font-size: clamp(2.4rem, 5.4vw, 4.25rem);
@@ -909,22 +721,8 @@
   /* ---------- FOOTER ---------- */
   footer.site-footer{
     background:var(--ivory);
-    border-top:1px solid var(--border);
+    border-top:0.5px solid var(--border);
     padding:32px 0 36px;
-  }
-  .cantor-band{
-    position:relative;
-    width:100%;
-    height:220px;
-    background:#fff;
-    overflow:hidden;
-  }
-  #cantor-canvas{
-    position:absolute;
-    inset:0;
-    width:100%;
-    height:100%;
-    display:block;
   }
   .footer-inner{
     display:flex;
@@ -937,38 +735,6 @@
   .footer-inner .links a{font-size:13px;color:var(--body)}
   .footer-inner .links a:hover{color:var(--teal)}
   .footer-inner .copy{font-size:13px;color:var(--muted)}
-  .footer-social{display:flex;gap:16px;align-items:center}
-  .footer-social a{color:var(--muted);display:flex}
-  .footer-social a:hover{color:var(--teal)}
-  .footer-social svg{width:18px;height:18px}
-
-  /* ---------- PROCESS dark variant ---------- */
-  .process-dark{
-    background: #044AB3;
-    color: #FAF8F4;
-    padding-top: clamp(7rem, 12vw, 11rem);
-    padding-bottom: clamp(7rem, 12vw, 11rem);
-  }
-  .process-dark .eyebrow{ color: #D6E3F7; }
-  .process-dark .eyebrow::before{ background: #D6E3F7; }
-  .process-dark .section-num{ color: #D6E3F7; }
-  .process-dark h2{ color: #FAF8F4; }
-  .process-dark .it{ color: #D6E3F7; }
-  .process-dark .sec-head .right p{ color: #FAF8F4; }
-  .process-dark .process-grid{ border-top-color: rgba(250,248,244,0.2); }
-  .process-dark .step{ border-right-color: rgba(250,248,244,0.2); }
-  .process-dark .step .n{ color: #D6E3F7; }
-  .process-dark .step h4{ color: #FAF8F4; }
-  .process-dark .step p{ color: #FAF8F4; }
-  @media (max-width: 980px){
-    .process-dark .step{
-      border-right:0 !important;
-      border-bottom:0.5px solid rgba(250,248,244,0.2);
-    }
-    .process-dark .step:nth-child(odd){
-      border-right:0.5px solid rgba(250,248,244,0.2) !important;
-    }
-  }
 
   /* ---------- Section header utility ---------- */
   .sec-head{
@@ -993,19 +759,17 @@
   @media (max-width: 980px){
     .nav-links{display:none}
     .two-col, .about-grid, .sec-head{grid-template-columns: 1fr}
+    .services-grid{grid-template-columns: 1fr; gap:16px}
     .work-grid{grid-template-columns: 1fr}
     .process-grid{grid-template-columns: 1fr 1fr}
     .step{border-right:0;border-bottom:0.5px solid var(--border);padding:28px 0}
-    .step:nth-child(odd){padding-right:24px;border-right:0.5px solid var(--border);padding-left:0}
-    .step:nth-child(even){padding-left:28px}
+    .step:nth-child(odd){padding-right:24px;border-right:0.5px solid var(--border)}
     .footer-cta h2{font-size: clamp(2rem, 8vw, 3rem)}
   }
   @media (max-width: 560px){
     .process-grid{grid-template-columns: 1fr}
     .step{padding:28px 0;border-right:0;border-bottom:0.5px solid var(--border)}
-    .step:nth-child(odd){padding-right:0;border-right:0}
-    .step + .step{padding-left:0}
-    .case-visual{height:280px}
+    .case-visual{height:200px}
   }
 
   /* ---------- Animations ---------- */
@@ -1029,8 +793,8 @@
   /* Reveal-on-scroll base */
   .reveal{
     opacity: 0;
-    transform: translateY(24px);
-    transition: opacity .6s cubic-bezier(.2,.7,.2,1), transform .6s cubic-bezier(.2,.7,.2,1);
+    transform: translateY(18px);
+    transition: opacity .9s cubic-bezier(.2,.7,.2,1), transform .9s cubic-bezier(.2,.7,.2,1);
     will-change: opacity, transform;
   }
   .reveal.in{
@@ -1040,18 +804,18 @@
   /* Stagger children */
   .reveal-stagger > *{
     opacity: 0;
-    transform: translateY(24px);
-    transition: opacity .6s cubic-bezier(.2,.7,.2,1), transform .6s cubic-bezier(.2,.7,.2,1);
+    transform: translateY(14px);
+    transition: opacity .8s cubic-bezier(.2,.7,.2,1), transform .8s cubic-bezier(.2,.7,.2,1);
   }
   .reveal-stagger.in > *{
     opacity: 1;
     transform: translateY(0);
   }
-  .reveal-stagger.in > *:nth-child(1){ transition-delay: .0s }
-  .reveal-stagger.in > *:nth-child(2){ transition-delay: .08s }
-  .reveal-stagger.in > *:nth-child(3){ transition-delay: .16s }
-  .reveal-stagger.in > *:nth-child(4){ transition-delay: .24s }
-  .reveal-stagger.in > *:nth-child(5){ transition-delay: .32s }
+  .reveal-stagger.in > *:nth-child(1){ transition-delay: .04s }
+  .reveal-stagger.in > *:nth-child(2){ transition-delay: .14s }
+  .reveal-stagger.in > *:nth-child(3){ transition-delay: .24s }
+  .reveal-stagger.in > *:nth-child(4){ transition-delay: .34s }
+  .reveal-stagger.in > *:nth-child(5){ transition-delay: .44s }
 
   /* Hero entry */
   .hero .eyebrow{ animation: sb-fade .8s ease both .05s; }
@@ -1100,6 +864,20 @@
   }
   .case:hover .case-visual .glyph{ transform: scale(1.04); }
 
+  /* Service cards subtle accent line on hover */
+  .svc{ position: relative; overflow: hidden; }
+  .svc::after{
+    content: "";
+    position: absolute;
+    left: 0; right: 0; bottom: 0;
+    height: 2px;
+    background: var(--teal);
+    transform: scaleX(0);
+    transform-origin: left center;
+    transition: transform .5s cubic-bezier(.2,.7,.2,1);
+  }
+  .svc:hover::after{ transform: scaleX(1); }
+  .svc.featured::after{ transform: scaleX(1); }
 
   /* Process numbers rise */
   .step .n{
@@ -1157,44 +935,34 @@
     .lang-switch{margin-right:12px}
   }
 </style>
-<style id="scroll-fx-css">
-@media (prefers-reduced-motion: no-preference){
-.js-reveal{opacity:0;transform:translateY(24px);transition:opacity .6s cubic-bezier(.2,.7,.2,1),transform .6s cubic-bezier(.2,.7,.2,1);will-change:opacity,transform}
-.js-reveal.js-in{opacity:1;transform:translateY(0)}
-}
-</style>
 </head>
 <body data-screen-label="Home">
 
 <!-- ============== NAV ============== -->
 <header class="nav" data-screen-label="Nav">
   <div class="container nav-inner">
-    <a href="#" class="logo" aria-label="Lovre — home"><img src="assets/lovre-logo-128.png" alt="" />Lovre</a>
+    <a href="#" class="logo" aria-label="Lovre — home">Lovre</a>
     <nav class="nav-links" aria-label="Primary">
       <a href="#services" data-i18n="nav_services">Services</a>
       <a href="#work" data-i18n="nav_work">Work</a>
       <a href="#about" data-i18n="nav_about">About</a>
-      <a href="#contact" data-i18n="nav_contact">Contact</a>
     </nav>
-    <div class="nav-right">
-      <div class="lang-switch" role="group" aria-label="Language">
-        <button type="button" data-lang="en" class="active" aria-label="English">EN</button>
-        <button type="button" data-lang="es" aria-label="Español">ES</button>
-      </div>
+    <div class="lang-switch" role="group" aria-label="Language">
+      <button type="button" data-lang="en" class="active" aria-label="English">EN</button>
+      <button type="button" data-lang="es" aria-label="Español">ES</button>
     </div>
+    <a href="#contact" class="btn btn-nav" data-i18n-html="nav_cta">Book a call <span class="arr">→</span></a>
   </div>
 </header>
 
 <!-- ============== HERO ============== -->
 <section class="hero" data-screen-label="01 Hero">
-  <canvas id="hero-fx" aria-hidden="true"></canvas>
   <div class="container">
-    <div class="hero-copy">
     <span class="eyebrow" data-i18n="hero_eyebrow">Complex B2B &amp; Enterprise Product Design</span>
     <h1 data-i18n-html="hero_h1">We design software that complex teams can <span class="it">actually</span> use.</h1>
     <p class="lead" data-i18n="hero_lead">We help enterprise and B2B product teams simplify critical workflows, reduce friction, and modernize complex interfaces — with deep experience in healthcare, pharma, compliance, and industrial systems.</p>
     <div class="hero-cta">
-      <a href="#services" class="btn btn-primary" data-i18n-html="hero_cta1">See the UX Audit <span class="arr">→</span></a>
+      <a href="#audit" class="btn btn-primary" data-i18n-html="hero_cta1">See the UX Audit <span class="arr">→</span></a>
       <a href="#work" class="btn btn-secondary" data-i18n="hero_cta2">View our work</a>
     </div>
     <div class="hero-tags" aria-label="Selected clients and sectors">
@@ -1204,7 +972,6 @@
       <span class="tag" data-i18n="tag_hg">Healthcare Governance</span>
       <span class="tag" data-i18n="tag_mes">Pharma MES</span>
       <span class="tag" data-i18n="tag_ind">Industrial SaaS</span>
-    </div>
     </div>
   </div>
 </section>
@@ -1279,38 +1046,62 @@
       </div>
     </div>
 
-    <div class="services-grid">
-      <article class="svc" data-open="true">
-        <button class="svc-header" type="button" aria-expanded="true" onclick="const c=this.closest('.svc'); c.dataset.open = c.dataset.open==='true' ? 'false' : 'true'; this.setAttribute('aria-expanded', c.dataset.open);">
-          <span data-i18n="svc1_title">Not sure what's actually broken?</span>
-          <svg class="chev" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </button>
-        <div class="svc-panel"><div class="svc-panel-inner"><div class="svc-panel-content">
-          <span class="svc-meta" data-i18n="svc1_meta">UX audit — 2 weeks</span>
-          <p class="svc-desc" data-i18n="svc1_desc">A structured review of your product's most critical workflows — what works, what breaks, and where to fix it first.</p>
-        </div></div></div>
+    <div class="services-grid reveal-stagger reveal">
+      <!-- Card 1 -->
+      <article class="svc">
+        <div class="row1">
+          <span class="eyebrow" data-i18n="svc1_eyebrow">Entry point</span>
+          <span class="caption" data-i18n="svc1_dur">02 weeks</span>
+        </div>
+        <h3 data-i18n="svc1_title">Complex Product UX Audit</h3>
+        <p class="desc" style="margin-top:18px;" data-i18n="svc1_desc">A senior, structured review of your product's most critical workflows — what works, what breaks, and where the highest-leverage fixes live.</p>
+        <span class="incl-label" data-i18n="svc_incl">What's included</span>
+        <ul class="incl">
+          <li data-i18n="svc1_i1">Stakeholder &amp; expert-user interviews</li>
+          <li data-i18n="svc1_i2">Heuristic and task-based evaluation</li>
+          <li data-i18n="svc1_i3">Prioritized findings with severity scoring</li>
+          <li data-i18n="svc1_i4">Roadmap of fixes, sequenced by impact</li>
+          <li data-i18n="svc1_i5">90-minute walkthrough with your team</li>
+        </ul>
+        <a href="#audit" class="learn" data-i18n-html="learn_more">Learn more <span class="arr">→</span></a>
       </article>
 
-      <article class="svc" data-open="true">
-        <button class="svc-header" type="button" aria-expanded="true" onclick="const c=this.closest('.svc'); c.dataset.open = c.dataset.open==='true' ? 'false' : 'true'; this.setAttribute('aria-expanded', c.dataset.open);">
-          <span data-i18n="svc2_title">Know you need embedded design support?</span>
-          <svg class="chev" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </button>
-        <div class="svc-panel"><div class="svc-panel-inner"><div class="svc-panel-content">
-          <span class="svc-meta" data-i18n="svc2_meta">Product design partner — monthly retainer</span>
-          <p class="svc-desc" data-i18n="svc2_desc">An embedded senior designer working alongside your product and engineering team — discovery, interaction design, and design QA on a sustained cadence.</p>
-        </div></div></div>
+      <!-- Card 2 - featured -->
+      <article class="svc featured">
+        <div class="row1">
+          <span class="eyebrow" data-i18n="svc2_eyebrow">Most popular</span>
+          <span class="caption" data-i18n="svc2_dur">Monthly retainer</span>
+        </div>
+        <h3 data-i18n="svc2_title">Product Design Partner</h3>
+        <p class="desc" style="margin-top:18px;" data-i18n="svc2_desc">An embedded senior designer working alongside your product and engineering team — discovery, interaction design, and design QA on a sustained cadence.</p>
+        <span class="incl-label" data-i18n="svc_incl_2">What's included</span>
+        <ul class="incl">
+          <li data-i18n="svc2_i1">Weekly design pairing with PM and engineering</li>
+          <li data-i18n="svc2_i2">Discovery research with your expert users</li>
+          <li data-i18n="svc2_i3">End-to-end interaction and visual design</li>
+          <li data-i18n="svc2_i4">Design-system contributions and governance</li>
+          <li data-i18n="svc2_i5">Async reviews and design QA on shipped work</li>
+        </ul>
+        <a href="#partner" class="learn" data-i18n-html="learn_more_2">Learn more <span class="arr">→</span></a>
       </article>
 
-      <article class="svc" data-open="true">
-        <button class="svc-header" type="button" aria-expanded="true" onclick="const c=this.closest('.svc'); c.dataset.open = c.dataset.open==='true' ? 'false' : 'true'; this.setAttribute('aria-expanded', c.dataset.open);">
-          <span data-i18n="svc3_title">Know your design system needs rebuilding?</span>
-          <svg class="chev" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </button>
-        <div class="svc-panel"><div class="svc-panel-inner"><div class="svc-panel-content">
-          <span class="svc-meta" data-i18n="svc3_meta">Design system and modernization — 3–6 months</span>
-          <p class="svc-desc" data-i18n="svc3_desc">A structured engagement to audit, build, or modernize your product's design system — component library, tokens, documentation, and dev handoff.</p>
-        </div></div></div>
+      <!-- Card 3 -->
+      <article class="svc">
+        <div class="row1">
+          <span class="eyebrow" data-i18n="svc3_eyebrow">Project</span>
+          <span class="caption" data-i18n="svc3_dur">3–6 months</span>
+        </div>
+        <h3 data-i18n-html="svc3_title">Design System &amp; Modernization</h3>
+        <p class="desc" style="margin-top:18px;" data-i18n="svc3_desc">A structured engagement to audit, build, or modernize your product's design system — component library, tokens, documentation, and dev handoff — so your team can ship faster and more consistently.</p>
+        <span class="incl-label" data-i18n="svc_incl_3">What's included</span>
+        <ul class="incl">
+          <li data-i18n="svc3_i1">Audit of existing patterns and component drift</li>
+          <li data-i18n="svc3_i2">Token, component, and pattern libraries</li>
+          <li data-i18n="svc3_i3">Reference flows for two priority modules</li>
+          <li data-i18n="svc3_i4">Engineering handoff and contribution model</li>
+          <li data-i18n="svc3_i5">Adoption playbook for the rest of the suite</li>
+        </ul>
+        <a href="#system" class="learn" data-i18n-html="learn_more_3">Learn more <span class="arr">→</span></a>
       </article>
     </div>
   </div>
@@ -1335,22 +1126,9 @@
       <!-- Case 1 -->
       <a href="case-studies/case-01-pharma-mes.html" class="case-link">
       <article class="case">
-        <div class="case-visual has-shot">
+        <div class="case-visual">
           <span class="num">CASE 01</span>
-          <div class="browser-frame" aria-hidden="true">
-            <div class="browser-toolbar">
-              <div class="browser-dots">
-                <span class="d-r"></span>
-                <span class="d-y"></span>
-                <span class="d-g"></span>
-              </div>
-              <div class="browser-url">app.rldatix.com/home</div>
-              <div class="browser-dots" style="visibility:hidden">
-                <span></span><span></span><span></span>
-              </div>
-            </div>
-            <img class="shot" src="assets/rldatix-dashboard.png" alt="RLDatix Home — Welcome dashboard with Info Center, Incident Tracker and Notifications" />
-          </div>
+          <span class="glyph" aria-hidden="true">Rx</span>
         </div>
         <div class="case-body">
           <div class="meta">
@@ -1369,20 +1147,11 @@
       </a>
 
       <!-- Case 2 -->
-      <a href="case-studies/case-02-hellofresh.html" class="case-link">
+      <a href="case-studies/case-02-healthcare-governance.html" class="case-link">
       <article class="case">
         <div class="case-visual v2">
           <span class="num">CASE 02</span>
-          <div class="mac-window" aria-hidden="true">
-            <div class="mac-titlebar">
-              <div class="mac-dots">
-                <span class="d-r"></span>
-                <span class="d-y"></span>
-                <span class="d-g"></span>
-              </div>
-            </div>
-            <img class="mac-shot" src="assets/hellofresh-siv.png" alt="HelloFresh Systematic Inventory View — Stock Overview" />
-          </div>
+          <span class="glyph" aria-hidden="true">§</span>
         </div>
         <div class="case-body">
           <div class="meta">
@@ -1403,9 +1172,9 @@
       <!-- Case 3 -->
       <a href="case-studies/case-03-industrial-saas.html" class="case-link">
       <article class="case">
-        <div class="case-visual v3 has-img">
+        <div class="case-visual v3">
           <span class="num">CASE 03</span>
-          <img class="case-img" src="assets/wpm-imac.png" alt="Work Center Performance Monitoring — main dashboard" />
+          <span class="glyph" aria-hidden="true">∞</span>
         </div>
         <div class="case-body">
           <div class="meta">
@@ -1435,7 +1204,7 @@
           </div>
           <h3 data-i18n="work_more_title">Most of our work lives behind NDA.</h3>
           <p class="summary" data-i18n="work_more_p">If you're evaluating us against a specific brief, we'll walk you through the most relevant case in a 45-minute call — flows, decisions, trade-offs, and what we'd do differently.</p>
-          <a href="#contact" class="learn" style="color:#D6E3F7;font-weight:500;display:inline-flex;align-items:center;gap:8px;text-decoration:none;margin-top:auto;" data-i18n-html="work_more_cta">Request a walkthrough <span class="arr">→</span></a>
+          <a href="#contact" class="learn" style="color:var(--teal);font-weight:500;display:inline-flex;align-items:center;gap:8px;text-decoration:none;margin-top:auto;" data-i18n-html="work_more_cta">Request a walkthrough <span class="arr">→</span></a>
         </div>
       </article>
     </div>
@@ -1443,7 +1212,7 @@
 </section>
 
 <!-- ============== PROCESS ============== -->
-<section class="alt process-dark reveal" data-screen-label="05 Process">
+<section class="alt reveal" data-screen-label="05 Process">
   <div class="container">
     <div class="sec-head">
       <div class="left">
@@ -1489,9 +1258,9 @@
       <div class="sec-num-row">
         <span class="section-num" data-i18n="about_num">04 — About</span>
       </div>
-      <h2 style="margin-top:24px;" data-i18n-html="about_h2">We design complex products that need to work <span class="it">precisely</span>.</h2>
-      <p style="margin-top:1.75rem;" data-i18n="about_p1">Lovre is a product design studio specializing in complex B2B and enterprise software. We transform dense workflows, technical requirements, and operational complexity into products that are clear, reliable, and easier to use.</p>
-      <p data-i18n="about_p2">We work closely with product, engineering, and domain experts in environments where design decisions have real operational consequences. Every engagement is senior-led, with additional specialists brought in when the project requires it.</p>
+      <h2 style="margin-top:24px;" data-i18n-html="about_h2">Run by Silvana Brandán, working with a small bench of senior designers when it <span class="it">helps</span>.</h2>
+      <p style="margin-top:1.75rem;" data-i18n="about_p1">Lovre is a focused product design studio. We specialize in complex B2B and enterprise software — the kind where users are experts, the domain is dense, and a wrong design decision has real operational consequences.</p>
+      <p data-i18n="about_p2">Engagements are sized so the principal designer is on the work. When a project genuinely needs more hands, we bring in trusted senior collaborators we've worked with for years — never juniors, never offshored, never to fill a slot on a deck.</p>
 
       <div class="regions" aria-label="Regions we work with">
         <span class="regions-label" data-i18n="regions_label">We work with teams in</span>
@@ -1504,17 +1273,37 @@
         </div>
       </div>
       <div class="sig">
-        <img class="photo" src="assets/silvana-brandan.jpg" alt="Silvana Brandán" />
+        <span class="avatar" aria-hidden="true">SB</span>
         <div class="who">
           <span class="n">Silvana Brandán</span>
-          <span class="role" data-i18n="sig_founder_role">Founder &amp; Creative Director</span>
-          <span class="cred" data-i18n="sig_founder_cred">10+ years designing product for regulated and enterprise environments — pharma manufacturing, healthcare governance, industrial systems.</span>
-          <a class="li-link" href="https://www.linkedin.com/in/silvana-brandan" target="_blank" rel="noopener">LinkedIn ↗</a>
-          <span class="studio" data-i18n="sig_name">Independent product design studio · Madrid · Barcelona · Working internationally</span>
+          <span class="r" data-i18n="sig_role">Principal · Madrid &amp; Barcelona</span>
         </div>
       </div>
     </div>
 
+    <div class="quotes" aria-label="Testimonials">
+      <figure class="quote">
+        <p data-i18n-html="q1_text">"Silvana asks the questions our internal team had stopped asking. The audit reframed our roadmap — and the half-dozen things we shipped from it are <span class="it">measurably</span> the most-used parts of the platform now."</p>
+        <figcaption class="attr">
+          <span class="mark" aria-hidden="true">M</span>
+          <div class="who">
+            <span class="n" data-i18n="q1_n">VP of Product</span>
+            <span class="r" data-i18n="q1_r">Healthcare governance platform · Series C</span>
+          </div>
+        </figcaption>
+      </figure>
+
+      <figure class="quote">
+        <p data-i18n="q2_text">"She works the way our best engineers work — slowly, then suddenly. We hired her for a six-week audit and she's been our design partner for two years."</p>
+        <figcaption class="attr">
+          <span class="mark" aria-hidden="true">D</span>
+          <div class="who">
+            <span class="n" data-i18n="q2_n">Director of Engineering</span>
+            <span class="r" data-i18n="q2_r">Pharma manufacturing software</span>
+          </div>
+        </figcaption>
+      </figure>
+    </div>
   </div>
 </section>
 
@@ -1552,189 +1341,6 @@
   </div>
 </section>
 
-<style>
-  .lv-brief{
-    --paper:#FFFFFF;
-    --ink:#1A1714;
-    --ink-70:rgba(26,23,20,.70);
-    --ink-45:rgba(26,23,20,.45);
-    --ink-14:rgba(26,23,20,.14);
-    --bf-blue:#044AB3;
-    --bf-blue-dark:#033A8F;
-  }
-  .lv-brief{
-    background:var(--ivory);
-    color:var(--ink);
-    font-family:'Inter',sans-serif;
-    padding:clamp(5rem,10vw,8rem) 40px clamp(8rem,14vw,11rem);
-    -webkit-font-smoothing:antialiased;
-  }
-  .lv-brief .bf-wrap{max-width:1240px;margin:0 auto}
-  .bf-eyebrow{display:flex;align-items:center;gap:16px;font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--bf-blue);margin:0 0 44px}
-  .bf-eyebrow::before{content:"";width:56px;height:1px;background:var(--bf-blue);flex:none}
-  .bf-cols{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:96px;align-items:start}
-  h2.bf-lede{font-family:'Fraunces',Georgia,serif;font-weight:400;font-size:clamp(44px,5.2vw,76px);line-height:1.02;letter-spacing:-.02em;margin:0 0 28px}
-  h2.bf-lede em{font-style:italic;color:var(--bf-blue);border-bottom:1px solid rgba(4,74,179,.35);padding-bottom:.02em}
-  .bf-sub{font-size:19px;line-height:1.62;color:var(--ink-70);max-width:34ch;margin:0 0 40px}
-  .bf-aside{border-top:1px solid var(--ink-14);padding-top:24px;font-size:15px;line-height:1.75;color:var(--ink-45);max-width:34ch}
-  .bf-aside a{color:var(--bf-blue);text-decoration:none;font-family:'Fraunces',Georgia,serif;font-style:italic;font-size:17px;border-bottom:1px solid rgba(4,74,179,.3)}
-  .bf-aside a:hover{border-bottom-color:var(--bf-blue)}
-  .bf-field{margin-bottom:34px}
-  .bf-field > label,.bf-field .legend{display:block;font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-45);margin-bottom:10px}
-  .bf-field input{width:100%;border:0;border-bottom:1px solid var(--ink-14);background:transparent;padding:8px 0 12px;font-family:'Inter',sans-serif;font-size:19px;color:var(--ink);border-radius:0;outline:none;transition:border-color .2s ease}
-  .bf-field input::placeholder{color:rgba(26,23,20,.28)}
-  .bf-field input:focus{border-bottom-color:var(--bf-blue)}
-  .lv-brief fieldset{border:0;padding:0;margin:0}
-  .bf-chips{display:flex;flex-wrap:wrap;gap:8px}
-  .bf-chip input{position:absolute;opacity:0;width:1px;height:1px}
-  .bf-chip span{display:inline-block;cursor:pointer;border:1px solid var(--ink-14);padding:10px 16px;font-size:14.5px;color:var(--ink-70);transition:border-color .18s ease,color .18s ease,background .18s ease}
-  .bf-chip span:hover{border-color:var(--bf-blue);color:var(--bf-blue)}
-  .bf-chip input:checked + span{background:var(--bf-blue);border-color:var(--bf-blue);color:#fff}
-  .bf-chip input:focus-visible + span{outline:2px solid var(--bf-blue);outline-offset:3px}
-  .bf-actions{display:flex;align-items:center;gap:26px;flex-wrap:wrap;margin-top:48px}
-  .bf-btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;font-family:'Inter',sans-serif;font-size:14px;font-weight:500;line-height:1;letter-spacing:0.01em;padding:14px 22px;border-radius:3px;cursor:pointer;border:1px solid transparent;transition:background .2s ease,border-color .2s ease,color .2s ease,transform .2s ease}
-  .bf-btn-primary{background:var(--bf-blue);border-color:var(--bf-blue);color:#fff}
-  .bf-btn-primary:hover{background:var(--bf-blue-dark);border-color:var(--bf-blue-dark)}
-  .bf-btn-ghost{background:transparent;border-color:var(--ink);color:var(--ink);text-decoration:none}
-  .bf-btn-ghost:hover{border-color:var(--bf-blue);color:var(--bf-blue)}
-  .bf-btn .bf-arrow{transition:transform .25s cubic-bezier(.2,.8,.3,1)}
-  .bf-btn:hover .bf-arrow{transform:translateX(5px)}
-  .bf-note{font-size:14px;color:var(--ink-45)}
-  .bf-err{display:none;font-size:14px;color:var(--bf-blue);margin-top:8px}
-  .bf-field.invalid input{border-bottom-color:var(--bf-blue)}
-  .bf-field.invalid .bf-err{display:block}
-  .bf-done{display:none;background:var(--ivory,#FAF8F4);padding:56px 52px}
-  .bf-done.show{display:block;animation:bf-rise .5s cubic-bezier(.2,.8,.3,1) both}
-  @keyframes bf-rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
-  .bf-done h3{font-family:'Fraunces',Georgia,serif;font-weight:400;font-size:38px;line-height:1.1;margin:0 0 14px;letter-spacing:-.01em}
-  .bf-done p{margin:0;color:var(--ink-70);font-size:17px;line-height:1.6;max-width:40ch}
-  @media (max-width:900px){
-    .lv-brief{padding:88px 24px 80px}
-    .bf-cols{grid-template-columns:1fr;gap:56px}
-    .bf-sub{max-width:none}
-    .bf-field input{font-size:17px}
-  }
-</style>
-
-<!-- ============== PROJECT BRIEF ============== -->
-<section class="lv-brief" aria-labelledby="bf-brief-title" data-screen-label="Brief">
-  <div class="bf-wrap">
-    <p class="bf-eyebrow" data-i18n="bf_eyebrow">Project brief</p>
-    <div class="bf-cols">
-      <div>
-        <h2 class="bf-lede" id="bf-brief-title" data-i18n-html="bf_title">Send a short <em>brief</em>.</h2>
-        <p class="bf-sub" data-i18n="bf_sub">Fill out the form below and we&rsquo;ll be in touch shortly.</p>
-        <div class="bf-aside" data-i18n-html="bf_aside">We read every one and reply within two working days.<br>Rather do it live? <a href="https://calendly.com/hello-lovre" target="_blank" rel="noopener">Book a call</a></div>
-      </div>
-      <div>
-        <form id="bf-briefForm" action="" method="POST" novalidate>
-          <div class="bf-field">
-            <label for="bf-f-name" data-i18n="bf_l_name">Your name</label>
-            <input id="bf-f-name" name="name" type="text" placeholder="Marcus Hale" required data-i18n-ph="bf_ph_name">
-            <p class="bf-err" data-i18n="bf_err_name">Add your name so we know who we're replying to.</p>
-          </div>
-          <div class="bf-field">
-            <label for="bf-f-email" data-i18n="bf_l_email">Work email</label>
-            <input id="bf-f-email" name="email" type="email" placeholder="marcus@company.com" required data-i18n-ph="bf_ph_email">
-            <p class="bf-err" data-i18n="bf_err_email">Check the email — we need a valid address to reply.</p>
-          </div>
-          <div class="bf-field">
-            <label for="bf-f-company" data-i18n="bf_l_company">Company</label>
-            <input id="bf-f-company" name="company" type="text" placeholder="Company and your role" data-i18n-ph="bf_ph_company">
-          </div>
-          <div class="bf-field">
-            <fieldset>
-              <legend class="legend" data-i18n="bf_l_need">What you're after</legend>
-              <div class="bf-chips">
-                <label class="bf-chip"><input type="radio" name="need" value="UX audit"><span data-i18n="bf_need_1">UX audit</span></label>
-                <label class="bf-chip"><input type="radio" name="need" value="Design system"><span data-i18n="bf_need_2">Design system</span></label>
-                <label class="bf-chip"><input type="radio" name="need" value="Design partner"><span data-i18n="bf_need_3">Ongoing design partner</span></label>
-                <label class="bf-chip"><input type="radio" name="need" value="Not sure"><span data-i18n="bf_need_4">Not sure yet</span></label>
-              </div>
-            </fieldset>
-            <p class="bf-err" data-i18n="bf_err_need">Pick the closest one — "not sure yet" is a valid answer.</p>
-          </div>
-          <div class="bf-actions">
-            <button class="bf-btn bf-btn-primary" type="submit"><span data-i18n="bf_submit">Send brief</span> <span class="bf-arrow">&#8594;</span></button>
-            <span class="bf-note" data-i18n="bf_note">No newsletter. No CRM sequence.</span>
-          </div>
-        </form>
-        <div class="bf-done" id="bf-done" role="status">
-          <h3 data-i18n="bf_done_h">Brief received.</h3>
-          <p data-i18n="bf_done_p">We'll read it properly and come back within two working days — with a straight answer on whether this is a fit.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<script>
-(function(){
-  var form = document.getElementById('bf-briefForm');
-  if(!form) return;
-  function isFilled(field){
-    var radios = field.querySelectorAll('input[type=radio]');
-    if(radios.length) return [].some.call(radios, function(r){return r.checked;});
-    var el = field.querySelector('input');
-    return el && el.value.trim().length > 0;
-  }
-  form.addEventListener('input', function(e){
-    var f = e.target.closest('.bf-field');
-    if(f) f.classList.remove('invalid');
-  });
-  form.addEventListener('change', function(e){
-    var f = e.target.closest('.bf-field');
-    if(f) f.classList.remove('invalid');
-  });
-  form.addEventListener('submit', function(e){
-    var first = null;
-    form.querySelectorAll('.bf-field').forEach(function(f){
-      if(!f.querySelector('.bf-err')) return;
-      var email = f.querySelector('input[type=email]');
-      var ok = isFilled(f) && (!email || /^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email.value.trim()));
-      f.classList.toggle('invalid', !ok);
-      if(!ok && !first) first = f;
-    });
-    if(first){
-      e.preventDefault();
-      first.scrollIntoView({behavior:'smooth', block:'center'});
-      var el = first.querySelector('input');
-      if(el) el.focus({preventScroll:true});
-      return;
-    }
-    e.preventDefault();
-    var name = form.querySelector('#bf-f-name').value.trim();
-    var email = form.querySelector('#bf-f-email').value.trim();
-    var company = form.querySelector('#bf-f-company').value.trim();
-    var need = form.querySelector('input[name=need]:checked');
-    var submitBtn = form.querySelector('.bf-btn-primary');
-    var originalLabel = submitBtn.innerHTML;
-    submitBtn.disabled = true;
-    submitBtn.textContent = 'Sending…';
-    fetch('https://formsubmit.co/ajax/hello@lovre.studio', {
-      method: 'POST',
-      headers: {'Content-Type': 'application/json', 'Accept': 'application/json'},
-      body: JSON.stringify({
-        name: name,
-        email: email,
-        company: company || '-',
-        need: need ? need.value : '-',
-        _subject: 'Project brief from ' + name
-      })
-    }).then(function(res){
-      if(!res.ok) throw new Error('send failed');
-      form.style.display = 'none';
-      document.getElementById('bf-done').classList.add('show');
-    }).catch(function(){
-      submitBtn.disabled = false;
-      submitBtn.innerHTML = originalLabel;
-      alert('Something went wrong sending the brief. Please try again or email hello@lovre.studio directly.');
-    });
-  });
-})();
-</script>
-
-<section class="cantor-band" id="cantor-band" aria-hidden="true"><canvas id="cantor-canvas"></canvas></section>
-
 <!-- ============== FOOTER CTA ============== -->
 <section id="contact" class="footer-cta reveal" data-screen-label="08 Contact CTA">
   <div class="container">
@@ -1742,7 +1348,7 @@
     <h2 data-i18n-html="cta_h2">Let's talk about your <span class="it">product</span>.</h2>
     <p class="lead" data-i18n="cta_lead">A 30-minute call to understand what you're working on, what's getting in the way, and whether we're the right partner.</p>
     <div class="row">
-      <a href="https://calendly.com/hello-lovre" target="_blank" rel="noopener" class="btn btn-primary" data-i18n-html="cta_btn">Book a call <span class="arr">→</span></a>
+      <a href="mailto:hello@lovre.studio" class="btn btn-primary" data-i18n-html="cta_btn">Book a call <span class="arr">→</span></a>
       <a href="mailto:hello@lovre.studio" class="email">hello@lovre.studio</a>
     </div>
   </div>
@@ -1751,12 +1357,15 @@
 <!-- ============== FOOTER ============== -->
 <footer class="site-footer" data-screen-label="Footer">
   <div class="container footer-inner">
-    <a href="#" class="logo"><img src="assets/lovre-logo-128.png" alt="" />Lovre</a>
-    <div class="footer-social">
-      <a href="https://www.linkedin.com/company/lovre-studio/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.07 2.07 0 1 1 0-4.13 2.07 2.07 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45z"/></svg></a>
-      <a href="https://www.instagram.com" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1" fill="currentColor" stroke="none"/></svg></a>
-      <span class="copy" data-i18n="foot_copy">© 2026 Lovre</span>
-    </div>
+    <a href="#" class="logo">Lovre</a>
+    <nav class="links" aria-label="Footer">
+      <a href="#services" data-i18n="foot_services">Services</a>
+      <a href="#work" data-i18n="foot_work">Work</a>
+      <a href="#about" data-i18n="foot_about">About</a>
+      <a href="#contact" data-i18n="foot_contact">Contact</a>
+      <a href="mailto:hello@lovre.studio" data-i18n="foot_email">Email</a>
+    </nav>
+    <span class="copy" data-i18n="foot_copy">© 2026 Lovre</span>
   </div>
 </footer>
 
@@ -1771,7 +1380,6 @@
       nav_services: "Services",
       nav_work: "Work",
       nav_about: "About",
-      nav_contact: "Contact",
       nav_cta: 'Book a call <span class="arr">→</span>',
 
       // HERO
@@ -1805,17 +1413,42 @@
       svc_num: "01 — Services",
       svc_h2: 'Three ways to <span class="it">work</span> together.',
       svc_p: "Each engagement is shaped by what your team needs next — a clear-eyed assessment, a steady design partner, or a full modernization. Scoped to the work, not the seat count.",
-      svc1_title: "Not sure what's actually broken?",
-      svc1_meta: "UX audit — 2 weeks",
-      svc1_desc: "A structured review of your product's most critical workflows — what works, what breaks, and where to fix it first.",
+      svc_incl: "What's included",
+      svc_incl_2: "What's included",
+      svc_incl_3: "What's included",
+      learn_more: 'Learn more <span class="arr">→</span>',
+      learn_more_2: 'Learn more <span class="arr">→</span>',
+      learn_more_3: 'Learn more <span class="arr">→</span>',
 
-      svc2_title: "Know you need embedded design support?",
-      svc2_meta: "Product design partner — monthly retainer",
+      svc1_eyebrow: "Entry point",
+      svc1_dur: "02 weeks",
+      svc1_title: "Complex Product UX Audit",
+      svc1_desc: "A senior, structured review of your product's most critical workflows — what works, what breaks, and where the highest-leverage fixes live.",
+      svc1_i1: "Stakeholder & expert-user interviews",
+      svc1_i2: "Heuristic and task-based evaluation",
+      svc1_i3: "Prioritized findings with severity scoring",
+      svc1_i4: "Roadmap of fixes, sequenced by impact",
+      svc1_i5: "90-minute walkthrough with your team",
+
+      svc2_eyebrow: "Most popular",
+      svc2_dur: "Monthly retainer",
+      svc2_title: "Product Design Partner",
       svc2_desc: "An embedded senior designer working alongside your product and engineering team — discovery, interaction design, and design QA on a sustained cadence.",
+      svc2_i1: "Weekly design pairing with PM and engineering",
+      svc2_i2: "Discovery research with your expert users",
+      svc2_i3: "End-to-end interaction and visual design",
+      svc2_i4: "Design-system contributions and governance",
+      svc2_i5: "Async reviews and design QA on shipped work",
 
-      svc3_title: "Know your design system needs rebuilding?",
-      svc3_meta: "Design system and modernization — 3–6 months",
-      svc3_desc: "A structured engagement to audit, build, or modernize your product's design system — component library, tokens, documentation, and dev handoff.",
+      svc3_eyebrow: "Project",
+      svc3_dur: "3–6 months",
+      svc3_title: "Design System &amp; Modernization",
+      svc3_desc: "A structured engagement to audit, build, or modernize your product's design system — component library, tokens, documentation, and dev handoff — so your team can ship faster and more consistently.",
+      svc3_i1: "Audit of existing patterns and component drift",
+      svc3_i2: "Token, component, and pattern libraries",
+      svc3_i3: "Reference flows for two priority modules",
+      svc3_i4: "Engineering handoff and contribution model",
+      svc3_i5: "Adoption playbook for the rest of the suite",
 
       // WORK
       work_num: "02 — Selected work",
@@ -1851,18 +1484,16 @@
 
       // ABOUT
       about_num: "04 — About",
-      about_h2: 'We design complex products that need to work <span class="it">precisely</span>.',
-      about_p1: "Lovre is a product design studio specializing in complex B2B and enterprise software. We transform dense workflows, technical requirements, and operational complexity into products that are clear, reliable, and easier to use.",
-      about_p2: "We work closely with product, engineering, and domain experts in environments where design decisions have real operational consequences. Every engagement is senior-led, with additional specialists brought in when the project requires it.",
+      about_h2: 'Run by Silvana Brandán, working with a small bench of senior designers when it <span class="it">helps</span>.',
+      about_p1: "Lovre is a focused product design studio. We specialize in complex B2B and enterprise software — the kind where users are experts, the domain is dense, and a wrong design decision has real operational consequences.",
+      about_p2: "Engagements are sized so the principal designer is on the work. When a project genuinely needs more hands, we bring in trusted senior collaborators we've worked with for years — never juniors, never offshored, never to fill a slot on a deck.",
       regions_label: "We work with teams in",
       region_uk: "United Kingdom",
       region_de: "Germany / DACH",
       region_no: "Nordics",
       region_us: "USA East Coast",
       region_es: "Spain",
-      sig_name: "Independent product design studio · Madrid · Barcelona · Working internationally",
-      sig_founder_role: "Founder & Creative Director",
-      sig_founder_cred: "10+ years designing product for regulated and enterprise environments — pharma manufacturing, healthcare governance, industrial systems.",
+      sig_role: "Principal · Madrid & Barcelona",
 
       q1_text: '"Silvana asks the questions our internal team had stopped asking. The audit reframed our roadmap — and the half-dozen things we shipped from it are <span class="it">measurably</span> the most-used parts of the platform now."',
       q1_n: "VP of Product",
@@ -1897,29 +1528,7 @@
       foot_about: "About",
       foot_contact: "Contact",
       foot_email: "Email",
-      foot_copy: "© 2026 Lovre",
-      bf_eyebrow: "Project brief",
-      bf_title: 'Send a short <em>brief</em>.',
-      bf_sub: "Fill out the form below and we\u2019ll be in touch shortly.",
-      bf_aside: 'We read every one and reply within two working days.<br>Rather do it live? <a href="https://calendly.com/hello-lovre" target="_blank" rel="noopener">Book a call</a>',
-      bf_l_name: "Your name",
-      bf_ph_name: "Marcus Hale",
-      bf_err_name: "Add your name so we know who we're replying to.",
-      bf_l_email: "Work email",
-      bf_ph_email: "marcus@company.com",
-      bf_err_email: "Check the email — we need a valid address to reply.",
-      bf_l_company: "Company",
-      bf_ph_company: "Company and your role",
-      bf_l_need: "What you're after",
-      bf_need_1: "UX audit",
-      bf_need_2: "Design system",
-      bf_need_3: "Ongoing design partner",
-      bf_need_4: "Not sure yet",
-      bf_err_need: 'Pick the closest one — "not sure yet" is a valid answer.',
-      bf_submit: "Send brief",
-      bf_note: "No newsletter. No CRM sequence.",
-      bf_done_h: "Brief received.",
-      bf_done_p: "We'll read it properly and come back within two working days — with a straight answer on whether this is a fit."
+      foot_copy: "© 2026 Lovre"
     },
 
     es: {
@@ -1927,7 +1536,6 @@
       nav_services: "Servicios",
       nav_work: "Proyectos",
       nav_about: "Estudio",
-      nav_contact: "Contacto",
       nav_cta: 'Agendar una llamada <span class="arr">→</span>',
 
       // HERO
@@ -1961,17 +1569,42 @@
       svc_num: "01 — Servicios",
       svc_h2: 'Tres formas de <span class="it">trabajar</span> juntos.',
       svc_p: "Cada engagement se adapta a lo que tu equipo necesita ahora — una evaluación clara, un socio de diseño constante, o una modernización completa. Se dimensiona por trabajo, no por puestos.",
-      svc1_title: "¿No estás seguro de qué está realmente roto?",
-      svc1_meta: "Auditoría UX — 2 semanas",
-      svc1_desc: "Una revisión estructurada de los flujos más críticos de tu producto — qué funciona, qué se rompe y dónde arreglarlo primero.",
+      svc_incl: "Qué incluye",
+      svc_incl_2: "Qué incluye",
+      svc_incl_3: "Qué incluye",
+      learn_more: 'Saber más <span class="arr">→</span>',
+      learn_more_2: 'Saber más <span class="arr">→</span>',
+      learn_more_3: 'Saber más <span class="arr">→</span>',
 
-      svc2_title: "¿Sabes que necesitas soporte de diseño embebido?",
-      svc2_meta: "Socio de diseño de producto — retainer mensual",
+      svc1_eyebrow: "Punto de entrada",
+      svc1_dur: "02 semanas",
+      svc1_title: "Auditoría UX de Producto Complejo",
+      svc1_desc: "Una revisión senior y estructurada de los flujos más críticos de tu producto — qué funciona, qué se rompe y dónde están las mejoras de mayor impacto.",
+      svc1_i1: "Entrevistas con stakeholders y usuarios expertos",
+      svc1_i2: "Evaluación heurística y por tareas",
+      svc1_i3: "Hallazgos priorizados con puntuación de severidad",
+      svc1_i4: "Roadmap de mejoras, secuenciado por impacto",
+      svc1_i5: "Sesión de 90 minutos con tu equipo",
+
+      svc2_eyebrow: "El más solicitado",
+      svc2_dur: "Retainer mensual",
+      svc2_title: "Socio de Diseño de Producto",
       svc2_desc: "Una diseñadora senior embebida trabajando junto a tu equipo de producto e ingeniería — descubrimiento, diseño de interacción y QA de diseño con cadencia sostenida.",
+      svc2_i1: "Pairing semanal de diseño con PM e ingeniería",
+      svc2_i2: "Investigación de descubrimiento con tus usuarios expertos",
+      svc2_i3: "Diseño de interacción y visual de extremo a extremo",
+      svc2_i4: "Aportaciones y gobernanza del design system",
+      svc2_i5: "Reviews asíncronas y QA de diseño sobre lo enviado",
 
-      svc3_title: "¿Sabes que tu design system necesita reconstruirse?",
-      svc3_meta: "Design system y modernización — 3–6 meses",
-      svc3_desc: "Un engagement estructurado para auditar, construir o modernizar el design system de tu producto — librería de componentes, tokens, documentación y handoff a desarrollo.",
+      svc3_eyebrow: "Proyecto",
+      svc3_dur: "3–6 meses",
+      svc3_title: "Design System y Modernización",
+      svc3_desc: "Un engagement estructurado para auditar, construir o modernizar el design system de tu producto — librería de componentes, tokens, documentación y handoff a desarrollo — para que tu equipo envíe más rápido y más consistente.",
+      svc3_i1: "Auditoría de patrones existentes y deriva de componentes",
+      svc3_i2: "Librerías de tokens, componentes y patrones",
+      svc3_i3: "Flujos de referencia para dos módulos prioritarios",
+      svc3_i4: "Handoff a ingeniería y modelo de contribución",
+      svc3_i5: "Plan de adopción para el resto de la suite",
 
       // WORK
       work_num: "02 — Proyectos seleccionados",
@@ -2007,18 +1640,16 @@
 
       // ABOUT
       about_num: "04 — Estudio",
-      about_h2: 'Diseñamos productos complejos que necesitan funcionar con <span class="it">precisión</span>.',
-      about_p1: "Lovre es un estudio de diseño de producto especializado en software B2B y enterprise complejo. Transformamos flujos de trabajo densos, requisitos técnicos y complejidad operativa en productos claros, fiables y más fáciles de usar.",
-      about_p2: "Trabajamos de cerca con equipos de producto, ingeniería y expertos del dominio en entornos donde las decisiones de diseño tienen consecuencias operativas reales. Cada proyecto está liderado por un perfil senior, sumando especialistas adicionales cuando el proyecto lo requiere.",
+      about_h2: 'Dirigido por Silvana Brandán, con un pequeño equipo de diseñadores senior cuando <span class="it">ayuda</span>.',
+      about_p1: "Lovre es un estudio enfocado en diseño de producto. Nos especializamos en software B2B y enterprise complejo — del tipo donde los usuarios son expertos, el dominio es denso y una mala decisión de diseño tiene consecuencias operativas reales.",
+      about_p2: "Los engagements se dimensionan para que la diseñadora principal esté en el trabajo. Cuando un proyecto realmente necesita más manos, traemos colaboradores senior de confianza con quienes hemos trabajado durante años — nunca juniors, nunca offshored, nunca para llenar un slot en un deck.",
       regions_label: "Trabajamos con equipos en",
       region_uk: "Reino Unido",
       region_de: "Alemania / DACH",
       region_no: "Países Nórdicos",
       region_us: "Costa Este de EE.UU.",
       region_es: "España",
-      sig_name: "Estudio de diseño de producto independiente · Madrid · Barcelona · Trabajando internacionalmente",
-      sig_founder_role: "Fundadora y Dirección Creativa",
-      sig_founder_cred: "Más de 10 años diseñando producto para entornos regulados y enterprise — manufactura farmacéutica, healthcare governance, sistemas industriales.",
+      sig_role: "Principal · Madrid y Barcelona",
 
       q1_text: '"Silvana hace las preguntas que nuestro equipo interno había dejado de hacerse. La auditoría reformuló nuestro roadmap — y la media docena de cosas que enviamos a partir de ella son <span class="it">medibles</span> como las partes más usadas de la plataforma hoy."',
       q1_n: "VP de Producto",
@@ -2053,29 +1684,7 @@
       foot_about: "Estudio",
       foot_contact: "Contacto",
       foot_email: "Email",
-      foot_copy: "© 2026 Lovre",
-      bf_eyebrow: "Brief del proyecto",
-      bf_title: 'Envíanos un <em>brief</em> breve.',
-      bf_sub: "Completa el formulario y nos pondremos en contacto pronto.",
-      bf_aside: 'Leemos todos los mensajes y respondemos en dos días hábiles.<br>¿Prefieres hacerlo en vivo? <a href="#contact">Agenda una llamada</a>',
-      bf_l_name: "Tu nombre",
-      bf_ph_name: "Marcus Hale",
-      bf_err_name: "Agrega tu nombre para saber a quién le respondemos.",
-      bf_l_email: "Email de trabajo",
-      bf_ph_email: "marcus@empresa.com",
-      bf_err_email: "Revisa el email — necesitamos una dirección válida para responder.",
-      bf_l_company: "Empresa",
-      bf_ph_company: "Empresa y tu rol",
-      bf_l_need: "Qué estás buscando",
-      bf_need_1: "Auditoría UX",
-      bf_need_2: "Design system",
-      bf_need_3: "Socio de diseño continuo",
-      bf_need_4: "Aún no estoy seguro",
-      bf_err_need: 'Elige la opción más cercana — "aún no estoy seguro" también es válida.',
-      bf_submit: "Enviar brief",
-      bf_note: "Sin newsletter. Sin secuencia de CRM.",
-      bf_done_h: "Brief recibido.",
-      bf_done_p: "Lo leeremos con atención y volveremos en dos días hábiles — con una respuesta clara sobre si somos un buen fit."
+      foot_copy: "© 2026 Lovre"
     }
   };
 
@@ -2092,10 +1701,6 @@
     document.querySelectorAll('[data-i18n-html]').forEach(function(el){
       var key = el.getAttribute('data-i18n-html');
       if (dict[key] != null) el.innerHTML = dict[key];
-    });
-    document.querySelectorAll('[data-i18n-ph]').forEach(function(el){
-      var key = el.getAttribute('data-i18n-ph');
-      if (dict[key] != null) el.setAttribute('placeholder', dict[key]);
     });
 
     // Toggle button state
@@ -2115,10 +1720,11 @@
     });
   });
 
-  // Initial: stored preference > en (English by default, regardless of browser locale)
+  // Initial: stored > browser > en
   var stored = null;
   try { stored = localStorage.getItem('sb_lang'); } catch(e){}
-  var initial = (stored === 'es' || stored === 'en') ? stored : 'en';
+  var initial = stored
+    || ((navigator.language || 'en').toLowerCase().indexOf('es') === 0 ? 'es' : 'en');
   applyLang(initial);
 })();
 </script>
@@ -2142,294 +1748,31 @@
   })();
 </script>
 
-<style>
-  *{cursor:none !important}
-  .cursor-dot,.cursor-ring{position:fixed;top:0;left:0;border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%)}
-  .cursor-dot{width:8px;height:8px;background:#044AB3}
-  .cursor-ring{width:40px;height:40px;border:1.5px solid #044AB3;transition:width .2s ease,height .2s ease}
-  @media (hover:none){.cursor-dot,.cursor-ring{display:none}*{cursor:auto !important}}
-</style>
-<div class="cursor-dot" id="cursorDot"></div>
-<div class="cursor-ring" id="cursorRing"></div>
-<script>
-(function(){
-  var dot=document.getElementById('cursorDot'), ring=document.getElementById('cursorRing');
-  var mx=0,my=0,rx=0,ry=0,hover=false;
-  window.addEventListener('mousemove',function(e){mx=e.clientX;my=e.clientY;dot.style.left=mx+'px';dot.style.top=my+'px';});
-  function loop(){
-    rx+=(mx-rx)*0.15; ry+=(my-ry)*0.15;
-    ring.style.left=rx+'px'; ring.style.top=ry+'px';
-    requestAnimationFrame(loop);
-  }
-  loop();
-  document.addEventListener('mouseover',function(e){
-    if(e.target.closest('a,button,[role="button"],input,select,textarea,.svc-header')){
-      if(!hover){hover=true;ring.style.width='64px';ring.style.height='64px';}
-    }
-  });
-  document.addEventListener('mouseout',function(e){
-    if(e.target.closest('a,button,[role="button"],input,select,textarea,.svc-header')){
-      if(!e.relatedTarget || !e.relatedTarget.closest('a,button,[role="button"],input,select,textarea,.svc-header')){
-        hover=false;ring.style.width='40px';ring.style.height='40px';
-      }
-    }
-  });
-})();
-</script>
-<script id="scroll-fx-js">
-(function(){
-var reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
-if(!reduced){
-function isRepeatingGroup(el){
-if(el.children.length<2) return false;
-if(/grid|stats|approach|outcomes|pager|two-col|tabs|stat-row|credits/i.test(el.className||'')) return true;
-var tags=[].map.call(el.children,function(c){return c.tagName});
-return tags.every(function(t){return t===tags[0]});
-}
-var toObserve=[];
-document.querySelectorAll('section').forEach(function(sec){
-var host = sec.querySelector(':scope > .container, :scope > .wrap, :scope > .wrap-narrow, :scope > .wrap-wide') || sec;
-[].forEach.call(host.children,function(el){
-if(isRepeatingGroup(el)){
-[].forEach.call(el.children,function(g,i){
-g.classList.add('js-reveal');
-g.style.transitionDelay=Math.min(i,6)*0.08+'s';
-toObserve.push(g);
-});
-} else {
-el.classList.add('js-reveal');
-toObserve.push(el);
-}
-});
-});
-if('IntersectionObserver' in window){
-var io=new IntersectionObserver(function(entries){
-entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('js-in'); io.unobserve(e.target);} });
-},{threshold:0.15, rootMargin:'0px 0px -8% 0px'});
-toObserve.forEach(function(el){ io.observe(el); });
-} else {
-toObserve.forEach(function(el){ el.classList.add('js-in'); });
-}
-}
-if(!reduced && matchMedia('(pointer:fine)').matches){
-var target=window.scrollY, current=window.scrollY, raf=null, programmatic=false, resyncTimer=null;
-function loop(){
-current += (target-current)*0.11;
-if(Math.abs(target-current)<0.4){ current=target; }
-programmatic=true;
-window.scrollTo({top:current,left:0,behavior:'instant'});
-if(current!==target){ raf=requestAnimationFrame(loop); } else { raf=null; }
-}
-window.addEventListener('wheel',function(e){
-if(e.ctrlKey) return;
-e.preventDefault();
-var max=document.documentElement.scrollHeight-window.innerHeight;
-target=Math.max(0,Math.min(target+e.deltaY,max));
-if(!raf) raf=requestAnimationFrame(loop);
-},{passive:false});
-window.addEventListener('scroll',function(){
-if(programmatic){ programmatic=false; return; }
-clearTimeout(resyncTimer);
-resyncTimer=setTimeout(function(){
-target=window.scrollY; current=window.scrollY;
-},50);
-});
-}
-var darkEls=[];
-document.querySelectorAll('.process-dark, .case-banner.v-infinity, .case.cta-case, .outcome-dark').forEach(function(el){
-darkEls.push({el:el, target: getComputedStyle(el).backgroundColor});
-});
-if(darkEls.length){
-function toRgb(str){
-var m = str.match(/rgba?\((\d+),\s*(\d+),\s*(\d+)/);
-return m ? [parseInt(m[1]),parseInt(m[2]),parseInt(m[3])] : [250,248,244];
-}
-var ivory=[250,248,244];
-darkEls.forEach(function(item){ item.targetRgb = toRgb(item.target); });
-function clamp(v,a,b){return Math.max(a,Math.min(b,v));}
-function tick(){
-var vh=window.innerHeight;
-darkEls.forEach(function(item){
-var r=item.el.getBoundingClientRect();
-var t=clamp((vh-r.top)/(vh*0.6),0,1);
-var c=item.targetRgb;
-var rr=Math.round(ivory[0]+(c[0]-ivory[0])*t);
-var gg=Math.round(ivory[1]+(c[1]-ivory[1])*t);
-var bb=Math.round(ivory[2]+(c[2]-ivory[2])*t);
-item.el.style.backgroundColor='rgb('+rr+','+gg+','+bb+')';
-});
-requestAnimationFrame(tick);
-}
-tick();
-}
-})();
-</script>
-<script>
-(function(){
-  var hero = document.querySelector('.hero');
-  var canvas = document.getElementById('hero-fx');
-  if(!hero || !canvas) return;
-  if(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+<template id="__bundler_thumbnail" data-bg-color="#FAF8F4">
+  <svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+    <rect width="1200" height="800" fill="#FAF8F4"/>
+    <!-- editorial wordmark — Fraunces-like S in italic teal -->
+    <g transform="translate(600 440)" text-anchor="middle">
+      <text x="0" y="0"
+            font-family="Georgia, 'Times New Roman', serif"
+            font-style="italic"
+            font-weight="500"
+            font-size="420"
+            fill="#0E4F4F"
+            letter-spacing="-12">S</text>
+    </g>
+    <!-- baseline rule -->
+    <line x1="380" y1="560" x2="820" y2="560" stroke="#0E4F4F" stroke-width="1"/>
+    <!-- studio mark -->
+    <text x="600" y="610"
+          text-anchor="middle"
+          font-family="Inter, system-ui, sans-serif"
+          font-weight="500"
+          font-size="22"
+          letter-spacing="6"
+          fill="#1A1714">LOVRE</text>
+  </svg>
+</template>
 
-  var ctx = canvas.getContext('2d');
-  var CELL = 68;
-  var LIFE = 750;
-  var COLORS = ['#044AB3','#2C5DB8','#4F86D6','#9BB8E8'];
-  var squares = [];
-  var lastCell = null;
-  var dpr = Math.min(window.devicePixelRatio || 1, 2);
-  var w = 0, h = 0;
-
-  function resize(){
-    w = hero.clientWidth;
-    h = hero.clientHeight;
-    canvas.width = w * dpr;
-    canvas.height = h * dpr;
-    canvas.style.width = w + 'px';
-    canvas.style.height = h + 'px';
-    ctx.setTransform(dpr,0,0,dpr,0,0);
-  }
-  resize();
-  window.addEventListener('resize', resize);
-
-  function pickColor(){
-    return COLORS[Math.floor(Math.random()*COLORS.length)];
-  }
-
-  function addSquare(cx, cy){
-    squares.push({ x: cx, y: cy, color: pickColor(), born: performance.now() });
-  }
-
-  hero.addEventListener('mousemove', function(e){
-    var rect = hero.getBoundingClientRect();
-    var mx = e.clientX - rect.left;
-    var my = e.clientY - rect.top;
-    var gx = Math.floor(mx / CELL);
-    var gy = Math.floor(my / CELL);
-    var key = gx + ',' + gy;
-    if(key === lastCell) return;
-    lastCell = key;
-    addSquare(gx * CELL, gy * CELL);
-    if(Math.random() < 0.4){
-      var nx = gx + (Math.random() < 0.5 ? -1 : 1);
-      addSquare(nx * CELL, gy * CELL);
-    }
-    if(squares.length > 200) squares.splice(0, squares.length - 200);
-  });
-
-  hero.addEventListener('mouseleave', function(){ lastCell = null; });
-
-  function frame(now){
-    ctx.clearRect(0,0,w,h);
-    for(var i = squares.length - 1; i >= 0; i--){
-      var s = squares[i];
-      var age = now - s.born;
-      if(age >= LIFE){ squares.splice(i,1); continue; }
-      var t = age / LIFE;
-      var opacity = 0.95 * (1 - t);
-      var scale = 1 - 0.25 * t;
-      var size = CELL * scale;
-      var offset = (CELL - size) / 2;
-      ctx.globalAlpha = opacity;
-      ctx.fillStyle = s.color;
-      ctx.fillRect(s.x + offset, s.y + offset, size, size);
-    }
-    ctx.globalAlpha = 1;
-    requestAnimationFrame(frame);
-  }
-  requestAnimationFrame(frame);
-})();
-</script>
-<script>
-(function(){
-  var band = document.getElementById('cantor-band');
-  var canvas = document.getElementById('cantor-canvas');
-  if(!band || !canvas) return;
-  var ctx = canvas.getContext('2d');
-  var reduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-  var CELL = 68, GAP = 6, STEP = CELL + GAP;
-  var COLORS = ['#044AB3','#044AB3','#044AB3','#2C5DB8','#2C5DB8','#4F86D6','#9BB8E8'];
-  var dpr = Math.min(window.devicePixelRatio || 1, 2);
-  var w = 0, h = 0, cols = 0, rows = 0;
-  var cells = [];
-  var progress = 0;
-  var display = 0;
-
-  function build(){
-    w = band.clientWidth;
-    h = band.clientHeight;
-    canvas.width = w * dpr;
-    canvas.height = h * dpr;
-    canvas.style.width = w + 'px';
-    canvas.style.height = h + 'px';
-    ctx.setTransform(dpr,0,0,dpr,0,0);
-    cols = Math.ceil(w / STEP) + 1;
-    rows = Math.ceil(h / STEP);
-    cells = [];
-    for(var r = 0; r < rows; r++){
-      var rowFromBottom = rows - 1 - r;
-      var rowT = rows <= 1 ? 1 : rowFromBottom / (rows - 1);
-      var prob = 0.1 + rowT * 0.55;
-      for(var c = 0; c < cols; c++){
-        var survive = Math.random() < (0.16 + (1 - rowT) * 0.18);
-        var skip = Math.random() < 0.2;
-        cells.push({
-          row:r, col:c,
-          on: !skip && Math.random() < prob,
-          color: COLORS[Math.floor(Math.random()*COLORS.length)],
-          survive: survive,
-          threshold: survive ? 1 : (1 - rowT) * 0.65 + Math.random() * 0.3
-        });
-      }
-    }
-  }
-  build();
-  window.addEventListener('resize', build);
-
-  function targetProgress(){
-    var rect = band.getBoundingClientRect();
-    var vh = window.innerHeight;
-    var start = vh * 0.9;
-    var end = -rect.height * 0.6;
-    var p = (start - rect.top) / (start - end);
-    return Math.max(0, Math.min(1, p));
-  }
-
-  function draw(){
-    display += (progress - display) * 0.15;
-    ctx.clearRect(0,0,w,h);
-    for(var i = 0; i < cells.length; i++){
-      var cell = cells[i];
-      if(!cell.on) continue;
-      var opacity;
-      if(cell.survive){
-        opacity = 0.95;
-      } else {
-        var local = (cell.threshold - display) / 0.18;
-        opacity = Math.max(0, Math.min(1, local)) * 0.95;
-      }
-      if(opacity <= 0.01) continue;
-      var x = cell.col * STEP;
-      var y = cell.row * STEP;
-      ctx.globalAlpha = opacity;
-      ctx.fillStyle = cell.color;
-      ctx.fillRect(x, y, CELL, CELL);
-    }
-    ctx.globalAlpha = 1;
-    requestAnimationFrame(draw);
-  }
-
-  if(reduced){
-    progress = 1; display = 1;
-    draw();
-  } else {
-    function onScroll(){ progress = targetProgress(); }
-    window.addEventListener('scroll', onScroll, { passive:true });
-    onScroll();
-    draw();
-  }
-})();
-</script>
 </body>
 </html>
