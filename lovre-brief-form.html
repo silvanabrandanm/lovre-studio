@@ -1,0 +1,261 @@
+<!-- LOVRE — Project brief section
+     Pega esta sección justo ANTES del bloque "Let's talk about your product".
+     Para activarlo: poné tu endpoint de Formspree/Basin en action="" del <form>
+     y borrá las 3 líneas marcadas al final del script. -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --paper:#FFFFFF;
+    --ivory:#FAF8F4;
+    --ink:#1A1714;
+    --ink-70:rgba(26,23,20,.70);
+    --ink-45:rgba(26,23,20,.45);
+    --ink-14:rgba(26,23,20,.14);
+    --blue:#1B3EC2;
+    --blue-dark:#14309B;
+
+    --display:"Fraunces","Playfair Display",Georgia,serif;
+    --body:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  }
+
+  *,*::before,*::after{box-sizing:border-box}
+
+  .lv-brief{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:var(--body);
+    padding:120px 40px 110px;
+    -webkit-font-smoothing:antialiased;
+  }
+  .lv-brief .wrap{max-width:1240px;margin:0 auto}
+
+  /* ── eyebrow ───────────────────────────────── */
+  .eyebrow{
+    display:flex;align-items:center;gap:16px;
+    font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;
+    color:var(--blue);margin:0 0 44px;
+  }
+  .eyebrow::before{content:"";width:56px;height:1px;background:var(--blue);flex:none}
+
+  /* ── grid ──────────────────────────────────── */
+  .cols{
+    display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);
+    gap:96px;align-items:start;
+  }
+
+  h2.lede{
+    font-family:var(--display);font-weight:400;
+    font-size:clamp(44px,5.2vw,76px);
+    line-height:1.02;letter-spacing:-.02em;margin:0 0 28px;
+  }
+  h2.lede em{
+    font-style:italic;color:var(--blue);
+    border-bottom:1px solid rgba(27,62,194,.35);padding-bottom:.02em;
+  }
+  .sub{
+    font-size:19px;line-height:1.62;color:var(--ink-70);
+    max-width:34ch;margin:0 0 40px;
+  }
+  .aside{
+    border-top:1px solid var(--ink-14);padding-top:24px;
+    font-size:15px;line-height:1.75;color:var(--ink-45);max-width:34ch;
+  }
+  .aside a{
+    color:var(--blue);text-decoration:none;
+    font-family:var(--display);font-style:italic;font-size:17px;
+    border-bottom:1px solid rgba(27,62,194,.3);
+  }
+  .aside a:hover{border-bottom-color:var(--blue)}
+
+  /* ── campos ────────────────────────────────── */
+  .field{margin-bottom:34px}
+  .field > label,.field .legend{
+    display:block;font-size:12px;font-weight:600;
+    letter-spacing:.12em;text-transform:uppercase;
+    color:var(--ink-45);margin-bottom:10px;
+  }
+  .field input{
+    width:100%;border:0;border-bottom:1px solid var(--ink-14);
+    background:transparent;padding:8px 0 12px;
+    font-family:var(--body);font-size:19px;color:var(--ink);
+    border-radius:0;outline:none;transition:border-color .2s ease;
+  }
+  .field input::placeholder{color:rgba(26,23,20,.28)}
+  .field input:focus{border-bottom-color:var(--blue)}
+
+  /* ── chips ─────────────────────────────────── */
+  fieldset{border:0;padding:0;margin:0}
+  .chips{display:flex;flex-wrap:wrap;gap:8px}
+  .chip input{position:absolute;opacity:0;width:1px;height:1px}
+  .chip span{
+    display:inline-block;cursor:pointer;border:1px solid var(--ink-14);
+    padding:10px 16px;font-size:14.5px;color:var(--ink-70);
+    transition:border-color .18s ease,color .18s ease,background .18s ease;
+  }
+  .chip span:hover{border-color:var(--blue);color:var(--blue)}
+  .chip input:checked + span{background:var(--blue);border-color:var(--blue);color:#fff}
+  .chip input:focus-visible + span{outline:2px solid var(--blue);outline-offset:3px}
+
+  /* ── submit ────────────────────────────────── */
+  .actions{display:flex;align-items:center;gap:26px;flex-wrap:wrap;margin-top:48px}
+
+  /* botones — mismas medidas que "See the UX Audit" / "View our work" */
+  .btn{
+    display:inline-flex;align-items:center;justify-content:center;gap:16px;
+    font-family:var(--body);font-size:17px;font-weight:600;line-height:1;
+    padding:21px 34px;border-radius:6px;cursor:pointer;
+    border:2px solid transparent;
+    transition:background .2s ease,border-color .2s ease,color .2s ease;
+  }
+  .btn-primary{background:var(--blue);border-color:var(--blue);color:#fff}
+  .btn-primary:hover{background:var(--blue-dark);border-color:var(--blue-dark)}
+  .btn-ghost{background:transparent;border-color:var(--ink);color:var(--ink)}
+  .btn-ghost:hover{border-color:var(--blue);color:var(--blue)}
+  .btn .arrow{transition:transform .25s cubic-bezier(.2,.8,.3,1)}
+  .btn:hover .arrow{transform:translateX(5px)}
+  .note{font-size:14px;color:var(--ink-45)}
+
+  .err{display:none;font-size:14px;color:var(--blue);margin-top:8px}
+  .field.invalid input{border-bottom-color:var(--blue)}
+  .field.invalid .err{display:block}
+
+  /* ── éxito ─────────────────────────────────── */
+  .done{display:none;background:var(--ivory);padding:56px 52px}
+  .done.show{display:block;animation:rise .5s cubic-bezier(.2,.8,.3,1) both}
+  @keyframes rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+  .done h3{
+    font-family:var(--display);font-weight:400;font-size:38px;
+    line-height:1.1;margin:0 0 14px;letter-spacing:-.01em;
+  }
+  .done p{margin:0;color:var(--ink-70);font-size:17px;line-height:1.6;max-width:40ch}
+  .done .btn{text-decoration:none}
+
+  :focus-visible{outline:2px solid var(--blue);outline-offset:3px}
+
+  @media (max-width:900px){
+    .lv-brief{padding:88px 24px 80px}
+    .cols{grid-template-columns:1fr;gap:56px}
+    .sub{max-width:none}
+    .field input{font-size:17px}
+  }
+  @media (prefers-reduced-motion:reduce){
+    *{animation:none !important;transition:none !important}
+  }
+</style>
+
+<section class="lv-brief" aria-labelledby="brief-title">
+  <div class="wrap">
+    <p class="eyebrow">Project brief</p>
+
+    <div class="cols">
+      <div>
+        <h2 class="lede" id="brief-title">Send a short <em>brief</em>.</h2>
+        <p class="sub">
+          Fill out the form below and we&rsquo;ll be in touch shortly.
+        </p>
+        <div class="aside">
+          We read every one and reply within two working days.<br>
+          Rather do it live? <a href="#book">Book a call</a>
+        </div>
+      </div>
+
+      <div>
+        <form id="briefForm" action="" method="POST" novalidate>
+          <div class="field">
+            <label for="f-name">Your name</label>
+            <input id="f-name" name="name" type="text" placeholder="Marcus Hale" required>
+            <p class="err">Add your name so we know who we're replying to.</p>
+          </div>
+
+          <div class="field">
+            <label for="f-email">Work email</label>
+            <input id="f-email" name="email" type="email" placeholder="marcus@company.com" required>
+            <p class="err">Check the email — we need a valid address to reply.</p>
+          </div>
+
+          <div class="field">
+            <label for="f-company">Company</label>
+            <input id="f-company" name="company" type="text" placeholder="Company and your role">
+          </div>
+
+          <div class="field">
+            <fieldset>
+              <legend class="legend">What you're after</legend>
+              <div class="chips">
+                <label class="chip"><input type="radio" name="need" value="UX audit"><span>UX audit</span></label>
+                <label class="chip"><input type="radio" name="need" value="Design system"><span>Design system</span></label>
+                <label class="chip"><input type="radio" name="need" value="Design partner"><span>Ongoing design partner</span></label>
+                <label class="chip"><input type="radio" name="need" value="Not sure"><span>Not sure yet</span></label>
+              </div>
+            </fieldset>
+            <p class="err">Pick the closest one — "not sure yet" is a valid answer.</p>
+          </div>
+
+
+          <div class="actions">
+            <button class="btn btn-primary" type="submit">Send brief <span class="arrow">&#8594;</span></button>
+            <span class="note">No newsletter. No CRM sequence.</span>
+          </div>
+        </form>
+
+        <div class="done" id="done" role="status">
+          <h3>Brief received.</h3>
+          <p>We'll read it properly and come back within two working days — with a straight answer on whether this is a fit.</p>
+          <a class="btn btn-ghost" href="#book" style="margin-top:32px">Book a call now</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+(function(){
+  const form = document.getElementById('briefForm');
+
+  const isFilled = field => {
+    const radios = field.querySelectorAll('input[type=radio]');
+    if (radios.length) return [...radios].some(r => r.checked);
+    const el = field.querySelector('input');
+    return el && el.value.trim().length > 0;
+  };
+
+  form.addEventListener('input', e => {
+    const f = e.target.closest('.field');
+    if (f) f.classList.remove('invalid');
+  });
+  form.addEventListener('change', e => {
+    const f = e.target.closest('.field');
+    if (f) f.classList.remove('invalid');
+  });
+
+  form.addEventListener('submit', function(e){
+    let first = null;
+
+    form.querySelectorAll('.field').forEach(f => {
+      if (!f.querySelector('.err')) return;          // campo opcional
+      const email = f.querySelector('input[type=email]');
+      const ok = isFilled(f) &&
+                 (!email || /^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email.value.trim()));
+      f.classList.toggle('invalid', !ok);
+      if (!ok && !first) first = f;
+    });
+
+    if (first){
+      e.preventDefault();
+      first.scrollIntoView({behavior:'smooth', block:'center'});
+      const el = first.querySelector('input');
+      if (el) el.focus({preventScroll:true});
+      return;
+    }
+
+    // ↓↓↓ BORRÁ ESTAS 3 LÍNEAS al conectar Formspree/Basin ↓↓↓
+    e.preventDefault();
+    form.style.display = 'none';
+    document.getElementById('done').classList.add('show');
+  });
+})();
+</script>
