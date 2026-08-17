@@ -1,1 +1,36 @@
-{"cleanUrls":true}
+{
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "redirects": [
+    {
+      "source": "/case-studies/case-01-pharma-mes",
+      "destination": "/case-studies/case-01-rldatix-governance",
+      "permanent": true
+    },
+    {
+      "source": "/case-studies/case-01-pharma-mes.html",
+      "destination": "/case-studies/case-01-rldatix-governance",
+      "permanent": true
+    },
+    {
+      "source": "/case-studies/case-02-hellofresh",
+      "destination": "/case-studies/case-02-inventory-system",
+      "permanent": true
+    },
+    {
+      "source": "/case-studies/case-02-hellofresh.html",
+      "destination": "/case-studies/case-02-inventory-system",
+      "permanent": true
+    },
+    {
+      "source": "/case-studies/case-03-industrial-saas",
+      "destination": "/case-studies/case-03-pharma-monitoring",
+      "permanent": true
+    },
+    {
+      "source": "/case-studies/case-03-industrial-saas.html",
+      "destination": "/case-studies/case-03-pharma-monitoring",
+      "permanent": true
+    }
+  ]
+}

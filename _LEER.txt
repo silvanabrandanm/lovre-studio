@@ -1,0 +1,15 @@
+Sitio completo. Reemplaza TODO el repo.
+
+Borrá todo el contenido actual del repo (incluidas las "Captura de pantalla ...png"
+sueltas en la raíz) y subí el contenido de esta carpeta respetando la estructura:
+
+  index.html
+  vercel.json
+  sitemap.xml
+  robots.txt
+  assets/
+  case-studies/
+  case-studies/img/
+
+Ya NO existen: case-01-pharma-mes.html, case-02-hellofresh.html,
+case-03-industrial-saas.html — los redirects 301 están en vercel.json.

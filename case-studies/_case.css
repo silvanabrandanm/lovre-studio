@@ -289,6 +289,10 @@ footer.site-footer{background:var(--ivory);border-top:0.5px solid #E8E2D8;paddin
 .footer-inner .links a{font-size:13px;color:var(--body)}
 .footer-inner .links a:hover{color:var(--teal)}
 .footer-inner .copy{font-size:13px;color:var(--muted)}
+.footer-social{display:flex;gap:16px;align-items:center}
+.footer-social a{color:var(--muted);display:flex}
+.footer-social a:hover{color:var(--teal)}
+.footer-social svg{width:18px;height:18px}
 
 /* Reveal */
 .reveal{opacity:0;transform:translateY(18px);transition:opacity .9s cubic-bezier(.2,.7,.2,1),transform .9s cubic-bezier(.2,.7,.2,1)}
