@@ -350,6 +350,11 @@ footer.site-footer{background:#FFFFFF;padding:32px 0 36px;border-top:0.5px solid
 .footer-inner .links a:hover{color:var(--teal)}
 .footer-inner .copy{font-family:'Inter',sans-serif;font-size:13px;color:var(--muted)}
 
+.footer-social{display:flex;align-items:center;gap:14px}
+.footer-social a{color:var(--muted);display:inline-flex;transition:color .2s ease}
+.footer-social a:hover{color:var(--charcoal)}
+.footer-social svg{width:16px;height:16px;display:block}
+
 /* ──────────────────────── RESPONSIVE ──────────────────────── */
 @media (max-width:900px){
   .wrap-narrow,.wrap,.wrap-wide{padding:0 1.5rem}
@@ -407,26 +412,26 @@ footer.site-footer{background:#FFFFFF;padding:32px 0 36px;border-top:0.5px solid
 <!-- ─── HERO ─── -->
 <section class="hero" data-screen-label="01 Hero">
   <div class="wrap">
-    <div class="eyebrow"><span class="ln"></span>Case 01 · Healthcare governance · RLDatix</div>
-    <h1 class="case-title">Unifying four products into <em>one platform</em>.</h1>
-    <p class="lede">RLDatix serves more than 10,000 healthcare organizations. Their platform had grown through acquisitions — four products, four interfaces, four mental models. We were brought in to design the future where they felt like one, and to build the design system that now powers the entire ecosystem.</p>
+    <div class="eyebrow" data-i18n="c_eyebrow"><span class="ln"></span>Case 01 · Healthcare governance · RLDatix</div>
+    <h1 class="case-title" data-i18n-html="c_h1">Unifying four products into <em>one platform</em>.</h1>
+    <p class="lede" data-i18n="c_lede">RLDatix serves more than 10,000 healthcare organizations. Their platform had grown through acquisitions — four products, four interfaces, four mental models. We were brought in to design the future where they felt like one, and to build the design system that now powers the entire ecosystem.</p>
 
     <div class="meta-row">
       <div class="meta-item">
-        <span class="meta-label">Client</span>
+        <span class="meta-label" data-i18n="m_client">Client</span>
         <span class="meta-value">RLDatix — healthcare governance</span>
       </div>
       <div class="meta-item">
-        <span class="meta-label">Role</span>
-        <span class="meta-value">Lead product designer + 1 senior</span>
+        <span class="meta-label" data-i18n="m_role">Role</span>
+        <span class="meta-value" data-i18n="c_meta_role_v">Lead product designer + 1 senior</span>
       </div>
       <div class="meta-item">
-        <span class="meta-label">Timeline</span>
-        <span class="meta-value">12-month engagement · 2024–2025</span>
+        <span class="meta-label" data-i18n="m_timeline">Timeline</span>
+        <span class="meta-value" data-i18n="c_meta_timeline_v">12-month engagement · 2024–2025</span>
       </div>
       <div class="meta-item">
-        <span class="meta-label">Scope</span>
-        <span class="meta-value">Nova design system · platform unification · AI UX</span>
+        <span class="meta-label" data-i18n="m_scope">Scope</span>
+        <span class="meta-value" data-i18n="c_meta_scope_v">Nova design system · platform unification · AI UX</span>
       </div>
     </div>
   </div>
@@ -443,7 +448,7 @@ footer.site-footer{background:#FFFFFF;padding:32px 0 36px;border-top:0.5px solid
       </div>
       <img class="hero-mock-img" src="img/case-01-01.jpg" alt="RLDatix Log In — Nova brand surface with luminous teal light streaks" />
     </div>
-    <div class="wrap"><div class="cap">Nova · RLDatix unified platform — brand entry surface</div></div>
+    <div class="wrap"><div class="cap" data-i18n="c_cap1">Nova · RLDatix unified platform — brand entry surface</div></div>
   </div>
 </section>
 
@@ -453,19 +458,19 @@ footer.site-footer{background:#FFFFFF;padding:32px 0 36px;border-top:0.5px solid
     <div class="stat-row">
       <div class="stat-item">
         <span class="stat-num"><em>04</em></span>
-        <span class="stat-label">Products unified into one platform</span>
+        <span class="stat-label" data-i18n="c_stat1">Products unified into one platform</span>
       </div>
       <div class="stat-item">
         <span class="stat-num">10K<em>+</em></span>
-        <span class="stat-label">Healthcare organizations on the platform</span>
+        <span class="stat-label" data-i18n="c_stat2">Healthcare organizations on the platform</span>
       </div>
       <div class="stat-item">
         <span class="stat-num"><em>08</em></span>
-        <span class="stat-label">Products now running Nova in production</span>
+        <span class="stat-label" data-i18n="c_stat3">Products now running Nova in production</span>
       </div>
       <div class="stat-item">
         <span class="stat-num">04<em>mo</em></span>
-        <span class="stat-label">POC inside a 12-month engagement</span>
+        <span class="stat-label" data-i18n="c_stat4">POC inside a 12-month engagement</span>
       </div>
     </div>
   </div>
@@ -474,19 +479,19 @@ footer.site-footer{background:#FFFFFF;padding:32px 0 36px;border-top:0.5px solid
 <!-- ─── CONTEXT ─── -->
 <section data-screen-label="03 Context">
   <div class="wrap">
-    <div class="eyebrow"><span class="ln"></span>Context</div>
+    <div class="eyebrow" data-i18n="c_ctx_eyebrow"><span class="ln"></span>Context</div>
     <div class="context-grid">
       <div class="ctx-col">
-        <div class="section-eyebrow"><span class="ln"></span>01 — The brief</div>
-        <h2 class="h-section" style="font-size:clamp(24px,2.6vw,30px)">Four products. Four interfaces. One customer using them all.</h2>
-        <p class="body-prose">RLDatix had built a market-leading position in healthcare governance through organic growth and acquisitions. By 2025 the platform spanned Risk &amp; Safety, PolicyStat, Onesource, and Assure &amp; Survey — together covering the full risk lifecycle for hospitals, but each carrying its own interface, terminology, and patterns.</p>
-        <p class="body-prose">Customers using more than one product had to learn each separately. New buyers saw a fragmented experience. Internal teams couldn't share components or onboarding flows.</p>
+        <div class="section-eyebrow" data-i18n="c_ctx1_eyebrow"><span class="ln"></span>01 — The brief</div>
+        <h2 class="h-section" style="font-size:clamp(24px,2.6vw,30px)" data-i18n="c_ctx1_h2">Four products. Four interfaces. One customer using them all.</h2>
+        <p class="body-prose" data-i18n="c_ctx1_p1">RLDatix had built a market-leading position in healthcare governance through organic growth and acquisitions. By 2025 the platform spanned Risk &amp; Safety, PolicyStat, Onesource, and Assure &amp; Survey — together covering the full risk lifecycle for hospitals, but each carrying its own interface, terminology, and patterns.</p>
+        <p class="body-prose" data-i18n="c_ctx1_p2">Customers using more than one product had to learn each separately. New buyers saw a fragmented experience. Internal teams couldn't share components or onboarding flows.</p>
       </div>
       <div class="ctx-col">
-        <div class="section-eyebrow"><span class="ln"></span>02 — The challenge</div>
-        <h2 class="h-section" style="font-size:clamp(24px,2.6vw,30px)">An earlier internal direction had stalled. We started over.</h2>
-        <p class="body-prose">Before we joined, an internal team had attempted a first version. The work had quality but was solving the wrong problem — it treated unification as a styling exercise, not a structural one.</p>
-        <p class="body-prose">We took the brief back to first principles. The question wasn't "how do we make four products look the same" — it was "what is the shared mental model a healthcare leader uses to navigate risk, and how does the platform mirror it?"</p>
+        <div class="section-eyebrow" data-i18n="c_ctx2_eyebrow"><span class="ln"></span>02 — The challenge</div>
+        <h2 class="h-section" style="font-size:clamp(24px,2.6vw,30px)" data-i18n="c_ctx2_h2">An earlier internal direction had stalled. We started over.</h2>
+        <p class="body-prose" data-i18n="c_ctx2_p1">Before we joined, an internal team had attempted a first version. The work had quality but was solving the wrong problem — it treated unification as a styling exercise, not a structural one.</p>
+        <p class="body-prose" data-i18n="c_ctx2_p2">We took the brief back to first principles. The question wasn't "how do we make four products look the same" — it was "what is the shared mental model a healthcare leader uses to navigate risk, and how does the platform mirror it?"</p>
       </div>
     </div>
   </div>
@@ -495,28 +500,28 @@ footer.site-footer{background:#FFFFFF;padding:32px 0 36px;border-top:0.5px solid
 <!-- ─── PULL QUOTE ─── -->
 <section class="quote-block bare" data-screen-label="04 Pull quote">
   <div class="wrap">
-    <p class="quote">You don't unify enterprise software by changing the colors. You unify it by finding the workflow that was <em>already there</em>.</p>
-    <div class="quote-attr">Design principle · Nova</div>
+    <p class="quote" data-i18n-html="c_quote">You don't unify enterprise software by changing the colors. You unify it by finding the workflow that was <em>already there</em>.</p>
+    <div class="quote-attr" data-i18n="c_quote_attr">Design principle · Nova</div>
   </div>
 </section>
 
 <!-- ─── APPROACH ─── -->
 <section data-screen-label="05 Approach">
   <div class="wrap">
-    <div class="eyebrow"><span class="ln"></span>03 — Approach</div>
-    <h2 class="h-section">Discovery before design.</h2>
-    <p class="body-prose">We worked alongside RLDatix's product owners and engineering leads — interviewing stakeholders across all four product lines to understand how clinicians, risk managers, and compliance officers actually moved through the system.</p>
-    <p class="body-prose">From there we built Nova — the design system that would carry the unified platform — and applied it to the workflows with the highest visibility at Summit: incident reporting, policy management, compliance audits, and the AI-assisted Smart Entry that became the keynote centerpiece.</p>
-    <p class="body-prose">Two designers worked with two RLDatix engineers in tight cycles: design Monday, prototype by Wednesday, review Friday.</p>
+    <div class="eyebrow" data-i18n="c_appr_eyebrow"><span class="ln"></span>03 — Approach</div>
+    <h2 class="h-section" data-i18n="c_appr_h2">Discovery before design.</h2>
+    <p class="body-prose" data-i18n="c_appr_p1">We worked alongside RLDatix's product owners and engineering leads — interviewing stakeholders across all four product lines to understand how clinicians, risk managers, and compliance officers actually moved through the system.</p>
+    <p class="body-prose" data-i18n="c_appr_p2">From there we built Nova — the design system that would carry the unified platform — and applied it to the workflows with the highest visibility at Summit: incident reporting, policy management, compliance audits, and the AI-assisted Smart Entry that became the keynote centerpiece.</p>
+    <p class="body-prose" data-i18n="c_appr_p3">Two designers worked with two RLDatix engineers in tight cycles: design Monday, prototype by Wednesday, review Friday.</p>
   </div>
 </section>
 
 <!-- ─── SHOWCASE / SCROLLSHOT ─── -->
 <section class="tight" data-screen-label="06 Showcase">
   <div class="wrap">
-    <div class="eyebrow"><span class="ln"></span>04 — Showcase</div>
-    <h2 class="h-section">Policy management, rebuilt as one long, legible surface.</h2>
-    <p class="body-prose" style="margin-bottom:0">A policy editor that holds an entire SOP — definitions, procedures, comments, attachments, standards, revision dates and approval signatures — without losing the reader. Scroll inside the window to explore the full screen.</p>
+    <div class="eyebrow" data-i18n="c_show_eyebrow"><span class="ln"></span>04 — Showcase</div>
+    <h2 class="h-section" data-i18n="c_show_h2">Policy management, rebuilt as one long, legible surface.</h2>
+    <p class="body-prose" style="margin-bottom:0" data-i18n="c_show_p">A policy editor that holds an entire SOP — definitions, procedures, comments, attachments, standards, revision dates and approval signatures — without losing the reader. Scroll inside the window to explore the full screen.</p>
     <div class="scrollshot" data-scrollshot>
       <div class="scrollshot-toolbar">
         <div class="scrollshot-dots">
@@ -535,7 +540,7 @@ footer.site-footer{background:#FFFFFF;padding:32px 0 36px;border-top:0.5px solid
           <div class="scrollshot-scrub-thumb"></div>
         </div>
         <div class="scrollshot-hint">
-          <span class="dot"></span> Scroll to explore
+          <span class="dot"></span> <span data-i18n="c_scroll_hint">Scroll to explore</span>
         </div>
       </div>
     </div>
@@ -545,42 +550,42 @@ footer.site-footer{background:#FFFFFF;padding:32px 0 36px;border-top:0.5px solid
 <!-- ─── SELECTED SCREENS ─── -->
 <section data-screen-label="07 Selected screens">
   <div class="wrap">
-    <div class="eyebrow"><span class="ln"></span>05 — Selected screens</div>
-    <h2 class="h-section">A single mental model, scaled across roles and modules.</h2>
+    <div class="eyebrow" data-i18n="c_sel_eyebrow"><span class="ln"></span>05 — Selected screens</div>
+    <h2 class="h-section" data-i18n="c_sel_h2">A single mental model, scaled across roles and modules.</h2>
 
     <div class="side-by-side" style="margin-top:3.5rem">
       <div class="sbs-image"><img src="img/case-01-04.jpg" alt="Role-based home workspace" /></div>
       <div class="sbs-text">
-        <span class="sbs-num">01 / Role-based home</span>
-        <h3>Each user enters a workspace shaped to their <em>role</em>.</h3>
-        <p>A policy reviewer sees policy work; a risk reporter sees incidents. The shell stays consistent — the priorities adapt. The same component library renders both views; only the data and tasks differ.</p>
+        <span class="sbs-num" data-i18n="c_sbs1_num">01 / Role-based home</span>
+        <h3 data-i18n-html="c_sbs1_h3">Each user enters a workspace shaped to their <em>role</em>.</h3>
+        <p data-i18n="c_sbs1_p">A policy reviewer sees policy work; a risk reporter sees incidents. The shell stays consistent — the priorities adapt. The same component library renders both views; only the data and tasks differ.</p>
       </div>
     </div>
 
     <div class="side-by-side reverse">
       <div class="sbs-image"><img src="img/case-01-05.jpg" alt="Information density — calm tables for review at scale" /></div>
       <div class="sbs-text">
-        <span class="sbs-num">02 / Information density</span>
-        <h3>Calm tables for review at <em>scale</em>.</h3>
-        <p>Risk managers read hundreds of incidents per week. The Info Center pattern — built around a scannable table with consistent metadata — became the foundation for every list view in the platform.</p>
+        <span class="sbs-num" data-i18n="c_sbs2_num">02 / Information density</span>
+        <h3 data-i18n-html="c_sbs2_h3">Calm tables for review at <em>scale</em>.</h3>
+        <p data-i18n="c_sbs2_p">Risk managers read hundreds of incidents per week. The Info Center pattern — built around a scannable table with consistent metadata — became the foundation for every list view in the platform.</p>
       </div>
     </div>
 
     <div class="side-by-side">
       <div class="sbs-image"><img src="img/case-01-06.jpg" alt="Compliance reporting designed for audit readiness" /></div>
       <div class="sbs-text">
-        <span class="sbs-num">03 / Compliance reporting</span>
-        <h3>Designed to hold up to a <em>survey</em>.</h3>
-        <p>A reporting pattern built to be readable in a printed audit binder, in a board meeting, and in a Joint Commission survey window. One chart, layered metadata, defensible numbers.</p>
+        <span class="sbs-num" data-i18n="c_sbs3_num">03 / Compliance reporting</span>
+        <h3 data-i18n-html="c_sbs3_h3">Designed to hold up to a <em>survey</em>.</h3>
+        <p data-i18n="c_sbs3_p">A reporting pattern built to be readable in a printed audit binder, in a board meeting, and in a Joint Commission survey window. One chart, layered metadata, defensible numbers.</p>
       </div>
     </div>
 
     <div class="side-by-side reverse">
       <div class="sbs-image"><img src="img/case-01-07.jpg" alt="Audit setup with question groups and reusable templates" /></div>
       <div class="sbs-text">
-        <span class="sbs-num">04 / Audit setup</span>
-        <h3>From an hour to a few <em>minutes</em>.</h3>
-        <p>Setting up a compliance audit used to take a knowledgeable admin an hour. With Nova patterns — question groups, reusable templates, live previews — it now takes minutes.</p>
+        <span class="sbs-num" data-i18n="c_sbs4_num">04 / Audit setup</span>
+        <h3 data-i18n-html="c_sbs4_h3">From an hour to a few <em>minutes</em>.</h3>
+        <p data-i18n="c_sbs4_p">Setting up a compliance audit used to take a knowledgeable admin an hour. With Nova patterns — question groups, reusable templates, live previews — it now takes minutes.</p>
       </div>
     </div>
   </div>
@@ -589,19 +594,19 @@ footer.site-footer{background:#FFFFFF;padding:32px 0 36px;border-top:0.5px solid
 <!-- ─── SMART ENTRY ─── -->
 <section class="tight" data-screen-label="08 Smart Entry">
   <div class="wrap">
-    <div class="eyebrow"><span class="ln"></span>06 — The keynote moment</div>
-    <h2 class="h-section">Smart Entry — where the platform decided to lead with <em>AI</em>.</h2>
-    <p class="body-prose">A clinician describes what happened in plain language. Smart Entry parses the narrative and pre-fills the structured incident form. We designed the conversation to keep the human in control: every AI inference is visible, editable, and reversible.</p>
+    <div class="eyebrow" data-i18n="c_se_eyebrow"><span class="ln"></span>06 — The keynote moment</div>
+    <h2 class="h-section" data-i18n-html="c_se_h2">Smart Entry — where the platform decided to lead with <em>AI</em>.</h2>
+    <p class="body-prose" data-i18n="c_se_p">A clinician describes what happened in plain language. Smart Entry parses the narrative and pre-fills the structured incident form. We designed the conversation to keep the human in control: every AI inference is visible, editable, and reversible.</p>
 
     <div class="paired-grid">
       <div>
-        <span class="step-label">A · The conversation</span>
-        <span class="step-title">"Tell me what happened."</span>
+        <span class="step-label" data-i18n="c_se_a_label">A · The conversation</span>
+        <span class="step-title" data-i18n="c_se_a_title">"Tell me what happened."</span>
         <div class="frame"><img src="img/case-01-08.jpg" alt="Smart Entry — conversational input from the clinician" /></div>
       </div>
       <div>
-        <span class="step-label">B · The structured record</span>
-        <span class="step-title">Auto-filled. Always editable.</span>
+        <span class="step-label" data-i18n="c_se_b_label">B · The structured record</span>
+        <span class="step-title" data-i18n="c_se_b_title">Auto-filled. Always editable.</span>
         <div class="frame"><img src="img/case-01-09.jpg" alt="Smart Entry — structured incident form pre-filled by AI" /></div>
       </div>
     </div>
@@ -611,12 +616,12 @@ footer.site-footer{background:#FFFFFF;padding:32px 0 36px;border-top:0.5px solid
 <!-- ─── OUTCOME (DARK) ─── -->
 <section class="outcome-dark bare" data-screen-label="09 Outcome">
   <div class="wrap">
-    <div class="section-eyebrow"><span class="ln"></span>07 — Outcome</div>
-    <h2 class="h-section">Approved at Summit 2025 — and became the platform <em>direction</em>.</h2>
-    <p class="body-prose" style="max-width:680px">RLDatix leadership greenlit the work after the show-and-tell on February 13, 2025. What started as a proof of concept became the foundation for the platform's rollout — and the Nova design system shipped to production across the full product portfolio. Today, the same patterns we built for the POC are running in the hands of risk managers, compliance officers, and clinicians at thousands of healthcare organizations.</p>
+    <div class="section-eyebrow" data-i18n="c_out_eyebrow"><span class="ln"></span>07 — Outcome</div>
+    <h2 class="h-section" data-i18n-html="c_out_h2">Approved at Summit 2025 — and became the platform <em>direction</em>.</h2>
+    <p class="body-prose" style="max-width:680px" data-i18n="c_out_p">RLDatix leadership greenlit the work after the show-and-tell on February 13, 2025. What started as a proof of concept became the foundation for the platform's rollout — and the Nova design system shipped to production across the full product portfolio. Today, the same patterns we built for the POC are running in the hands of risk managers, compliance officers, and clinicians at thousands of healthcare organizations.</p>
 
     <div class="deploy">
-      <div class="deploy-label">Now deployed across</div>
+      <div class="deploy-label" data-i18n="c_out_deploy_label">Now deployed across</div>
       <div class="deploy-pills">
         <span class="deploy-pill">Risk &amp; Safety</span>
         <span class="deploy-pill">PolicyStat</span>
@@ -650,30 +655,30 @@ footer.site-footer{background:#FFFFFF;padding:32px 0 36px;border-top:0.5px solid
   <div class="wrap">
     <div class="credits">
       <div class="credit-item">
-        <span class="credit-label">Client</span>
-        <p>RLDatix<br/>Healthcare governance<br/>Chicago / London</p>
+        <span class="credit-label" data-i18n="cred_client">Client</span>
+        <p data-i18n-html="c_cred1_p">RLDatix<br/>Healthcare governance<br/>Chicago / London</p>
       </div>
       <div class="credit-item">
-        <span class="credit-label">Studio team</span>
-        <p>Belen Longhi<br/>Lead product designer<br/>+ 1 senior designer</p>
+        <span class="credit-label" data-i18n="cred_team">Studio team</span>
+        <p data-i18n-html="c_cred2_p">Belen Longhi<br/>Lead product designer<br/>+ 1 senior designer</p>
       </div>
       <div class="credit-item">
-        <span class="credit-label">Client team</span>
-        <p>Product owners<br/>2 engineers<br/>Tight weekly cycles</p>
+        <span class="credit-label" data-i18n="cred_clientteam">Client team</span>
+        <p data-i18n-html="c_cred3_p">Product owners<br/>2 engineers<br/>Tight weekly cycles</p>
       </div>
       <div class="credit-item">
-        <span class="credit-label">Year</span>
-        <p>POC: Jan – Jul 2025<br/>Engagement: 2024 – 2025<br/>Deployed in production</p>
+        <span class="credit-label" data-i18n="cred_year">Year</span>
+        <p data-i18n-html="c_cred4_p">POC: Jan – Jul 2025<br/>Engagement: 2024 – 2025<br/>Deployed in production</p>
       </div>
     </div>
 
     <div class="design-card">
       <div>
-        <h3>Next case — <em>HelloFresh</em>: bringing order to ingredient buying.</h3>
-        <p>Rebuilding the buyer's workflow across five European markets around a single planning surface.</p>
+        <h3 data-i18n-html="c_next_h3">Next case — <em>HelloFresh</em>: bringing order to ingredient buying.</h3>
+        <p data-i18n="c_next_p">Rebuilding the buyer's workflow across five European markets around a single planning surface.</p>
       </div>
       <a href="case-02-hellofresh.html" class="design-cta">
-        Next case
+        <span data-i18n="next_case">Next case</span>
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
       </a>
     </div>
@@ -690,7 +695,11 @@ footer.site-footer{background:#FFFFFF;padding:32px 0 36px;border-top:0.5px solid
       <a href="../index.html#about" data-i18n="nav_about">About</a>
       <a href="../index.html#contact" data-i18n="nav_contact">Contact</a>
     </nav>
-    <span class="copy" data-i18n="foot_copy">© 2026 Lovre</span>
+        <div class="footer-social">
+      <a href="https://www.linkedin.com/company/lovre-studio/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.07 2.07 0 1 1 0-4.13 2.07 2.07 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45z"/></svg></a>
+      <a href="https://www.instagram.com" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1" fill="currentColor" stroke="none"/></svg></a>
+      <span class="copy" data-i18n="foot_copy">© 2026 Lovre</span>
+    </div>
   </div>
 </footer>
 
@@ -890,8 +899,80 @@ tick();
 <script>
 (function(){
   var DICT={
-    en:{nav_services:'Services',nav_work:'Work',nav_about:'About',nav_contact:'Contact',back_link:'Back to all work',foot_copy:'\u00A9 2026 Lovre',figma_q:'Want to see more of this project?'},
-    es:{nav_services:'Servicios',nav_work:'Trabajo',nav_about:'Nosotros',nav_contact:'Contacto',back_link:'Volver a proyectos',foot_copy:'\u00A9 2026 Lovre',figma_q:'\u00BFQuer\u00E9s ver m\u00E1s de este proyecto?'}
+    en:{nav_services:'Services',nav_work:'Work',nav_about:'About',nav_contact:'Contact',back_link:'Back to all work',foot_copy:'\u00A9 2026 Lovre',figma_q:'Want to see more of this project?',
+      m_client:'Client',m_role:'Role',m_timeline:'Timeline',m_scope:'Scope',cred_client:'Client',cred_team:'Studio team',cred_clientteam:'Client team',cred_year:'Year',next_case:'Next case',
+      c_eyebrow:'Case 01 · Healthcare governance · RLDatix',
+      c_h1:'Unifying four products into <em>one platform</em>.',
+      c_lede:'RLDatix serves more than 10,000 healthcare organizations. Their platform had grown through acquisitions — four products, four interfaces, four mental models. We were brought in to design the future where they felt like one, and to build the design system that now powers the entire ecosystem.',
+      c_meta_role_v:'Lead product designer + 1 senior',c_meta_timeline_v:'12-month engagement · 2024–2025',c_meta_scope_v:'Nova design system · platform unification · AI UX',
+      c_cap1:'Nova · RLDatix unified platform — brand entry surface',
+      c_stat1:'Products unified into one platform',c_stat2:'Healthcare organizations on the platform',c_stat3:'Products now running Nova in production',c_stat4:'POC inside a 12-month engagement',
+      c_ctx_eyebrow:'Context',
+      c_ctx1_eyebrow:'01 — The brief',c_ctx1_h2:'Four products. Four interfaces. One customer using them all.',
+      c_ctx1_p1:'RLDatix had built a market-leading position in healthcare governance through organic growth and acquisitions. By 2025 the platform spanned Risk & Safety, PolicyStat, Onesource, and Assure & Survey — together covering the full risk lifecycle for hospitals, but each carrying its own interface, terminology, and patterns.',
+      c_ctx1_p2:"Customers using more than one product had to learn each separately. New buyers saw a fragmented experience. Internal teams couldn't share components or onboarding flows.",
+      c_ctx2_eyebrow:'02 — The challenge',c_ctx2_h2:'An earlier internal direction had stalled. We started over.',
+      c_ctx2_p1:'Before we joined, an internal team had attempted a first version. The work had quality but was solving the wrong problem — it treated unification as a styling exercise, not a structural one.',
+      c_ctx2_p2:'We took the brief back to first principles. The question wasn\'t "how do we make four products look the same" — it was "what is the shared mental model a healthcare leader uses to navigate risk, and how does the platform mirror it?"',
+      c_quote:"You don't unify enterprise software by changing the colors. You unify it by finding the workflow that was <em>already there</em>.",c_quote_attr:'Design principle · Nova',
+      c_appr_eyebrow:'03 — Approach',c_appr_h2:'Discovery before design.',
+      c_appr_p1:"We worked alongside RLDatix's product owners and engineering leads — interviewing stakeholders across all four product lines to understand how clinicians, risk managers, and compliance officers actually moved through the system.",
+      c_appr_p2:'From there we built Nova — the design system that would carry the unified platform — and applied it to the workflows with the highest visibility at Summit: incident reporting, policy management, compliance audits, and the AI-assisted Smart Entry that became the keynote centerpiece.',
+      c_appr_p3:'Two designers worked with two RLDatix engineers in tight cycles: design Monday, prototype by Wednesday, review Friday.',
+      c_show_eyebrow:'04 — Showcase',c_show_h2:'Policy management, rebuilt as one long, legible surface.',
+      c_show_p:'A policy editor that holds an entire SOP — definitions, procedures, comments, attachments, standards, revision dates and approval signatures — without losing the reader. Scroll inside the window to explore the full screen.',
+      c_scroll_hint:'Scroll to explore',
+      c_sel_eyebrow:'05 — Selected screens',c_sel_h2:'A single mental model, scaled across roles and modules.',
+      c_sbs1_num:'01 / Role-based home',c_sbs1_h3:'Each user enters a workspace shaped to their <em>role</em>.',c_sbs1_p:'A policy reviewer sees policy work; a risk reporter sees incidents. The shell stays consistent — the priorities adapt. The same component library renders both views; only the data and tasks differ.',
+      c_sbs2_num:'02 / Information density',c_sbs2_h3:'Calm tables for review at <em>scale</em>.',c_sbs2_p:'Risk managers read hundreds of incidents per week. The Info Center pattern — built around a scannable table with consistent metadata — became the foundation for every list view in the platform.',
+      c_sbs3_num:'03 / Compliance reporting',c_sbs3_h3:'Designed to hold up to a <em>survey</em>.',c_sbs3_p:'A reporting pattern built to be readable in a printed audit binder, in a board meeting, and in a Joint Commission survey window. One chart, layered metadata, defensible numbers.',
+      c_sbs4_num:'04 / Audit setup',c_sbs4_h3:'From an hour to a few <em>minutes</em>.',c_sbs4_p:'Setting up a compliance audit used to take a knowledgeable admin an hour. With Nova patterns — question groups, reusable templates, live previews — it now takes minutes.',
+      c_se_eyebrow:'06 — The keynote moment',c_se_h2:'Smart Entry — where the platform decided to lead with <em>AI</em>.',
+      c_se_p:'A clinician describes what happened in plain language. Smart Entry parses the narrative and pre-fills the structured incident form. We designed the conversation to keep the human in control: every AI inference is visible, editable, and reversible.',
+      c_se_a_label:'A · The conversation',c_se_a_title:'"Tell me what happened."',c_se_b_label:'B · The structured record',c_se_b_title:'Auto-filled. Always editable.',
+      c_out_eyebrow:'07 — Outcome',c_out_h2:'Approved at Summit 2025 — and became the platform <em>direction</em>.',
+      c_out_p:"RLDatix leadership greenlit the work after the show-and-tell on February 13, 2025. What started as a proof of concept became the foundation for the platform's rollout — and the Nova design system shipped to production across the full product portfolio. Today, the same patterns we built for the POC are running in the hands of risk managers, compliance officers, and clinicians at thousands of healthcare organizations.",
+      c_out_deploy_label:'Now deployed across',
+      c_cred1_p:'RLDatix<br>Healthcare governance<br>Chicago / London',c_cred2_p:'Belen Longhi<br>Lead product designer<br>+ 1 senior designer',c_cred3_p:'Product owners<br>2 engineers<br>Tight weekly cycles',c_cred4_p:'POC: Jan – Jul 2025<br>Engagement: 2024 – 2025<br>Deployed in production',
+      c_next_h3:'Next case — <em>HelloFresh</em>: bringing order to ingredient buying.',c_next_p:"Rebuilding the buyer's workflow across five European markets around a single planning surface."
+    },
+    es:{nav_services:'Servicios',nav_work:'Trabajo',nav_about:'Nosotros',nav_contact:'Contacto',back_link:'Volver a proyectos',foot_copy:'\u00A9 2026 Lovre',figma_q:'\u00BFQuer\u00E9s ver m\u00E1s de este proyecto?',
+      m_client:'Cliente',m_role:'Rol',m_timeline:'Cronograma',m_scope:'Alcance',cred_client:'Cliente',cred_team:'Equipo del estudio',cred_clientteam:'Equipo del cliente',cred_year:'Año',next_case:'Siguiente caso',
+      c_eyebrow:'Caso 01 · Gobernanza en salud · RLDatix',
+      c_h1:'Unificar cuatro productos en <em>una sola plataforma</em>.',
+      c_lede:'RLDatix da servicio a más de 10.000 organizaciones de salud. Su plataforma había crecido a través de adquisiciones — cuatro productos, cuatro interfaces, cuatro modelos mentales. Nos convocaron para diseñar el futuro donde se sintieran como uno solo, y para construir el design system que hoy impulsa todo el ecosistema.',
+      c_meta_role_v:'Diseñador de producto líder + 1 senior',c_meta_timeline_v:'Proyecto de 12 meses · 2024–2025',c_meta_scope_v:'Design system Nova · unificación de plataforma · UX de IA',
+      c_cap1:'Nova · plataforma unificada de RLDatix — superficie de entrada de marca',
+      c_stat1:'Productos unificados en una plataforma',c_stat2:'Organizaciones de salud en la plataforma',c_stat3:'Productos que hoy corren Nova en producción',c_stat4:'POC dentro de un proyecto de 12 meses',
+      c_ctx_eyebrow:'Contexto',
+      c_ctx1_eyebrow:'01 — El brief',c_ctx1_h2:'Cuatro productos. Cuatro interfaces. Un mismo cliente usándolos a todos.',
+      c_ctx1_p1:'RLDatix había construido una posición líder en gobernanza de salud a través de crecimiento orgánico y adquisiciones. Para 2025 la plataforma abarcaba Risk & Safety, PolicyStat, Onesource y Assure & Survey — cubriendo juntos todo el ciclo de riesgo hospitalario, pero cada uno con su propia interfaz, terminología y patrones.',
+      c_ctx1_p2:'Los clientes que usaban más de un producto tenían que aprender cada uno por separado. Los nuevos compradores veían una experiencia fragmentada. Los equipos internos no podían compartir componentes ni flujos de onboarding.',
+      c_ctx2_eyebrow:'02 — El desafío',c_ctx2_h2:'Una dirección interna anterior se había estancado. Empezamos de nuevo.',
+      c_ctx2_p1:'Antes de que nos sumáramos, un equipo interno había intentado una primera versión. El trabajo tenía calidad pero resolvía el problema equivocado — trataba la unificación como un ejercicio de estilo, no estructural.',
+      c_ctx2_p2:'Llevamos el brief de vuelta a los primeros principios. La pregunta no era "cómo hacemos que cuatro productos se vean iguales" — era "cuál es el modelo mental compartido que usa un líder de salud para navegar el riesgo, y cómo lo refleja la plataforma".',
+      c_quote:'No se unifica software empresarial cambiando los colores. Se unifica encontrando el flujo de trabajo que <em>ya estaba ahí</em>.',c_quote_attr:'Principio de diseño · Nova',
+      c_appr_eyebrow:'03 — Enfoque',c_appr_h2:'Descubrimiento antes que diseño.',
+      c_appr_p1:'Trabajamos junto a los product owners y líderes de ingeniería de RLDatix — entrevistando a stakeholders de las cuatro líneas de producto para entender cómo se movían realmente por el sistema clínicos, gestores de riesgo y oficiales de cumplimiento.',
+      c_appr_p2:'A partir de ahí construimos Nova — el design system que llevaría la plataforma unificada — y lo aplicamos a los flujos con mayor visibilidad en el Summit: reporte de incidentes, gestión de políticas, auditorías de cumplimiento y el Smart Entry asistido por IA que se convirtió en el momento central del keynote.',
+      c_appr_p3:'Dos diseñadores trabajaron con dos ingenieros de RLDatix en ciclos cortos: diseño el lunes, prototipo el miércoles, revisión el viernes.',
+      c_show_eyebrow:'04 — Muestra',c_show_h2:'Gestión de políticas, reconstruida como una sola superficie larga y legible.',
+      c_show_p:'Un editor de políticas que contiene un SOP completo — definiciones, procedimientos, comentarios, adjuntos, estándares, fechas de revisión y firmas de aprobación — sin perder al lector. Desplázate dentro de la ventana para explorar la pantalla completa.',
+      c_scroll_hint:'Desplázate para explorar',
+      c_sel_eyebrow:'05 — Pantallas seleccionadas',c_sel_h2:'Un mismo modelo mental, escalado entre roles y módulos.',
+      c_sbs1_num:'01 / Inicio según rol',c_sbs1_h3:'Cada usuario entra a un espacio de trabajo diseñado según su <em>rol</em>.',c_sbs1_p:'Un revisor de políticas ve trabajo de políticas; un reportero de riesgos ve incidentes. El shell se mantiene consistente — las prioridades se adaptan. La misma librería de componentes renderiza ambas vistas; solo cambian los datos y las tareas.',
+      c_sbs2_num:'02 / Densidad de información',c_sbs2_h3:'Tablas calmas para revisar a <em>escala</em>.',c_sbs2_p:'Los gestores de riesgo leen cientos de incidentes por semana. El patrón Info Center — construido en torno a una tabla escaneable con metadatos consistentes — se convirtió en la base de cada vista de lista en la plataforma.',
+      c_sbs3_num:'03 / Reportes de cumplimiento',c_sbs3_h3:'Diseñado para resistir una <em>auditoría</em>.',c_sbs3_p:'Un patrón de reportes construido para ser legible en un binder de auditoría impreso, en una reunión de directorio y en una ventana de inspección de la Joint Commission. Un gráfico, metadatos en capas, números defendibles.',
+      c_sbs4_num:'04 / Configuración de auditoría',c_sbs4_h3:'De una hora a unos pocos <em>minutos</em>.',c_sbs4_p:'Configurar una auditoría de cumplimiento solía tomarle una hora a un administrador experto. Con los patrones de Nova — grupos de preguntas, plantillas reutilizables, vistas previas en vivo — ahora toma minutos.',
+      c_se_eyebrow:'06 — El momento del keynote',c_se_h2:'Smart Entry — donde la plataforma decidió liderar con <em>IA</em>.',
+      c_se_p:'Un clínico describe lo que pasó en lenguaje natural. Smart Entry interpreta el relato y prellena el formulario estructurado de incidente. Diseñamos la conversación para mantener al humano en control: cada inferencia de la IA es visible, editable y reversible.',
+      c_se_a_label:'A · La conversación',c_se_a_title:'"Contame qué pasó."',c_se_b_label:'B · El registro estructurado',c_se_b_title:'Autocompletado. Siempre editable.',
+      c_out_eyebrow:'07 — Resultado',c_out_h2:'Aprobado en el Summit 2025 — y se convirtió en la dirección de <em>la plataforma</em>.',
+      c_out_p:'El liderazgo de RLDatix aprobó el trabajo tras la presentación del 13 de febrero de 2025. Lo que empezó como una prueba de concepto se convirtió en la base del despliegue de la plataforma — y el design system Nova salió a producción en todo el portafolio de productos. Hoy, los mismos patrones que construimos para el POC funcionan en manos de gestores de riesgo, oficiales de cumplimiento y clínicos en miles de organizaciones de salud.',
+      c_out_deploy_label:'Hoy desplegado en',
+      c_cred1_p:'RLDatix<br>Gobernanza en salud<br>Chicago / Londres',c_cred2_p:'Belen Longhi<br>Diseñadora de producto líder<br>+ 1 diseñador senior',c_cred3_p:'Product owners<br>2 ingenieros<br>Ciclos semanales cortos',c_cred4_p:'POC: ene – jul 2025<br>Proyecto: 2024 – 2025<br>Desplegado en producción',
+      c_next_h3:'Siguiente caso — <em>HelloFresh</em>: poniendo orden en la compra de ingredientes.',c_next_p:'Reconstruyendo el flujo del comprador en cinco mercados europeos alrededor de una sola superficie de planificación.'
+    }
   };
   function apply(lang){
     var d=DICT[lang]||DICT.en;
@@ -899,6 +980,10 @@ tick();
     document.querySelectorAll('[data-i18n]').forEach(function(el){
       var k=el.getAttribute('data-i18n');
       if(d[k]) el.textContent=d[k];
+    });
+    document.querySelectorAll('[data-i18n-html]').forEach(function(el){
+      var k=el.getAttribute('data-i18n-html');
+      if(d[k]) el.innerHTML=d[k];
     });
     document.querySelectorAll('.lang-switch button').forEach(function(b){
       b.classList.toggle('active', b.getAttribute('data-lang')===lang);

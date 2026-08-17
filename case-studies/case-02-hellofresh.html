@@ -246,6 +246,11 @@ footer.site-footer{background:#FFFFFF;padding:32px 0 36px;border-top:0.5px solid
 .footer-inner .links a:hover{color:var(--teal)}
 .footer-inner .copy{font-family:'Inter',sans-serif;font-size:13px;color:var(--muted)}
 
+.footer-social{display:flex;align-items:center;gap:14px}
+.footer-social a{color:var(--muted);display:inline-flex;transition:color .2s ease}
+.footer-social a:hover{color:var(--charcoal)}
+.footer-social svg{width:16px;height:16px;display:block}
+
 /* ──────────────────────── RESPONSIVE ──────────────────────── */
 @media (max-width:900px){
   .wrap-narrow,.wrap,.wrap-wide{padding:0 1.5rem}
@@ -300,15 +305,15 @@ footer.site-footer{background:#FFFFFF;padding:32px 0 36px;border-top:0.5px solid
 <!-- ─── HERO ─── -->
 <section class="hero" data-screen-label="01 Hero">
   <div class="wrap">
-    <div class="eyebrow"><span class="ln"></span>Case 02 · Food-tech · Meal-kit · HelloFresh</div>
-    <h1 class="case-title">Bringing <em>order</em> to ingredient buying across five European markets.</h1>
-    <p class="lede">HelloFresh's procurement teams were planning orders for thousands of ingredient SKUs using dashboards that were never built for the job. We rebuilt the buyer's workflow around a single planning surface — disciplined by research across DACH, Italy, the UK, Nordics and Benelux.</p>
+    <div class="eyebrow" data-i18n="c_eyebrow"><span class="ln"></span>Case 02 · Food-tech · Meal-kit · HelloFresh</div>
+    <h1 class="case-title" data-i18n-html="c_h1">Bringing <em>order</em> to ingredient buying across five European markets.</h1>
+    <p class="lede" data-i18n="c_lede">HelloFresh's procurement teams were planning orders for thousands of ingredient SKUs using dashboards that were never built for the job. We rebuilt the buyer's workflow around a single planning surface — disciplined by research across DACH, Italy, the UK, Nordics and Benelux.</p>
 
     <div class="meta-row">
-      <div class="meta-item"><span class="meta-label">Client</span><span class="meta-value">HelloFresh SE</span></div>
-      <div class="meta-item"><span class="meta-label">Sector</span><span class="meta-value">Food-tech · Supply chain</span></div>
-      <div class="meta-item"><span class="meta-label">Role</span><span class="meta-value">Senior Product Designer</span></div>
-      <div class="meta-item"><span class="meta-label">Scope</span><span class="meta-value">Discovery · UX strategy · Interaction model</span></div>
+      <div class="meta-item"><span class="meta-label" data-i18n="m_client">Client</span><span class="meta-value">HelloFresh SE</span></div>
+      <div class="meta-item"><span class="meta-label" data-i18n="m_sector">Sector</span><span class="meta-value" data-i18n="c_meta_sector_v">Food-tech · Supply chain</span></div>
+      <div class="meta-item"><span class="meta-label" data-i18n="m_role">Role</span><span class="meta-value" data-i18n="c_meta_role_v">Senior Product Designer</span></div>
+      <div class="meta-item"><span class="meta-label" data-i18n="m_scope">Scope</span><span class="meta-value" data-i18n="c_meta_scope_v">Discovery · UX strategy · Interaction model</span></div>
     </div>
   </div>
 </section>
@@ -324,38 +329,38 @@ footer.site-footer{background:#FFFFFF;padding:32px 0 36px;border-top:0.5px solid
       </div>
       <img class="hero-mock-img" src="img/hf-hero-mosaic.jpeg" alt="HelloFresh SIV — Systematic Inventory View, selected views" />
     </div>
-    <div class="cap-wrap"><div class="cap">SIV · Systematic Inventory View — selected views</div></div>
+    <div class="cap-wrap"><div class="cap" data-i18n="c_cap1">SIV · Systematic Inventory View — selected views</div></div>
   </div>
 </section>
 
 <!-- ─── CONTEXT ─── -->
 <section class="inset" data-screen-label="02 Context">
   <div class="wrap">
-    <div class="eyebrow"><span class="ln"></span>01 — Context</div>
-    <h2 class="h-section">A buyer's day shouldn't begin with <em>doubt</em>.</h2>
-    <p class="body-prose">HelloFresh runs one of Europe's largest fresh-food supply chains. Behind every meal-kit sits a buyer placing orders against forecasts that shift daily — frozen SKUs landing weeks in advance, fresh produce arriving on the morning of production. Margins of error are thin, and the cost of getting it wrong is thrown stock or empty boxes.</p>
-    <p class="body-prose">At the time of this engagement, buyers were stitching together their decisions across three or four different tools. Tableau dashboards gave them a view of forecast and stock — but the data wasn't transactional, filters were brittle, and the product itself lacked any clear definition of how it was meant to be used. Compounded across markets, the result was time lost, errors absorbed, and decisions made on instinct.</p>
+    <div class="eyebrow" data-i18n="c_ctx_eyebrow"><span class="ln"></span>01 — Context</div>
+    <h2 class="h-section" data-i18n-html="c_ctx_h2">A buyer's day shouldn't begin with <em>doubt</em>.</h2>
+    <p class="body-prose" data-i18n="c_ctx_p1">HelloFresh runs one of Europe's largest fresh-food supply chains. Behind every meal-kit sits a buyer placing orders against forecasts that shift daily — frozen SKUs landing weeks in advance, fresh produce arriving on the morning of production. Margins of error are thin, and the cost of getting it wrong is thrown stock or empty boxes.</p>
+    <p class="body-prose" data-i18n="c_ctx_p2">At the time of this engagement, buyers were stitching together their decisions across three or four different tools. Tableau dashboards gave them a view of forecast and stock — but the data wasn't transactional, filters were brittle, and the product itself lacked any clear definition of how it was meant to be used. Compounded across markets, the result was time lost, errors absorbed, and decisions made on instinct.</p>
 
     <div class="principles">
       <div class="principle">
         <div class="principle-num">i.</div>
         <div class="principle-body">
-          <h4>Unreliable data</h4>
-          <p>Tableau pulled from CMS once a week. Buyers double-checked totals against multiple sources before placing any order — typically 30 to 45 minutes burned per day, per buyer.</p>
+          <h4 data-i18n="c_pr1_h">Unreliable data</h4>
+          <p data-i18n="c_pr1_p">Tableau pulled from CMS once a week. Buyers double-checked totals against multiple sources before placing any order — typically 30 to 45 minutes burned per day, per buyer.</p>
         </div>
       </div>
       <div class="principle">
         <div class="principle-num">ii.</div>
         <div class="principle-body">
-          <h4>Product without definition</h4>
-          <p>No clear ownership of what the tool was for, no buyer-led requirements, no roadmap. Features had been added in isolation and never reconciled with how the work actually got done.</p>
+          <h4 data-i18n="c_pr2_h">Product without definition</h4>
+          <p data-i18n="c_pr2_p">No clear ownership of what the tool was for, no buyer-led requirements, no roadmap. Features had been added in isolation and never reconciled with how the work actually got done.</p>
         </div>
       </div>
       <div class="principle">
         <div class="principle-num">iii.</div>
         <div class="principle-body">
-          <h4>Tableau's ceiling</h4>
-          <p>Filters couldn't be saved, side-by-side comparison was impossible, and there was no way to act on what you saw. Insight ended where the workflow began.</p>
+          <h4 data-i18n="c_pr3_h">Tableau's ceiling</h4>
+          <p data-i18n="c_pr3_p">Filters couldn't be saved, side-by-side comparison was impossible, and there was no way to act on what you saw. Insight ended where the workflow began.</p>
         </div>
       </div>
     </div>
@@ -365,54 +370,54 @@ footer.site-footer{background:#FFFFFF;padding:32px 0 36px;border-top:0.5px solid
 <!-- ─── PULL QUOTE ─── -->
 <section class="quote-block bare" data-screen-label="03 Pull quote">
   <div class="wrap">
-    <p class="quote">I don't have a tracking of what I pre-order, compared to what I finally order. A possible solution could be an overview with the <em>last updated</em> pre-purchase orders.</p>
-    <div class="quote-attr">Buyer · DACH market · Discovery interview</div>
+    <p class="quote" data-i18n-html="c_quote1">I don't have a tracking of what I pre-order, compared to what I finally order. A possible solution could be an overview with the <em>last updated</em> pre-purchase orders.</p>
+    <div class="quote-attr" data-i18n="c_quote1_attr">Buyer · DACH market · Discovery interview</div>
   </div>
 </section>
 
 <!-- ─── DISCOVERY ─── -->
 <section data-screen-label="04 Discovery">
   <div class="wrap">
-    <div class="eyebrow"><span class="ln"></span>02 — Discovery</div>
-    <h2 class="h-section">Five markets that <em>look</em> alike — and don't.</h2>
-    <p class="body-prose">Before drawing a single screen, we ran follow-up interviews with buyers in each of HelloFresh's five European DCs. The same role on paper, but five different operating realities. The synthesis became the single most important artefact of the project: a cross-market view of where the workflow converged and where it diverged.</p>
+    <div class="eyebrow" data-i18n="c_disc_eyebrow"><span class="ln"></span>02 — Discovery</div>
+    <h2 class="h-section" data-i18n-html="c_disc_h2">Five markets that <em>look</em> alike — and don't.</h2>
+    <p class="body-prose" data-i18n="c_disc_p">Before drawing a single screen, we ran follow-up interviews with buyers in each of HelloFresh's five European DCs. The same role on paper, but five different operating realities. The synthesis became the single most important artefact of the project: a cross-market view of where the workflow converged and where it diverged.</p>
 
     <div class="tensions">
       <div class="tension-row">
         <div class="tension-role">DACH</div>
-        <div class="tension-cell-text">Frozen-heavy. Pre-production checks against incoming POs and inbound. Need to link PO PDFs directly into SIV rather than open OTOPS for each detail.</div>
-        <div class="tension-insight">I lose time checking inbounds several times a day in CMS.</div>
+        <div class="tension-cell-text" data-i18n="c_t1_text">Frozen-heavy. Pre-production checks against incoming POs and inbound. Need to link PO PDFs directly into SIV rather than open OTOPS for each detail.</div>
+        <div class="tension-insight" data-i18n="c_t1_insight">I lose time checking inbounds several times a day in CMS.</div>
       </div>
       <div class="tension-row">
         <div class="tension-role">Italy</div>
-        <div class="tension-cell-text">Newly launched. Single DC, just one supplier per SKU. Production planning and emergency troubleshooting both routed through SIV as a schedule.</div>
-        <div class="tension-insight">Filter to SIV what is the projection, then consider that against delivery.</div>
+        <div class="tension-cell-text" data-i18n="c_t2_text">Newly launched. Single DC, just one supplier per SKU. Production planning and emergency troubleshooting both routed through SIV as a schedule.</div>
+        <div class="tension-insight" data-i18n="c_t2_insight">Filter to SIV what is the projection, then consider that against delivery.</div>
       </div>
       <div class="tension-row">
         <div class="tension-role">UK</div>
-        <div class="tension-cell-text">Stock-transfer mindset — many locations, swings of one or two days decide whether a transfer between DCs is needed.</div>
-        <div class="tension-insight">Linking the substitution sku to the original one is the gap.</div>
+        <div class="tension-cell-text" data-i18n="c_t3_text">Stock-transfer mindset — many locations, swings of one or two days decide whether a transfer between DCs is needed.</div>
+        <div class="tension-insight" data-i18n="c_t3_insight">Linking the substitution sku to the original one is the gap.</div>
       </div>
       <div class="tension-row">
         <div class="tension-role">Nordics</div>
-        <div class="tension-cell-text">Comparison-driven. Sweden often short while Norway holds extra. Daily granularity for fresh, weekly view for long-shelf categories.</div>
-        <div class="tension-insight">What is the minimum I need to order? What is the total amount I need to order?</div>
+        <div class="tension-cell-text" data-i18n="c_t4_text">Comparison-driven. Sweden often short while Norway holds extra. Daily granularity for fresh, weekly view for long-shelf categories.</div>
+        <div class="tension-insight" data-i18n="c_t4_insight">What is the minimum I need to order? What is the total amount I need to order?</div>
       </div>
       <div class="tension-row">
         <div class="tension-role">Benelux</div>
-        <div class="tension-cell-text">Central warehouse holds most stock. Filter by category and supplier, then walk back into incoming POs to understand the week ahead.</div>
-        <div class="tension-insight">Being able to filter by categories and from a supplier perspective.</div>
+        <div class="tension-cell-text" data-i18n="c_t5_text">Central warehouse holds most stock. Filter by category and supplier, then walk back into incoming POs to understand the week ahead.</div>
+        <div class="tension-insight" data-i18n="c_t5_insight">Being able to filter by categories and from a supplier perspective.</div>
       </div>
     </div>
 
     <div class="shot-figure inset-fig">
       <div class="frame"><img src="img/hf-02-main-simulation.jpg" alt="Simulation view — stress-testing stock against forecast scenarios" /></div>
-      <div class="cap">Simulation view — buyers stress-test stock against forecast scenarios before committing to a purchase order. The decision moves from "what is" to "what if".</div>
+      <div class="cap" data-i18n="c_fig1_cap">Simulation view — buyers stress-test stock against forecast scenarios before committing to a purchase order. The decision moves from "what is" to "what if".</div>
     </div>
 
     <div class="shot-figure inset-fig">
       <div class="frame"><img src="img/hf-01-main-overview.jpg" alt="Ingredient summary — the landing surface" /></div>
-      <div class="cap">Ingredient summary — the landing surface. SKUs at risk are flagged at the week they're projected to fall short, so buyers triage by urgency, not alphabetically.</div>
+      <div class="cap" data-i18n="c_fig2_cap">Ingredient summary — the landing surface. SKUs at risk are flagged at the week they're projected to fall short, so buyers triage by urgency, not alphabetically.</div>
     </div>
   </div>
 </section>
@@ -420,37 +425,37 @@ footer.site-footer{background:#FFFFFF;padding:32px 0 36px;border-top:0.5px solid
 <!-- ─── SYNTHESIS ─── -->
 <section class="inset" data-screen-label="05 Synthesis">
   <div class="wrap">
-    <div class="eyebrow"><span class="ln"></span>03 — Synthesis</div>
-    <h2 class="h-section">From <em>looking</em> at data to <em>acting</em> on it.</h2>
-    <p class="body-prose">The single most consequential decision was a reframe: SIV was being treated as a dashboard, but every buyer interview pointed at a workflow tool. The shift — from passive visibility to active order planning — set the direction for the rest of the engagement.</p>
+    <div class="eyebrow" data-i18n="c_syn_eyebrow"><span class="ln"></span>03 — Synthesis</div>
+    <h2 class="h-section" data-i18n-html="c_syn_h2">From <em>looking</em> at data to <em>acting</em> on it.</h2>
+    <p class="body-prose" data-i18n="c_syn_p">The single most consequential decision was a reframe: SIV was being treated as a dashboard, but every buyer interview pointed at a workflow tool. The shift — from passive visibility to active order planning — set the direction for the rest of the engagement.</p>
 
     <div class="principles">
       <div class="principle">
         <div class="principle-num">01</div>
         <div class="principle-body">
-          <h4>SIV is a workflow, not a dashboard.</h4>
-          <p>Buyers don't need a prettier Tableau. They need a place where forecast, inventory and order placement converge. The redesign positioned SIV as the single planning surface — Tableau retired as a reporting layer.</p>
+          <h4 data-i18n="c_p1_h">SIV is a workflow, not a dashboard.</h4>
+          <p data-i18n="c_p1_p">Buyers don't need a prettier Tableau. They need a place where forecast, inventory and order placement converge. The redesign positioned SIV as the single planning surface — Tableau retired as a reporting layer.</p>
         </div>
       </div>
       <div class="principle">
         <div class="principle-num">02</div>
         <div class="principle-body">
-          <h4>Supplier-split is the unit of work.</h4>
-          <p>Across markets, the recurring decision wasn't "how much" — it was "from whom, split how, delivered when." Multi-supplier splits with percentage allocation became the core mental model of the planning flow.</p>
+          <h4 data-i18n="c_p2_h">Supplier-split is the unit of work.</h4>
+          <p data-i18n="c_p2_p">Across markets, the recurring decision wasn't "how much" — it was "from whom, split how, delivered when." Multi-supplier splits with percentage allocation became the core mental model of the planning flow.</p>
         </div>
       </div>
       <div class="principle">
         <div class="principle-num">03</div>
         <div class="principle-body">
-          <h4>Time scale is local, not universal.</h4>
-          <p>Frozen categories think in weeks; fresh categories think in days. A single time abstraction would have failed half the user base. The flow exposes both, and lets the category — not the UI — drive cadence.</p>
+          <h4 data-i18n="c_p3_h">Time scale is local, not universal.</h4>
+          <p data-i18n="c_p3_p">Frozen categories think in weeks; fresh categories think in days. A single time abstraction would have failed half the user base. The flow exposes both, and lets the category — not the UI — drive cadence.</p>
         </div>
       </div>
       <div class="principle">
         <div class="principle-num">04</div>
         <div class="principle-body">
-          <h4>An MVP must be defendable, not exhaustive.</h4>
-          <p>The interview backlog held forty-plus feature requests. The roadmap that shipped held nine in MVP, eight in V2, six in Future — every cut argued against a user-research source.</p>
+          <h4 data-i18n="c_p4_h">An MVP must be defendable, not exhaustive.</h4>
+          <p data-i18n="c_p4_p">The interview backlog held forty-plus feature requests. The roadmap that shipped held nine in MVP, eight in V2, six in Future — every cut argued against a user-research source.</p>
         </div>
       </div>
     </div>
@@ -460,57 +465,57 @@ footer.site-footer{background:#FFFFFF;padding:32px 0 36px;border-top:0.5px solid
 <!-- ─── INTERACTION MODEL ─── -->
 <section class="inset" data-screen-label="06 Interaction model">
   <div class="wrap">
-    <div class="eyebrow"><span class="ln"></span>04 — Interaction model</div>
-    <h2 class="h-section">Three surfaces. One <em>decision path</em>.</h2>
-    <p class="body-prose">The Order Planning module collapses what used to be three tools into a single flow. The buyer enters at the country/week/DC level, drills into a SKU, defines delivery cadence per supplier, and confirms — without leaving the surface.</p>
+    <div class="eyebrow" data-i18n="c_im_eyebrow"><span class="ln"></span>04 — Interaction model</div>
+    <h2 class="h-section" data-i18n-html="c_im_h2">Three surfaces. One <em>decision path</em>.</h2>
+    <p class="body-prose" data-i18n="c_im_p">The Order Planning module collapses what used to be three tools into a single flow. The buyer enters at the country/week/DC level, drills into a SKU, defines delivery cadence per supplier, and confirms — without leaving the surface.</p>
 
     <div class="shot-figure inset-fig">
       <div class="figure-head">
-        <h3>Three surfaces, <em>layered</em>.</h3>
-        <span class="meta-line">Order planning · Interaction model</span>
+        <h3 data-i18n-html="c_f1_h">Three surfaces, <em>layered</em>.</h3>
+        <span class="meta-line" data-i18n="c_f1_meta">Order planning · Interaction model</span>
       </div>
       <div class="frame pad"><img src="img/hf-interaction-model.jpg" alt="Order planning interaction model — Summary, Detail and Add/edit date overlay surfaces composed in 3D" /></div>
     </div>
 
     <div class="shot-figure inset-fig">
       <div class="figure-head">
-        <h3>The roadmap, <em>defended</em>.</h3>
-        <span class="meta-line">SIV · Prioritized topics by user need</span>
+        <h3 data-i18n-html="c_f2_h">The roadmap, <em>defended</em>.</h3>
+        <span class="meta-line" data-i18n="c_f2_meta">SIV · Prioritized topics by user need</span>
       </div>
       <div class="frame pad"><img src="img/hf-siv-roadmap.jpg" alt="SIV roadmap — MVP, V1, V2 and Future columns of prioritized features tagged by type" /></div>
     </div>
 
     <div class="shot-figure inset-fig">
       <div class="figure-head">
-        <h3>The flow, before the <em>pixels</em>.</h3>
-        <span class="meta-line">Order planning · SKU detail</span>
+        <h3 data-i18n-html="c_f3_h">The flow, before the <em>pixels</em>.</h3>
+        <span class="meta-line" data-i18n="c_f3_meta">Order planning · SKU detail</span>
       </div>
       <div class="frame pad"><img src="img/hf-sku-detail-full.png" alt="SKU detail page — Stock overview and Stock in inventory tables for Cabbage mix across DCs" /></div>
     </div>
 
     <div class="feat-caption">
       <div>
-        <span class="lbl">One SKU, one surface</span>
-        <p class="t">Status cards, purchase orders, incoming POs by day, and the weekly stock projection — every signal the buyer needs to decide, on a single screen.</p>
+        <span class="lbl" data-i18n="c_fc1_lbl">One SKU, one surface</span>
+        <p class="t" data-i18n="c_fc1_p">Status cards, purchase orders, incoming POs by day, and the weekly stock projection — every signal the buyer needs to decide, on a single screen.</p>
       </div>
       <div>
-        <span class="lbl">What this proves</span>
-        <p class="t">The three-screen model isn't a sequence of pages — it's a single surface with layers. Context is preserved at every step.</p>
+        <span class="lbl" data-i18n="c_fc2_lbl">What this proves</span>
+        <p class="t" data-i18n="c_fc2_p">The three-screen model isn't a sequence of pages — it's a single surface with layers. Context is preserved at every step.</p>
       </div>
     </div>
 
     <div class="decisions">
       <div class="decision">
-        <span class="lbl">Decision 01</span>
-        <p class="t">A modal — not a new page — for SKU detail. Buyers compare across the list; context shouldn't be lost.</p>
+        <span class="lbl" data-i18n="c_d1_lbl">Decision 01</span>
+        <p class="t" data-i18n="c_d1_p">A modal — not a new page — for SKU detail. Buyers compare across the list; context shouldn't be lost.</p>
       </div>
       <div class="decision">
-        <span class="lbl">Decision 02</span>
-        <p class="t">Order placement is bottom-bar, action-conditional. It only appears when a SKU has delivery dates set.</p>
+        <span class="lbl" data-i18n="c_d2_lbl">Decision 02</span>
+        <p class="t" data-i18n="c_d2_p">Order placement is bottom-bar, action-conditional. It only appears when a SKU has delivery dates set.</p>
       </div>
       <div class="decision">
-        <span class="lbl">Decision 03</span>
-        <p class="t">Per-supplier split is the primary mental model. Quantities follow from %, not the other way around.</p>
+        <span class="lbl" data-i18n="c_d3_lbl">Decision 03</span>
+        <p class="t" data-i18n="c_d3_p">Per-supplier split is the primary mental model. Quantities follow from %, not the other way around.</p>
       </div>
     </div>
   </div>
@@ -519,47 +524,47 @@ footer.site-footer{background:#FFFFFF;padding:32px 0 36px;border-top:0.5px solid
 <!-- ─── ROADMAP ─── -->
 <section class="inset" data-screen-label="07 Roadmap">
   <div class="wrap">
-    <div class="eyebrow"><span class="ln"></span>05 — Roadmap</div>
-    <h2 class="h-section">What ships first, and <em>why</em>.</h2>
-    <p class="body-prose">Every feature on the roadmap traces back to a buyer interview. MVP holds the spine of the workflow. V2 introduces troubleshooting features that depend on MVP being adopted first. Future is reserved for predictive and reporting work — valuable, but not foundational.</p>
+    <div class="eyebrow" data-i18n="c_rm_eyebrow"><span class="ln"></span>05 — Roadmap</div>
+    <h2 class="h-section" data-i18n-html="c_rm_h2">What ships first, and <em>why</em>.</h2>
+    <p class="body-prose" data-i18n="c_rm_p">Every feature on the roadmap traces back to a buyer interview. MVP holds the spine of the workflow. V2 introduces troubleshooting features that depend on MVP being adopted first. Future is reserved for predictive and reporting work — valuable, but not foundational.</p>
 
     <div class="phases">
       <div class="phase">
         <div class="phase-head">
           <span class="phase-name">MVP</span>
-          <span class="phase-tag">In progress</span>
+          <span class="phase-tag" data-i18n="c_ph1_tag">In progress</span>
         </div>
-        <p class="phase-lead">SIV becomes the operations portal, with a basic exec piece. Faster, more accurate access to consolidated inventory data for movements.</p>
+        <p class="phase-lead" data-i18n="c_ph1_lead">SIV becomes the operations portal, with a basic exec piece. Faster, more accurate access to consolidated inventory data for movements.</p>
         <ul class="feature-list">
-          <li><span class="fname">Warehouse link</span><span class="fdesc">More frequent updates to ensure accuracy when ordering.</span></li>
-          <li><span class="fname">Improve filters</span><span class="fdesc">View by DC, consumption, category, supplier, consolidated PO order, R&amp;D.</span></li>
-          <li><span class="fname">Surface supplier information</span><span class="fdesc">Which DCs a supplier is delivering, PO amounts, missing.</span></li>
+          <li><span class="fname" data-i18n="c_ph1_f1n">Warehouse link</span><span class="fdesc" data-i18n="c_ph1_f1d">More frequent updates to ensure accuracy when ordering.</span></li>
+          <li><span class="fname" data-i18n="c_ph1_f2n">Improve filters</span><span class="fdesc" data-i18n="c_ph1_f2d">View by DC, consumption, category, supplier, consolidated PO order, R&amp;D.</span></li>
+          <li><span class="fname" data-i18n="c_ph1_f3n">Surface supplier information</span><span class="fdesc" data-i18n="c_ph1_f3d">Which DCs a supplier is delivering, PO amounts, missing.</span></li>
         </ul>
       </div>
       <div class="phase">
         <div class="phase-head">
           <span class="phase-name">V2</span>
-          <span class="phase-tag">Validated</span>
+          <span class="phase-tag" data-i18n="c_ph2_tag">Validated</span>
         </div>
-        <p class="phase-lead">Enhancing the core experience with additional functionality. Moving beyond visibility into supplier reliability, troubleshooting and side-by-side DC views.</p>
+        <p class="phase-lead" data-i18n="c_ph2_lead">Enhancing the core experience with additional functionality. Moving beyond visibility into supplier reliability, troubleshooting and side-by-side DC views.</p>
         <ul class="feature-list">
-          <li><span class="fname">DC comparison</span><span class="fdesc">Sibling stock checks: stocking-in from DC vs. peer.</span></li>
-          <li><span class="fname">Saved searches</span><span class="fdesc">Customised buyer-built reorder views.</span></li>
-          <li><span class="fname">Link to view Purchase Orders</span><span class="fdesc">Check ordered amount against arrival, retrieved within SIV.</span></li>
-          <li><span class="fname">Filter by buyer</span><span class="fdesc">Customised view of the SKUs a buyer is responsible for.</span></li>
+          <li><span class="fname" data-i18n="c_ph2_f1n">DC comparison</span><span class="fdesc" data-i18n="c_ph2_f1d">Sibling stock checks: stocking-in from DC vs. peer.</span></li>
+          <li><span class="fname" data-i18n="c_ph2_f2n">Saved searches</span><span class="fdesc" data-i18n="c_ph2_f2d">Customised buyer-built reorder views.</span></li>
+          <li><span class="fname" data-i18n="c_ph2_f3n">Link to view Purchase Orders</span><span class="fdesc" data-i18n="c_ph2_f3d">Check ordered amount against arrival, retrieved within SIV.</span></li>
+          <li><span class="fname" data-i18n="c_ph2_f4n">Filter by buyer</span><span class="fdesc" data-i18n="c_ph2_f4d">Customised view of the SKUs a buyer is responsible for.</span></li>
         </ul>
       </div>
       <div class="phase">
         <div class="phase-head">
           <span class="phase-name">Future</span>
-          <span class="phase-tag">To explore</span>
+          <span class="phase-tag" data-i18n="c_ph3_tag">To explore</span>
         </div>
-        <p class="phase-lead">SIV is the source-of-truth for accuracy, insights and analytics. The system now actively supports buyers, alerting users of potential risk areas.</p>
+        <p class="phase-lead" data-i18n="c_ph3_lead">SIV is the source-of-truth for accuracy, insights and analytics. The system now actively supports buyers, alerting users of potential risk areas.</p>
         <ul class="feature-list">
-          <li><span class="fname">Theoretical vs. actual consumption</span><span class="fdesc">What was formulated vs. used on the line.</span></li>
-          <li><span class="fname">Supplier reliability</span><span class="fdesc">Stocking performance and accuracy of ordering.</span></li>
-          <li><span class="fname">3PW integration</span><span class="fdesc">Warehouses that aren't in WMS.</span></li>
-          <li><span class="fname">SKU history</span><span class="fdesc">Period-on-period stock-state.</span></li>
+          <li><span class="fname" data-i18n="c_ph3_f1n">Theoretical vs. actual consumption</span><span class="fdesc" data-i18n="c_ph3_f1d">What was formulated vs. used on the line.</span></li>
+          <li><span class="fname" data-i18n="c_ph3_f2n">Supplier reliability</span><span class="fdesc" data-i18n="c_ph3_f2d">Stocking performance and accuracy of ordering.</span></li>
+          <li><span class="fname" data-i18n="c_ph3_f3n">3PW integration</span><span class="fdesc" data-i18n="c_ph3_f3d">Warehouses that aren't in WMS.</span></li>
+          <li><span class="fname" data-i18n="c_ph3_f4n">SKU history</span><span class="fdesc" data-i18n="c_ph3_f4d">Period-on-period stock-state.</span></li>
         </ul>
       </div>
     </div>
@@ -569,25 +574,25 @@ footer.site-footer{background:#FFFFFF;padding:32px 0 36px;border-top:0.5px solid
 <!-- ─── OUTCOME (DARK) ─── -->
 <section class="outcome-dark bare" data-screen-label="08 Outcome">
   <div class="wrap">
-    <div class="section-eyebrow"><span class="ln"></span>06 — Outcome</div>
-    <h2 class="h-section">A buyer's tool the buyers <em>argued for</em>.</h2>
-    <p class="body-prose" style="max-width:680px">The Order Planning interaction model was prototyped end-to-end, tested in click-through with the same buyers who had been interviewed in discovery, and handed off to engineering with a defended scope. Tableau remained for reporting — but the daily decision loop moved into SIV.</p>
+    <div class="section-eyebrow" data-i18n="c_out_eyebrow"><span class="ln"></span>06 — Outcome</div>
+    <h2 class="h-section" data-i18n-html="c_out_h2">A buyer's tool the buyers <em>argued for</em>.</h2>
+    <p class="body-prose" style="max-width:680px" data-i18n="c_out_p">The Order Planning interaction model was prototyped end-to-end, tested in click-through with the same buyers who had been interviewed in discovery, and handed off to engineering with a defended scope. Tableau remained for reporting — but the daily decision loop moved into SIV.</p>
 
     <div class="outcome-metrics">
       <div class="metric-item">
         <span class="metric-num">5<em>×</em></span>
-        <span class="metric-label">Markets aligned</span>
-        <span class="metric-detail">A single planning workflow — DACH, Italy, UK, Nordics, Benelux.</span>
+        <span class="metric-label" data-i18n="c_met1_lbl">Markets aligned</span>
+        <span class="metric-detail" data-i18n="c_met1_det">A single planning workflow — DACH, Italy, UK, Nordics, Benelux.</span>
       </div>
       <div class="metric-item">
         <span class="metric-num">3 <em>→</em> 1</span>
-        <span class="metric-label">Tools collapsed</span>
-        <span class="metric-detail">Tableau, CMS lookups and PO references unified inside SIV.</span>
+        <span class="metric-label" data-i18n="c_met2_lbl">Tools collapsed</span>
+        <span class="metric-detail" data-i18n="c_met2_det">Tableau, CMS lookups and PO references unified inside SIV.</span>
       </div>
       <div class="metric-item">
         <span class="metric-num">~40<em>m</em></span>
-        <span class="metric-label">Buyer time recovered / day</span>
-        <span class="metric-detail">The daily data-doubling routine retired in early validation.</span>
+        <span class="metric-label" data-i18n="c_met3_lbl">Buyer time recovered / day</span>
+        <span class="metric-detail" data-i18n="c_met3_det">The daily data-doubling routine retired in early validation.</span>
       </div>
     </div>
   </div>
@@ -612,10 +617,10 @@ footer.site-footer{background:#FFFFFF;padding:32px 0 36px;border-top:0.5px solid
 <section class="tight" data-screen-label="Credits">
   <div class="wrap">
     <div class="credits">
-      <div class="credit-item"><span class="credit-label">Client</span><p>HelloFresh SE<br/>Food-tech · Supply chain<br/>Berlin, Germany</p></div>
-      <div class="credit-item"><span class="credit-label">Studio team</span><p>Nicolas Alesio<br/>Senior product designer<br/>Solo engagement</p></div>
-      <div class="credit-item"><span class="credit-label">Client team</span><p>Buyer operations leads<br/>Supply chain analysts<br/>Biweekly reviews</p></div>
-      <div class="credit-item"><span class="credit-label">Year</span><p>Engagement: 2025<br/>Discovery through shipped release<br/>Live in production</p></div>
+      <div class="credit-item"><span class="credit-label" data-i18n="cred_client">Client</span><p data-i18n-html="c_cred1_p">HelloFresh SE<br/>Food-tech · Supply chain<br/>Berlin, Germany</p></div>
+      <div class="credit-item"><span class="credit-label" data-i18n="cred_team">Studio team</span><p data-i18n-html="c_cred2_p">Nicolas Alesio<br/>Senior product designer<br/>Solo engagement</p></div>
+      <div class="credit-item"><span class="credit-label" data-i18n="cred_clientteam">Client team</span><p data-i18n-html="c_cred3_p">Buyer operations leads<br/>Supply chain analysts<br/>Biweekly reviews</p></div>
+      <div class="credit-item"><span class="credit-label" data-i18n="cred_year">Year</span><p data-i18n-html="c_cred4_p">Engagement: 2025<br/>Discovery through shipped release<br/>Live in production</p></div>
     </div>
   </div>
 </section>
@@ -625,11 +630,11 @@ footer.site-footer{background:#FFFFFF;padding:32px 0 36px;border-top:0.5px solid
   <div class="wrap">
     <div class="design-card">
       <div>
-        <h3>The full <em>visual system</em> for SIV — typography, components, applied screens.</h3>
-        <p>This case study focuses on discovery, synthesis and the interaction model. The applied visual design — design tokens, table density, the order-bar component, the delivery-date overlay — is documented separately.</p>
+        <h3 data-i18n-html="c_next_h3">The full <em>visual system</em> for SIV — typography, components, applied screens.</h3>
+        <p data-i18n="c_next_p">This case study focuses on discovery, synthesis and the interaction model. The applied visual design — design tokens, table density, the order-bar component, the delivery-date overlay — is documented separately.</p>
       </div>
       <a href="case-03-industrial-saas.html" class="design-cta">
-        Next case
+        <span data-i18n="next_case">Next case</span>
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
       </a>
     </div>
@@ -646,7 +651,11 @@ footer.site-footer{background:#FFFFFF;padding:32px 0 36px;border-top:0.5px solid
       <a href="../index.html#about" data-i18n="nav_about">About</a>
       <a href="../index.html#contact" data-i18n="nav_contact">Contact</a>
     </nav>
-    <span class="copy" data-i18n="foot_copy">© 2026 Lovre</span>
+        <div class="footer-social">
+      <a href="https://www.linkedin.com/company/lovre-studio/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.07 2.07 0 1 1 0-4.13 2.07 2.07 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45z"/></svg></a>
+      <a href="https://www.instagram.com" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1" fill="currentColor" stroke="none"/></svg></a>
+      <span class="copy" data-i18n="foot_copy">© 2026 Lovre</span>
+    </div>
   </div>
 </footer>
 
@@ -776,8 +785,8 @@ tick();
 <script>
 (function(){
   var DICT={
-    en:{nav_services:'Services',nav_work:'Work',nav_about:'About',nav_contact:'Contact',back_link:'Back to all work',foot_copy:'\u00A9 2026 Lovre',figma_q:'Want to see more of this project?'},
-    es:{nav_services:'Servicios',nav_work:'Trabajo',nav_about:'Nosotros',nav_contact:'Contacto',back_link:'Volver a proyectos',foot_copy:'\u00A9 2026 Lovre',figma_q:'\u00BFQuer\u00E9s ver m\u00E1s de este proyecto?'}
+    en:{nav_services:"Services",nav_work:"Work",nav_about:"About",nav_contact:"Contact",back_link:"Back to all work",foot_copy:"© 2026 Lovre",figma_q:"Want to see more of this project?",m_client:"Client",m_sector:"Sector",m_role:"Role",m_scope:"Scope",cred_client:"Client",cred_team:"Studio team",cred_clientteam:"Client team",cred_year:"Year",next_case:"Next case",c_eyebrow:"Case 02 · Food-tech · Meal-kit · HelloFresh",c_h1:"Bringing <em>order</em> to ingredient buying across five European markets.",c_lede:"HelloFresh's procurement teams were planning orders for thousands of ingredient SKUs using dashboards that were never built for the job. We rebuilt the buyer's workflow around a single planning surface — disciplined by research across DACH, Italy, the UK, Nordics and Benelux.",c_meta_sector_v:"Food-tech · Supply chain",c_meta_role_v:"Senior Product Designer",c_meta_scope_v:"Discovery · UX strategy · Interaction model",c_cap1:"SIV · Systematic Inventory View — selected views",c_ctx_eyebrow:"01 — Context",c_ctx_h2:"A buyer's day shouldn't begin with <em>doubt</em>.",c_ctx_p1:"HelloFresh runs one of Europe's largest fresh-food supply chains. Behind every meal-kit sits a buyer placing orders against forecasts that shift daily — frozen SKUs landing weeks in advance, fresh produce arriving on the morning of production. Margins of error are thin, and the cost of getting it wrong is thrown stock or empty boxes.",c_ctx_p2:"At the time of this engagement, buyers were stitching together their decisions across three or four different tools. Tableau dashboards gave them a view of forecast and stock — but the data wasn't transactional, filters were brittle, and the product itself lacked any clear definition of how it was meant to be used. Compounded across markets, the result was time lost, errors absorbed, and decisions made on instinct.",c_pr1_h:"Unreliable data",c_pr1_p:"Tableau pulled from CMS once a week. Buyers double-checked totals against multiple sources before placing any order — typically 30 to 45 minutes burned per day, per buyer.",c_pr2_h:"Product without definition",c_pr2_p:"No clear ownership of what the tool was for, no buyer-led requirements, no roadmap. Features had been added in isolation and never reconciled with how the work actually got done.",c_pr3_h:"Tableau's ceiling",c_pr3_p:"Filters couldn't be saved, side-by-side comparison was impossible, and there was no way to act on what you saw. Insight ended where the workflow began.",c_quote1:"I don't have a tracking of what I pre-order, compared to what I finally order. A possible solution could be an overview with the <em>last updated</em> pre-purchase orders.",c_quote1_attr:"Buyer · DACH market · Discovery interview",c_disc_eyebrow:"02 — Discovery",c_disc_h2:"Five markets that <em>look</em> alike — and don't.",c_disc_p:"Before drawing a single screen, we ran follow-up interviews with buyers in each of HelloFresh's five European DCs. The same role on paper, but five different operating realities. The synthesis became the single most important artefact of the project: a cross-market view of where the workflow converged and where it diverged.",c_t1_text:"Frozen-heavy. Pre-production checks against incoming POs and inbound. Need to link PO PDFs directly into SIV rather than open OTOPS for each detail.",c_t1_insight:"I lose time checking inbounds several times a day in CMS.",c_t2_text:"Newly launched. Single DC, just one supplier per SKU. Production planning and emergency troubleshooting both routed through SIV as a schedule.",c_t2_insight:"Filter to SIV what is the projection, then consider that against delivery.",c_t3_text:"Stock-transfer mindset — many locations, swings of one or two days decide whether a transfer between DCs is needed.",c_t3_insight:"Linking the substitution sku to the original one is the gap.",c_t4_text:"Comparison-driven. Sweden often short while Norway holds extra. Daily granularity for fresh, weekly view for long-shelf categories.",c_t4_insight:"What is the minimum I need to order? What is the total amount I need to order?",c_t5_text:"Central warehouse holds most stock. Filter by category and supplier, then walk back into incoming POs to understand the week ahead.",c_t5_insight:"Being able to filter by categories and from a supplier perspective.",c_fig1_cap:"Simulation view — buyers stress-test stock against forecast scenarios before committing to a purchase order. The decision moves from \"what is\" to \"what if\".",c_fig2_cap:"Ingredient summary — the landing surface. SKUs at risk are flagged at the week they're projected to fall short, so buyers triage by urgency, not alphabetically.",c_syn_eyebrow:"03 — Synthesis",c_syn_h2:"From <em>looking</em> at data to <em>acting</em> on it.",c_syn_p:"The single most consequential decision was a reframe: SIV was being treated as a dashboard, but every buyer interview pointed at a workflow tool. The shift — from passive visibility to active order planning — set the direction for the rest of the engagement.",c_p1_h:"SIV is a workflow, not a dashboard.",c_p1_p:"Buyers don't need a prettier Tableau. They need a place where forecast, inventory and order placement converge. The redesign positioned SIV as the single planning surface — Tableau retired as a reporting layer.",c_p2_h:"Supplier-split is the unit of work.",c_p2_p:"Across markets, the recurring decision wasn't \"how much\" — it was \"from whom, split how, delivered when.\" Multi-supplier splits with percentage allocation became the core mental model of the planning flow.",c_p3_h:"Time scale is local, not universal.",c_p3_p:"Frozen categories think in weeks; fresh categories think in days. A single time abstraction would have failed half the user base. The flow exposes both, and lets the category — not the UI — drive cadence.",c_p4_h:"An MVP must be defendable, not exhaustive.",c_p4_p:"The interview backlog held forty-plus feature requests. The roadmap that shipped held nine in MVP, eight in V2, six in Future — every cut argued against a user-research source.",c_im_eyebrow:"04 — Interaction model",c_im_h2:"Three surfaces. One <em>decision path</em>.",c_im_p:"The Order Planning module collapses what used to be three tools into a single flow. The buyer enters at the country/week/DC level, drills into a SKU, defines delivery cadence per supplier, and confirms — without leaving the surface.",c_f1_h:"Three surfaces, <em>layered</em>.",c_f1_meta:"Order planning · Interaction model",c_f2_h:"The roadmap, <em>defended</em>.",c_f2_meta:"SIV · Prioritized topics by user need",c_f3_h:"The flow, before the <em>pixels</em>.",c_f3_meta:"Order planning · SKU detail",c_fc1_lbl:"One SKU, one surface",c_fc1_p:"Status cards, purchase orders, incoming POs by day, and the weekly stock projection — every signal the buyer needs to decide, on a single screen.",c_fc2_lbl:"What this proves",c_fc2_p:"The three-screen model isn't a sequence of pages — it's a single surface with layers. Context is preserved at every step.",c_d1_lbl:"Decision 01",c_d1_p:"A modal — not a new page — for SKU detail. Buyers compare across the list; context shouldn't be lost.",c_d2_lbl:"Decision 02",c_d2_p:"Order placement is bottom-bar, action-conditional. It only appears when a SKU has delivery dates set.",c_d3_lbl:"Decision 03",c_d3_p:"Per-supplier split is the primary mental model. Quantities follow from %, not the other way around.",c_rm_eyebrow:"05 — Roadmap",c_rm_h2:"What ships first, and <em>why</em>.",c_rm_p:"Every feature on the roadmap traces back to a buyer interview. MVP holds the spine of the workflow. V2 introduces troubleshooting features that depend on MVP being adopted first. Future is reserved for predictive and reporting work — valuable, but not foundational.",c_ph1_tag:"In progress",c_ph1_lead:"SIV becomes the operations portal, with a basic exec piece. Faster, more accurate access to consolidated inventory data for movements.",c_ph1_f1n:"Warehouse link",c_ph1_f1d:"More frequent updates to ensure accuracy when ordering.",c_ph1_f2n:"Improve filters",c_ph1_f2d:"View by DC, consumption, category, supplier, consolidated PO order, R&D.",c_ph1_f3n:"Surface supplier information",c_ph1_f3d:"Which DCs a supplier is delivering, PO amounts, missing.",c_ph2_tag:"Validated",c_ph2_lead:"Enhancing the core experience with additional functionality. Moving beyond visibility into supplier reliability, troubleshooting and side-by-side DC views.",c_ph2_f1n:"DC comparison",c_ph2_f1d:"Sibling stock checks: stocking-in from DC vs. peer.",c_ph2_f2n:"Saved searches",c_ph2_f2d:"Customised buyer-built reorder views.",c_ph2_f3n:"Link to view Purchase Orders",c_ph2_f3d:"Check ordered amount against arrival, retrieved within SIV.",c_ph2_f4n:"Filter by buyer",c_ph2_f4d:"Customised view of the SKUs a buyer is responsible for.",c_ph3_tag:"To explore",c_ph3_lead:"SIV is the source-of-truth for accuracy, insights and analytics. The system now actively supports buyers, alerting users of potential risk areas.",c_ph3_f1n:"Theoretical vs. actual consumption",c_ph3_f1d:"What was formulated vs. used on the line.",c_ph3_f2n:"Supplier reliability",c_ph3_f2d:"Stocking performance and accuracy of ordering.",c_ph3_f3n:"3PW integration",c_ph3_f3d:"Warehouses that aren't in WMS.",c_ph3_f4n:"SKU history",c_ph3_f4d:"Period-on-period stock-state.",c_out_eyebrow:"06 — Outcome",c_out_h2:"A buyer's tool the buyers <em>argued for</em>.",c_out_p:"The Order Planning interaction model was prototyped end-to-end, tested in click-through with the same buyers who had been interviewed in discovery, and handed off to engineering with a defended scope. Tableau remained for reporting — but the daily decision loop moved into SIV.",c_met1_lbl:"Markets aligned",c_met1_det:"A single planning workflow — DACH, Italy, UK, Nordics, Benelux.",c_met2_lbl:"Tools collapsed",c_met2_det:"Tableau, CMS lookups and PO references unified inside SIV.",c_met3_lbl:"Buyer time recovered / day",c_met3_det:"The daily data-doubling routine retired in early validation.",c_cred1_p:"HelloFresh SE<br>Food-tech · Supply chain<br>Berlin, Germany",c_cred2_p:"Nicolas Alesio<br>Senior product designer<br>Solo engagement",c_cred3_p:"Buyer operations leads<br>Supply chain analysts<br>Biweekly reviews",c_cred4_p:"Engagement: 2025<br>Discovery through shipped release<br>Live in production",c_next_h3:"The full <em>visual system</em> for SIV — typography, components, applied screens.",c_next_p:"This case study focuses on discovery, synthesis and the interaction model. The applied visual design — design tokens, table density, the order-bar component, the delivery-date overlay — is documented separately."},
+    es:{nav_services:"Servicios",nav_work:"Trabajo",nav_about:"Nosotros",nav_contact:"Contacto",back_link:"Volver a proyectos",foot_copy:"© 2026 Lovre",figma_q:"¿Querés ver más de este proyecto?",m_client:"Cliente",m_sector:"Sector",m_role:"Rol",m_scope:"Alcance",cred_client:"Cliente",cred_team:"Equipo del estudio",cred_clientteam:"Equipo del cliente",cred_year:"Año",next_case:"Siguiente caso",c_eyebrow:"Caso 02 · Food-tech · Meal-kit · HelloFresh",c_h1:"Poniendo <em>orden</em> en la compra de ingredientes en cinco mercados europeos.",c_lede:"Los equipos de compras de HelloFresh planificaban pedidos para miles de SKUs de ingredientes usando dashboards que nunca se pensaron para esa tarea. Reconstruimos el flujo del comprador alrededor de una sola superficie de planificación — validada con investigación en DACH, Italia, Reino Unido, Nórdicos y Benelux.",c_meta_sector_v:"Food-tech · Cadena de suministro",c_meta_role_v:"Diseñadora de producto senior",c_meta_scope_v:"Discovery · Estrategia UX · Modelo de interacción",c_cap1:"SIV · Systematic Inventory View — vistas seleccionadas",c_ctx_eyebrow:"01 — Contexto",c_ctx_h2:"El día de un comprador no debería empezar con <em>dudas</em>.",c_ctx_p1:"HelloFresh opera una de las cadenas de suministro de alimentos frescos más grandes de Europa. Detrás de cada meal-kit hay un comprador emitiendo pedidos contra pronósticos que cambian a diario — SKUs congelados que llegan con semanas de anticipación, producto fresco que llega la mañana de la producción. Los márgenes de error son mínimos, y el costo de equivocarse es stock desperdiciado o cajas vacías.",c_ctx_p2:"Al momento de este proyecto, los compradores armaban sus decisiones combinando tres o cuatro herramientas distintas. Los dashboards de Tableau les daban una vista del pronóstico y el stock — pero los datos no eran transaccionales, los filtros eran frágiles, y el producto en sí no tenía una definición clara de cómo debía usarse. Sumado entre mercados, el resultado era tiempo perdido, errores absorbidos y decisiones tomadas por instinto.",c_pr1_h:"Datos poco confiables",c_pr1_p:"Tableau se actualizaba desde CMS una vez por semana. Los compradores verificaban dos veces los totales contra múltiples fuentes antes de emitir cualquier pedido — típicamente 30 a 45 minutos perdidos por día, por comprador.",c_pr2_h:"Un producto sin definición",c_pr2_p:"No había propiedad clara de para qué servía la herramienta, ni requerimientos liderados por compradores, ni roadmap. Las funciones se habían agregado de forma aislada y nunca se reconciliaron con cómo se hacía realmente el trabajo.",c_pr3_h:"El techo de Tableau",c_pr3_p:"Los filtros no se podían guardar, la comparación lado a lado era imposible, y no había forma de actuar sobre lo que se veía. El insight terminaba donde empezaba el flujo de trabajo.",c_quote1:"No tengo un seguimiento de lo que preordeno, comparado con lo que finalmente ordeno. Una posible solución sería un resumen con las órdenes de preventa <em>actualizadas</em>.",c_quote1_attr:"Comprador · Mercado DACH · Entrevista de discovery",c_disc_eyebrow:"02 — Discovery",c_disc_h2:"Cinco mercados que <em>parecen</em> iguales — y no lo son.",c_disc_p:"Antes de dibujar una sola pantalla, hicimos entrevistas de seguimiento con compradores en cada uno de los cinco centros de distribución europeos de HelloFresh. El mismo rol en el papel, pero cinco realidades operativas distintas. La síntesis se convirtió en el artefacto más importante del proyecto: una vista cross-market de dónde el flujo de trabajo convergía y dónde divergía.",c_t1_text:"Con mucho congelado. Chequeos previos a producción contra POs entrantes e inbound. Necesitan enlazar PDFs de PO directamente en SIV en vez de abrir OTOPS para cada detalle.",c_t1_insight:"Pierdo tiempo revisando inbounds varias veces al día en CMS.",c_t2_text:"Recién lanzado. Un solo DC, un solo proveedor por SKU. La planificación de producción y la resolución de emergencias pasan ambas por SIV como cronograma.",c_t2_insight:"Filtrar en SIV cuál es la proyección, y luego contrastarla con la entrega.",c_t3_text:"Mentalidad de transferencia de stock — muchas ubicaciones, diferencias de uno o dos días deciden si se necesita una transferencia entre DCs.",c_t3_insight:"Vincular el SKU de sustitución con el original es lo que falta.",c_t4_text:"Impulsado por comparación. Suecia suele estar corta mientras Noruega tiene de más. Granularidad diaria para fresco, vista semanal para categorías de larga vida.",c_t4_insight:"¿Cuál es el mínimo que necesito ordenar? ¿Cuál es el total que necesito ordenar?",c_t5_text:"El almacén central tiene la mayor parte del stock. Filtrar por categoría y proveedor, y luego revisar las POs entrantes para entender la semana que viene.",c_t5_insight:"Poder filtrar por categorías y desde la perspectiva de un proveedor.",c_fig1_cap:"Vista de simulación — los compradores ponen a prueba el stock contra escenarios de pronóstico antes de confirmar una orden de compra. La decisión pasa de \"qué es\" a \"qué pasaría si\".",c_fig2_cap:"Resumen de ingredientes — la superficie de aterrizaje. Los SKUs en riesgo se marcan en la semana en que se proyecta que faltarán, para que los compradores prioricen por urgencia, no alfabéticamente.",c_syn_eyebrow:"03 — Síntesis",c_syn_h2:"De <em>mirar</em> los datos a <em>actuar</em> sobre ellos.",c_syn_p:"La decisión más determinante fue un replanteo: SIV se trataba como un dashboard, pero cada entrevista de comprador apuntaba a una herramienta de flujo de trabajo. El cambio — de visibilidad pasiva a planificación activa de pedidos — marcó el rumbo del resto del proyecto.",c_p1_h:"SIV es un flujo de trabajo, no un dashboard.",c_p1_p:"Los compradores no necesitan un Tableau más lindo. Necesitan un lugar donde pronóstico, inventario y colocación de pedidos converjan. El rediseño posicionó a SIV como la superficie única de planificación — Tableau quedó relegado a capa de reportes.",c_p2_h:"La división por proveedor es la unidad de trabajo.",c_p2_p:"En todos los mercados, la decisión recurrente no era \"cuánto\" — era \"a quién, cómo dividido, entregado cuándo\". Las divisiones multi-proveedor con asignación porcentual se convirtieron en el modelo mental central del flujo de planificación.",c_p3_h:"La escala de tiempo es local, no universal.",c_p3_p:"Las categorías congeladas piensan en semanas; las frescas piensan en días. Una sola abstracción temporal habría fallado a la mitad de los usuarios. El flujo expone ambas, y deja que la categoría — no la UI — marque el ritmo.",c_p4_h:"Un MVP debe ser defendible, no exhaustivo.",c_p4_p:"El backlog de entrevistas tenía más de cuarenta pedidos de funciones. El roadmap que salió tenía nueve en MVP, ocho en V2, seis en Future — cada recorte respaldado por una fuente de investigación de usuarios.",c_im_eyebrow:"04 — Modelo de interacción",c_im_h2:"Tres superficies. Un solo <em>camino de decisión</em>.",c_im_p:"El módulo de Order Planning colapsa lo que antes eran tres herramientas en un solo flujo. El comprador entra al nivel país/semana/DC, profundiza en un SKU, define la cadencia de entrega por proveedor, y confirma — sin salir de la superficie.",c_f1_h:"Tres superficies, <em>en capas</em>.",c_f1_meta:"Order planning · Modelo de interacción",c_f2_h:"El roadmap, <em>defendido</em>.",c_f2_meta:"SIV · Temas priorizados según necesidad del usuario",c_f3_h:"El flujo, antes de los <em>píxeles</em>.",c_f3_meta:"Order planning · Detalle de SKU",c_fc1_lbl:"Un SKU, una superficie",c_fc1_p:"Tarjetas de estado, órdenes de compra, POs entrantes por día, y la proyección semanal de stock — cada señal que el comprador necesita para decidir, en una sola pantalla.",c_fc2_lbl:"Qué demuestra esto",c_fc2_p:"El modelo de tres pantallas no es una secuencia de páginas — es una sola superficie con capas. El contexto se preserva en cada paso.",c_d1_lbl:"Decisión 01",c_d1_p:"Un modal — no una página nueva — para el detalle del SKU. Los compradores comparan a lo largo de la lista; el contexto no debe perderse.",c_d2_lbl:"Decisión 02",c_d2_p:"La colocación del pedido va en la barra inferior, condicional a la acción. Solo aparece cuando un SKU tiene fechas de entrega definidas.",c_d3_lbl:"Decisión 03",c_d3_p:"La división por proveedor es el modelo mental principal. Las cantidades se derivan del %, no al revés.",c_rm_eyebrow:"05 — Roadmap",c_rm_h2:"Qué sale primero, y <em>por qué</em>.",c_rm_p:"Cada función del roadmap se remonta a una entrevista de comprador. El MVP sostiene la columna vertebral del flujo de trabajo. V2 introduce funciones de resolución de problemas que dependen de que el MVP ya esté adoptado. Future queda reservado para trabajo predictivo y de reportes — valioso, pero no fundacional.",c_ph1_tag:"En progreso",c_ph1_lead:"SIV se convierte en el portal de operaciones, con una pieza ejecutiva básica. Acceso más rápido y preciso a datos de inventario consolidados para movimientos.",c_ph1_f1n:"Enlace con almacén",c_ph1_f1d:"Actualizaciones más frecuentes para asegurar precisión al ordenar.",c_ph1_f2n:"Mejorar filtros",c_ph1_f2d:"Ver por DC, consumo, categoría, proveedor, orden PO consolidada, I+D.",c_ph1_f3n:"Mostrar información del proveedor",c_ph1_f3d:"Qué DCs entrega un proveedor, montos de PO, faltantes.",c_ph2_tag:"Validado",c_ph2_lead:"Mejorando la experiencia central con funcionalidad adicional. Yendo más allá de la visibilidad hacia confiabilidad de proveedores, resolución de problemas y vistas comparativas de DC.",c_ph2_f1n:"Comparación de DC",c_ph2_f1d:"Chequeos de stock entre pares: entrada de stock de un DC vs. otro.",c_ph2_f2n:"Búsquedas guardadas",c_ph2_f2d:"Vistas de reorden personalizadas por el comprador.",c_ph2_f3n:"Enlace para ver órdenes de compra",c_ph2_f3d:"Verificar el monto pedido contra la llegada, recuperado dentro de SIV.",c_ph2_f4n:"Filtrar por comprador",c_ph2_f4d:"Vista personalizada de los SKUs a cargo de un comprador.",c_ph3_tag:"Por explorar",c_ph3_lead:"SIV es la fuente de verdad para precisión, insights y analítica. El sistema ahora apoya activamente a los compradores, alertando sobre posibles zonas de riesgo.",c_ph3_f1n:"Consumo teórico vs. real",c_ph3_f1d:"Lo que se formuló vs. lo que se usó en la línea.",c_ph3_f2n:"Confiabilidad de proveedores",c_ph3_f2d:"Desempeño de stock y precisión de los pedidos.",c_ph3_f3n:"Integración 3PW",c_ph3_f3d:"Almacenes que no están en el WMS.",c_ph3_f4n:"Historial de SKU",c_ph3_f4d:"Estado de stock período a período.",c_out_eyebrow:"06 — Resultado",c_out_h2:"Una herramienta que los propios compradores <em>defendieron</em>.",c_out_p:"El modelo de interacción de Order Planning se prototipó de punta a punta, se probó en click-through con los mismos compradores entrevistados en discovery, y se entregó a ingeniería con un alcance defendido. Tableau se mantuvo para reportes — pero el loop de decisión diario se mudó a SIV.",c_met1_lbl:"Mercados alineados",c_met1_det:"Un solo flujo de planificación — DACH, Italia, Reino Unido, Nórdicos, Benelux.",c_met2_lbl:"Herramientas unificadas",c_met2_det:"Tableau, búsquedas en CMS y referencias de PO unificadas dentro de SIV.",c_met3_lbl:"Tiempo de comprador recuperado / día",c_met3_det:"La rutina diaria de duplicar datos se retiró en la validación temprana.",c_cred1_p:"HelloFresh SE<br>Food-tech · Cadena de suministro<br>Berlín, Alemania",c_cred2_p:"Nicolas Alesio<br>Diseñador de producto senior<br>Proyecto individual",c_cred3_p:"Líderes de operaciones de compra<br>Analistas de cadena de suministro<br>Revisiones quincenales",c_cred4_p:"Proyecto: 2025<br>Desde discovery hasta el lanzamiento<br>En producción",c_next_h3:"El <em>sistema visual</em> completo de SIV — tipografía, componentes, pantallas aplicadas.",c_next_p:"Este caso de estudio se centra en discovery, síntesis y el modelo de interacción. El diseño visual aplicado — tokens de diseño, densidad de tablas, el componente de barra de orden, el overlay de fecha de entrega — está documentado por separado."}
   };
   function apply(lang){
     var d=DICT[lang]||DICT.en;
@@ -785,6 +794,10 @@ tick();
     document.querySelectorAll('[data-i18n]').forEach(function(el){
       var k=el.getAttribute('data-i18n');
       if(d[k]) el.textContent=d[k];
+    });
+    document.querySelectorAll('[data-i18n-html]').forEach(function(el){
+      var k=el.getAttribute('data-i18n-html');
+      if(d[k]) el.innerHTML=d[k];
     });
     document.querySelectorAll('.lang-switch button').forEach(function(b){
       b.classList.toggle('active', b.getAttribute('data-lang')===lang);
