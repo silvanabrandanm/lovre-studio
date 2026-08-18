@@ -1779,6 +1779,9 @@
       })
     }).then(function(res){
       if(!res.ok) throw new Error('send failed');
+      if (typeof gtag === 'function') {
+  gtag('event', 'brief_submitted');
+}
       form.style.display = 'none';
       document.getElementById('bf-done').classList.add('show');
     }).catch(function(){
