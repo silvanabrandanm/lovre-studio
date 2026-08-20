@@ -1182,6 +1182,8 @@
 }
 </style>
 <script defer src="/_vercel/insights/script.js"></script>
+<link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+<script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
 </head>
 <body data-screen-label="Home">
 
@@ -1803,8 +1805,7 @@
     <h2 data-i18n-html="cta_h2">Let's talk about your <span class="it">product</span>.</h2>
     <p class="lead" data-i18n="cta_lead">A 30-minute call to understand what you're working on, what's getting in the way, and whether we're the right partner.</p>
     <div class="row">
-      <a href="https://calendly.com/hello-lovre" target="_blank" rel="noopener" class="btn btn-primary" data-i18n-html="cta_btn">Book a call <span class="arr">→</span></a>
-      <a href="mailto:hello@lovre.studio" class="email">hello@lovre.studio</a>
+<a href="#" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/hello-lovre/30min'}); return false;" class="btn btn-primary" data-i18n-html="cta_btn">Book a call <span class="arr">→</span></a>      <a href="mailto:hello@lovre.studio" class="email">hello@lovre.studio</a>
     </div>
   </div>
 </section>
@@ -2517,6 +2518,31 @@ tick();
     draw();
   }
 })();
+</script>
+
+<script>
+document.addEventListener('click', function(e) {
+  var link = e.target.closest('a[href*="calendly.com/hello-lovre"]');
+  if (!link || typeof Calendly === 'undefined') return;
+
+  e.preventDefault();
+
+  Calendly.initPopupWidget({
+    url: 'https://calendly.com/hello-lovre/30min'
+  });
+});
+
+window.addEventListener('message', function(event) {
+  if (
+    event.origin === 'https://calendly.com' &&
+    event.data &&
+    event.data.event === 'calendly.event_scheduled'
+  ) {
+    if (typeof gtag === 'function') {
+      gtag('event', 'call_booked');
+    }
+  }
+});
 </script>
 </body>
 </html>
