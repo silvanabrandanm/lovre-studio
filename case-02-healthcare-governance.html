@@ -1,0 +1,426 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>A governance suite clinicians will actually open — Lovre</title>
+  <link rel="canonical" href="https://lovre.studio/case-studies/case-02-healthcare-governance" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="_case.css">
+<style id="scroll-fx-css">
+@media (prefers-reduced-motion: no-preference){
+.js-reveal{opacity:0;transform:translateY(24px);transition:opacity .6s cubic-bezier(.2,.7,.2,1),transform .6s cubic-bezier(.2,.7,.2,1);will-change:opacity,transform}
+.js-reveal.js-in{opacity:1;transform:translateY(0)}
+}
+</style>
+<script defer src="/_vercel/insights/script.js"></script>
+</head>
+<body data-screen-label="Case 02">
+
+<header class="nav" data-screen-label="Nav">
+  <div class="container nav-inner">
+    <a href="/" class="logo"><img src="lovre-logo-128.png" alt="" />Lovre</a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="/#services" data-i18n="nav_services">Services</a>
+      <a href="/#work" data-i18n="nav_work">Work</a>
+      <a href="/#about" data-i18n="nav_about">About</a>
+      <a href="/#contact" data-i18n="nav_contact">Contact</a>
+      <a href="/privacy-policy" data-i18n="nav_privacy">Privacy Policy</a>
+    </nav>
+    <div class="nav-right">
+      <div class="lang-switch" role="group" aria-label="Language">
+        <button type="button" data-lang="en" class="active" aria-label="English">EN</button>
+        <button type="button" data-lang="es" aria-label="Español">ES</button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section class="backbar">
+  <div class="container">
+    <a href="/#work" class="back-link"><span class="arr">←</span> <span data-i18n="back_link">Back to all work</span></a>
+  </div>
+</section>
+
+<section class="case-hero">
+  <div class="container">
+    <div class="meta">
+      <span>Case 02</span><span class="dot">·</span>
+      <span data-i18n="c_meta1">Healthcare · Governance</span><span class="dot">·</span>
+      <span>2023 — 2024</span><span class="dot">·</span>
+      <span data-i18n="c_meta2">9-month engagement</span>
+    </div>
+    <span class="eyebrow" data-i18n="c_eyebrow">Enterprise healthcare governance platform</span>
+    <h1 data-i18n-html="c_h1">A governance suite clinicians will <span class="it">actually</span> open.</h1>
+    <p class="lead" data-i18n="c_lead">Rebuilding the incident-reporting and policy-attestation flows of an enterprise healthcare governance platform — so frontline clinicians stop avoiding it, and risk teams get a defensible audit trail.</p>
+    <div class="tags">
+      <span class="tag" data-i18n="c_tag1">Healthcare</span>
+      <span class="tag" data-i18n="c_tag2">Risk &amp; compliance</span>
+      <span class="tag" data-i18n="c_tag3">Forms at scale</span>
+      <span class="tag" data-i18n="c_tag4">Audit trail</span>
+    </div>
+
+    <div class="case-banner v-section">
+      <span class="num">CASE 02</span>
+      <span class="glyph" aria-hidden="true">§</span>
+    </div>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="container">
+    <div class="stats">
+      <div class="stat"><div class="v">−54%</div><div class="l" data-i18n="c_stat1">Form abandonment on incident reports</div></div>
+      <div class="stat"><div class="v">+2.8×</div><div class="l" data-i18n="c_stat2">Near-miss reports submitted per month</div></div>
+      <div class="stat"><div class="v">94%</div><div class="l" data-i18n="c_stat3">Policy attestation rate within SLA</div></div>
+      <div class="stat"><div class="v">26</div><div class="l" data-i18n="c_stat4">Hospitals using the redesigned flows</div></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container case-body-grid">
+    <div class="label">
+      <span class="section-num" data-i18n="c_s1_num">01 — Context</span>
+    </div>
+    <div>
+      <h2 data-i18n="c_s1_h2">The product worked. Almost nobody used it the way it was meant to be used.</h2>
+      <p data-i18n="c_s1_p1">Incident reports were taking 18 minutes to fill out — on a ward, between patients, on a shared workstation. So clinicians stopped reporting near-misses. Policy attestations went into mass-click mode at the end of every quarter. The risk team had data, but the data wasn't trustworthy, and they knew it.</p>
+      <p data-i18n="c_s1_p2">The brief wasn't "make the forms prettier." It was: design a governance product that earns its place on a clinician's day, and gives the risk team something they can defend in front of an inspector.</p>
+    </div>
+  </div>
+</section>
+
+<hr class="rule" />
+
+<section>
+  <div class="container case-body-grid">
+    <div class="label">
+      <span class="section-num" data-i18n="c_s2_num">02 — Approach</span>
+    </div>
+    <div>
+      <h2 data-i18n="c_s2_h2">Three principles, ruthlessly applied.</h2>
+      <div class="approach">
+        <div class="item">
+          <div class="n">01</div>
+          <div>
+            <h3 data-i18n="c_ap1_h">Designed for the 90-second window</h3>
+            <p data-i18n="c_ap1_p">Every interaction had to survive being interrupted. Resumable drafts, local persistence, single-tap entry points from any context. We measured every flow against time-on-task, not screen count.</p>
+          </div>
+        </div>
+        <div class="item">
+          <div class="n">02</div>
+          <div>
+            <h3 data-i18n="c_ap2_h">Tiered the form to the risk</h3>
+            <p data-i18n="c_ap2_p">A near-miss should not require the same form as a serious incident. We worked with the risk team to define three tiers, each with a different level of evidence and follow-up — and let the system route them.</p>
+          </div>
+        </div>
+        <div class="item">
+          <div class="n">03</div>
+          <div>
+            <h3 data-i18n="c_ap3_h">Made the audit trail a first-class output</h3>
+            <p data-i18n="c_ap3_p">Every action — view, edit, escalate, sign-off — became a typed event with a timestamp and an actor. The audit view was designed alongside the entry view, not bolted on at the end.</p>
+          </div>
+        </div>
+        <div class="item">
+          <div class="n">04</div>
+          <div>
+            <h3 data-i18n="c_ap4_h">Piloted in two trusts before the full rollout</h3>
+            <p data-i18n="c_ap4_p">One acute, one community. Different cultures, different reporting patterns. The design system absorbed the differences as configuration, not forks.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="callout">
+        <p data-i18n="c_quote">"We stopped having to chase clinicians for reports. The product asks the right amount, at the right moment, and the data we get back is actually usable."</p>
+        <div class="who">
+          <div class="mark" aria-hidden="true">R</div>
+          <div class="info">
+            <span class="n" data-i18n="c_quote_who">Director of Risk &amp; Governance</span>
+            <span class="r" data-i18n="c_quote_role">Acute trust, NHS England</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="container case-body-grid">
+    <div class="label">
+      <span class="section-num" data-i18n="c_s3_num">03 — Outcomes</span>
+    </div>
+    <div>
+      <h2 data-i18n="c_s3_h2">What changed for the people doing the work.</h2>
+      <ul class="outcomes">
+        <li>
+          <span class="check"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="3.5 9.5 7 13 14.5 5"></polyline></svg></span>
+          <div>
+            <span class="t" data-i18n="c_o1_t">Form abandonment dropped 54% across both pilot trusts</span>
+            <span class="d" data-i18n="c_o1_d">Sustained at 12-month follow-up.</span>
+          </div>
+        </li>
+        <li>
+          <span class="check"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="3.5 9.5 7 13 14.5 5"></polyline></svg></span>
+          <div>
+            <span class="t" data-i18n="c_o2_t">Near-miss reporting volume tripled</span>
+            <span class="d" data-i18n="c_o2_d">The category that the old form effectively suppressed.</span>
+          </div>
+        </li>
+        <li>
+          <span class="check"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="3.5 9.5 7 13 14.5 5"></polyline></svg></span>
+          <div>
+            <span class="t" data-i18n="c_o3_t">Quarterly attestation completed inside SLA at 94% of sites</span>
+            <span class="d" data-i18n="c_o3_d">Up from 61% the previous year, on the same staff base.</span>
+          </div>
+        </li>
+        <li>
+          <span class="check"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="3.5 9.5 7 13 14.5 5"></polyline></svg></span>
+          <div>
+            <span class="t" data-i18n="c_o4_t">Audit trail accepted in two CQC inspections without follow-up</span>
+            <span class="d" data-i18n="c_o4_d">Used as a positive reference in one of the inspection reports.</span>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="pager">
+      <a href="case-01-rldatix-governance" class="prev">
+        <span class="l" data-i18n="c_prev_l">← Previous case</span>
+        <span class="t" data-i18n="c_prev_t">Role-based execution for a pharma MES</span>
+      </a>
+      <a href="case-03-pharma-monitoring" class="next">
+        <span class="l" data-i18n="c_next_l">Next case →</span>
+        <span class="t" data-i18n="c_next_t">Plant-floor SaaS, redesigned for the shift handover</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+
+<!-- ─── CREDITS ─── -->
+<section class="tight" data-screen-label="Credits">
+  <div class="container">
+    <div class="credits">
+      <div class="credit-item"><span class="credit-label" data-i18n="cred_client">Client</span><p data-i18n-html="c_cred1_p">Enterprise healthcare governance platform<br/>Healthcare · Risk &amp; compliance<br/>Confidential (NDA)</p></div>
+      <div class="credit-item"><span class="credit-label" data-i18n="cred_team">Studio team</span><p data-i18n-html="c_cred2_p">Belen Longhi<br/>Lead product designer<br/>Solo engagement</p></div>
+      <div class="credit-item"><span class="credit-label" data-i18n="cred_clientteam">Client team</span><p data-i18n-html="c_cred3_p">Clinical ops leads<br/>Risk &amp; compliance officers<br/>Frontline clinician panel</p></div>
+      <div class="credit-item"><span class="credit-label" data-i18n="cred_year">Year</span><p data-i18n-html="c_cred4_p">2023 – 2024<br/>9-month engagement<br/>Deployed in production</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── FIGMA TEASER ─── -->
+<section class="tight" style="padding:2rem 0" data-screen-label="Figma teaser">
+  <div class="wrap">
+    <div class="figma-teaser">
+      <p data-i18n="figma_q">Want to see more of this project?</p>
+      <a href="#" class="design-cta" target="_blank" rel="noopener">
+        View in Figma
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="footer-cta reveal">
+  <div class="container">
+    <span class="eyebrow" data-i18n="cta_eyebrow">Start a conversation</span>
+    <h2 data-i18n-html="cta_h2">Have a similar product?<br/>Let's <span class="it">talk</span>.</h2>
+    <p class="lead" data-i18n="cta_lead">A 30-minute call to understand what you're working on, what's getting in the way, and whether we're the right partner.</p>
+    <div class="row">
+      <a href="https://calendly.com/hello-lovre" target="_blank" rel="noopener" class="btn btn-primary" data-i18n-html="cta_btn">Book a call <span class="arr">→</span></a>
+      <a href="mailto:hello@lovre.studio" class="email">hello@lovre.studio</a>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <a href="/" class="logo"><img src="lovre-logo-128.png" alt="" />Lovre</a>
+    <nav class="links">
+      <a href="/#services" data-i18n="nav_services">Services</a>
+      <a href="/#work" data-i18n="nav_work">Work</a>
+      <a href="/#about" data-i18n="nav_about">About</a>
+      <a href="/#contact" data-i18n="nav_contact">Contact</a>
+      <a href="/privacy-policy" data-i18n="nav_privacy">Privacy Policy</a>
+    </nav>
+        <div class="footer-social">
+      <a href="https://www.linkedin.com/company/lovre-studio/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.07 2.07 0 1 1 0-4.13 2.07 2.07 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45z"/></svg></a>
+      <a href="https://www.instagram.com" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1" fill="currentColor" stroke="none"/></svg></a>
+      <span class="copy" data-i18n="foot_copy">© 2026 Lovre</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  (function(){
+    var els = document.querySelectorAll('.reveal');
+    if (!('IntersectionObserver' in window)) { els.forEach(function(el){ el.classList.add('in'); }); return; }
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){ if (e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }});
+    }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+    els.forEach(function(el){ io.observe(el); });
+  })();
+</script>
+<style>
+  *{cursor:none !important}
+  .cursor-dot,.cursor-ring{position:fixed;top:0;left:0;border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%)}
+  .cursor-dot{width:8px;height:8px;background:#044AB3}
+  .cursor-ring{width:40px;height:40px;border:1.5px solid #044AB3;transition:width .2s ease,height .2s ease}
+  @media (hover:none){.cursor-dot,.cursor-ring{display:none}*{cursor:auto !important}}
+</style>
+<div class="cursor-dot" id="cursorDot"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+<script>
+(function(){
+  var dot=document.getElementById('cursorDot'), ring=document.getElementById('cursorRing');
+  var mx=0,my=0,rx=0,ry=0,hover=false;
+  window.addEventListener('mousemove',function(e){mx=e.clientX;my=e.clientY;dot.style.left=mx+'px';dot.style.top=my+'px';});
+  function loop(){
+    rx+=(mx-rx)*0.15; ry+=(my-ry)*0.15;
+    ring.style.left=rx+'px'; ring.style.top=ry+'px';
+    requestAnimationFrame(loop);
+  }
+  loop();
+  document.addEventListener('mouseover',function(e){
+    if(e.target.closest('a,button,[role="button"],input,select,textarea')){
+      if(!hover){hover=true;ring.style.width='64px';ring.style.height='64px';}
+    }
+  });
+  document.addEventListener('mouseout',function(e){
+    if(e.target.closest('a,button,[role="button"],input,select,textarea')){
+      if(!e.relatedTarget || !e.relatedTarget.closest('a,button,[role="button"],input,select,textarea')){
+        hover=false;ring.style.width='40px';ring.style.height='40px';
+      }
+    }
+  });
+})();
+</script>
+<script id="scroll-fx-js">
+(function(){
+var reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+if(!reduced){
+function isRepeatingGroup(el){
+if(el.children.length<2) return false;
+if(/grid|stats|approach|outcomes|pager|two-col|tabs|stat-row|credits/i.test(el.className||'')) return true;
+var tags=[].map.call(el.children,function(c){return c.tagName});
+return tags.every(function(t){return t===tags[0]});
+}
+var toObserve=[];
+document.querySelectorAll('section').forEach(function(sec){
+var host = sec.querySelector(':scope > .container, :scope > .wrap, :scope > .wrap-narrow, :scope > .wrap-wide') || sec;
+[].forEach.call(host.children,function(el){
+if(isRepeatingGroup(el)){
+[].forEach.call(el.children,function(g,i){
+g.classList.add('js-reveal');
+g.style.transitionDelay=Math.min(i,6)*0.08+'s';
+toObserve.push(g);
+});
+} else {
+el.classList.add('js-reveal');
+toObserve.push(el);
+}
+});
+});
+if('IntersectionObserver' in window){
+var io=new IntersectionObserver(function(entries){
+entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('js-in'); io.unobserve(e.target);} });
+},{threshold:0.15, rootMargin:'0px 0px -8% 0px'});
+toObserve.forEach(function(el){ io.observe(el); });
+} else {
+toObserve.forEach(function(el){ el.classList.add('js-in'); });
+}
+}
+if(!reduced && matchMedia('(pointer:fine)').matches){
+var target=window.scrollY, current=window.scrollY, raf=null, programmatic=false, resyncTimer=null;
+function loop(){
+current += (target-current)*0.11;
+if(Math.abs(target-current)<0.4){ current=target; }
+programmatic=true;
+window.scrollTo({top:current,left:0,behavior:'instant'});
+if(current!==target){ raf=requestAnimationFrame(loop); } else { raf=null; }
+}
+window.addEventListener('wheel',function(e){
+if(e.ctrlKey) return;
+e.preventDefault();
+var max=document.documentElement.scrollHeight-window.innerHeight;
+target=Math.max(0,Math.min(target+e.deltaY,max));
+if(!raf) raf=requestAnimationFrame(loop);
+},{passive:false});
+window.addEventListener('scroll',function(){
+if(programmatic){ programmatic=false; return; }
+clearTimeout(resyncTimer);
+resyncTimer=setTimeout(function(){
+target=window.scrollY; current=window.scrollY;
+},50);
+});
+}
+var darkEls=[];
+document.querySelectorAll('.process-dark, .case-banner.v-infinity, .case.cta-case, .outcome-dark').forEach(function(el){
+darkEls.push({el:el, target: getComputedStyle(el).backgroundColor});
+});
+if(darkEls.length){
+function toRgb(str){
+var m = str.match(/rgba?\((\d+),\s*(\d+),\s*(\d+)/);
+return m ? [parseInt(m[1]),parseInt(m[2]),parseInt(m[3])] : [250,248,244];
+}
+var ivory=[250,248,244];
+darkEls.forEach(function(item){ item.targetRgb = toRgb(item.target); });
+function clamp(v,a,b){return Math.max(a,Math.min(b,v));}
+function tick(){
+var vh=window.innerHeight;
+darkEls.forEach(function(item){
+var r=item.el.getBoundingClientRect();
+var t=clamp((vh-r.top)/(vh*0.6),0,1);
+var c=item.targetRgb;
+var rr=Math.round(ivory[0]+(c[0]-ivory[0])*t);
+var gg=Math.round(ivory[1]+(c[1]-ivory[1])*t);
+var bb=Math.round(ivory[2]+(c[2]-ivory[2])*t);
+item.el.style.backgroundColor='rgb('+rr+','+gg+','+bb+')';
+});
+requestAnimationFrame(tick);
+}
+tick();
+}
+})();
+</script>
+
+<script>
+(function(){
+  var DICT={
+    en:{nav_services:"Services",nav_work:"Work",nav_about:"About",nav_contact:"Contact",nav_privacy:"Privacy Policy",back_link:"Back to all work",foot_copy:"© 2026 Lovre",figma_q:"Want to see more of this project?",cred_client:"Client",cred_team:"Studio team",cred_clientteam:"Client team",cred_year:"Year",cta_eyebrow:"Start a conversation",cta_h2:"Have a similar product?<br/>Let's <span class=\"it\">talk</span>.",cta_lead:"A 30-minute call to understand what you're working on, what's getting in the way, and whether we're the right partner.",cta_btn:"Book a call <span class=\"arr\">→</span>",c_meta1:"Healthcare · Governance",c_meta2:"9-month engagement",c_eyebrow:"Enterprise healthcare governance platform",c_h1:"A governance suite clinicians will <span class=\"it\">actually</span> open.",c_lead:"Rebuilding the incident-reporting and policy-attestation flows of an enterprise healthcare governance platform — so frontline clinicians stop avoiding it, and risk teams get a defensible audit trail.",c_tag1:"Healthcare",c_tag2:"Risk & compliance",c_tag3:"Forms at scale",c_tag4:"Audit trail",c_stat1:"Form abandonment on incident reports",c_stat2:"Near-miss reports submitted per month",c_stat3:"Policy attestation rate within SLA",c_stat4:"Hospitals using the redesigned flows",c_s1_num:"01 — Context",c_s1_h2:"The product worked. Almost nobody used it the way it was meant to be used.",c_s1_p1:"Incident reports were taking 18 minutes to fill out — on a ward, between patients, on a shared workstation. So clinicians stopped reporting near-misses. Policy attestations went into mass-click mode at the end of every quarter. The risk team had data, but the data wasn't trustworthy, and they knew it.",c_s1_p2:"The brief wasn't \"make the forms prettier.\" It was: design a governance product that earns its place on a clinician's day, and gives the risk team something they can defend in front of an inspector.",c_s2_num:"02 — Approach",c_s2_h2:"Three principles, ruthlessly applied.",c_ap1_h:"Designed for the 90-second window",c_ap1_p:"Every interaction had to survive being interrupted. Resumable drafts, local persistence, single-tap entry points from any context. We measured every flow against time-on-task, not screen count.",c_ap2_h:"Tiered the form to the risk",c_ap2_p:"A near-miss should not require the same form as a serious incident. We worked with the risk team to define three tiers, each with a different level of evidence and follow-up — and let the system route them.",c_ap3_h:"Made the audit trail a first-class output",c_ap3_p:"Every action — view, edit, escalate, sign-off — became a typed event with a timestamp and an actor. The audit view was designed alongside the entry view, not bolted on at the end.",c_ap4_h:"Piloted in two trusts before the full rollout",c_ap4_p:"One acute, one community. Different cultures, different reporting patterns. The design system absorbed the differences as configuration, not forks.",c_quote:"\"We stopped having to chase clinicians for reports. The product asks the right amount, at the right moment, and the data we get back is actually usable.\"",c_quote_who:"Director of Risk & Governance",c_quote_role:"Acute trust, NHS England",c_s3_num:"03 — Outcomes",c_s3_h2:"What changed for the people doing the work.",c_o1_t:"Form abandonment dropped 54% across both pilot trusts",c_o1_d:"Sustained at 12-month follow-up.",c_o2_t:"Near-miss reporting volume tripled",c_o2_d:"The category that the old form effectively suppressed.",c_o3_t:"Quarterly attestation completed inside SLA at 94% of sites",c_o3_d:"Up from 61% the previous year, on the same staff base.",c_o4_t:"Audit trail accepted in two CQC inspections without follow-up",c_o4_d:"Used as a positive reference in one of the inspection reports.",c_prev_l:"← Previous case",c_prev_t:"Role-based execution for a pharma MES",c_next_l:"Next case →",c_next_t:"Plant-floor SaaS, redesigned for the shift handover",c_cred1_p:"Enterprise healthcare governance platform<br>Healthcare · Risk & compliance<br>Confidential (NDA)",c_cred2_p:"Belen Longhi<br>Lead product designer<br>Solo engagement",c_cred3_p:"Clinical ops leads<br>Risk & compliance officers<br>Frontline clinician panel",c_cred4_p:"2023 – 2024<br>9-month engagement<br>Deployed in production"},
+    es:{nav_services:"Servicios",nav_work:"Trabajo",nav_about:"Nosotros",nav_contact:"Contacto",nav_privacy:"Política de Privacidad",back_link:"Volver a proyectos",foot_copy:"© 2026 Lovre",figma_q:"¿Querés ver más de este proyecto?",cred_client:"Cliente",cred_team:"Equipo del estudio",cred_clientteam:"Equipo del cliente",cred_year:"Año",cta_eyebrow:"Iniciemos una conversación",cta_h2:"¿Tienes un producto similar?<br/>Hablemos <span class=\"it\">de eso</span>.",cta_lead:"Una llamada de 30 minutos para entender en qué estás trabajando, qué se interpone en el camino, y si somos el socio indicado.",cta_btn:"Agenda una llamada <span class=\"arr\">→</span>",c_meta1:"Salud · Gobernanza",c_meta2:"Proyecto de 9 meses",c_eyebrow:"Plataforma empresarial de gobernanza en salud",c_h1:"Una suite de gobernanza que los clínicos <span class=\"it\">realmente</span> abren.",c_lead:"Reconstrucción de los flujos de reporte de incidentes y atestación de políticas de una plataforma empresarial de gobernanza en salud — para que los clínicos de primera línea dejen de evitarla, y los equipos de riesgo obtengan un registro de auditoría defendible.",c_tag1:"Salud",c_tag2:"Riesgo y cumplimiento",c_tag3:"Formularios a escala",c_tag4:"Registro de auditoría",c_stat1:"Abandono de formularios en reportes de incidentes",c_stat2:"Reportes de casi-incidentes enviados por mes",c_stat3:"Tasa de atestación de políticas dentro del SLA",c_stat4:"Hospitales usando los flujos rediseñados",c_s1_num:"01 — Contexto",c_s1_h2:"El producto funcionaba. Casi nadie lo usaba como estaba pensado.",c_s1_p1:"Los reportes de incidentes tardaban 18 minutos en completarse — en una sala, entre pacientes, en una estación de trabajo compartida. Entonces los clínicos dejaron de reportar casi-incidentes. Las atestaciones de políticas entraban en modo de clic masivo al final de cada trimestre. El equipo de riesgo tenía datos, pero los datos no eran confiables, y lo sabían.",c_s1_p2:"El brief no era \"hacer los formularios más lindos\". Era: diseñar un producto de gobernanza que se gane su lugar en el día de un clínico, y le dé al equipo de riesgo algo que puedan defender frente a un inspector.",c_s2_num:"02 — Enfoque",c_s2_h2:"Tres principios, aplicados sin concesiones.",c_ap1_h:"Diseñado para la ventana de 90 segundos",c_ap1_p:"Cada interacción tenía que sobrevivir a una interrupción. Borradores retomables, persistencia local, puntos de entrada de un toque desde cualquier contexto. Medimos cada flujo contra el tiempo en tarea, no la cantidad de pantallas.",c_ap2_h:"El formulario escalado según el riesgo",c_ap2_p:"Un casi-incidente no debería requerir el mismo formulario que un incidente grave. Trabajamos con el equipo de riesgo para definir tres niveles, cada uno con un nivel distinto de evidencia y seguimiento — y dejamos que el sistema los enrutara.",c_ap3_h:"El registro de auditoría como resultado de primera clase",c_ap3_p:"Cada acción — ver, editar, escalar, aprobar — se convirtió en un evento tipado con marca de tiempo y actor. La vista de auditoría se diseñó junto a la vista de carga, no se agregó al final.",c_ap4_h:"Piloteado en dos trusts antes del despliegue completo",c_ap4_p:"Uno agudo, uno comunitario. Culturas distintas, patrones de reporte distintos. El design system absorbió las diferencias como configuración, no como forks.",c_quote:"\"Dejamos de tener que perseguir a los clínicos por los reportes. El producto pide lo justo, en el momento justo, y los datos que recibimos son realmente usables.\"",c_quote_who:"Directora de Riesgo y Gobernanza",c_quote_role:"Trust agudo, NHS England",c_s3_num:"03 — Resultados",c_s3_h2:"Qué cambió para las personas que hacen el trabajo.",c_o1_t:"El abandono de formularios cayó 54% en ambos trusts piloto",c_o1_d:"Sostenido en el seguimiento a 12 meses.",c_o2_t:"El volumen de reportes de casi-incidentes se triplicó",c_o2_d:"La categoría que el formulario anterior suprimía en la práctica.",c_o3_t:"La atestación trimestral se completó dentro del SLA en el 94% de los sitios",c_o3_d:"Frente al 61% del año anterior, con la misma dotación de personal.",c_o4_t:"El registro de auditoría fue aceptado en dos inspecciones de la CQC sin observaciones",c_o4_d:"Usado como referencia positiva en uno de los informes de inspección.",c_prev_l:"← Caso anterior",c_prev_t:"Ejecución basada en roles para un MES de farma",c_next_l:"Siguiente caso →",c_next_t:"SaaS de planta industrial, rediseñado para el cambio de turno",c_cred1_p:"Plataforma empresarial de gobernanza en salud<br>Salud · Riesgo y cumplimiento<br>Confidencial (NDA)",c_cred2_p:"Belen Longhi<br>Diseñadora de producto líder<br>Proyecto individual",c_cred3_p:"Líderes de operaciones clínicas<br>Oficiales de riesgo y cumplimiento<br>Panel de clínicos de primera línea",c_cred4_p:"2023 – 2024<br>Proyecto de 9 meses<br>Desplegado en producción"}
+  };
+  function apply(lang){
+    var d=DICT[lang]||DICT.en;
+    document.documentElement.setAttribute('lang', lang);
+    document.querySelectorAll('[data-i18n]').forEach(function(el){
+      var k=el.getAttribute('data-i18n');
+      if(d[k]) el.textContent=d[k];
+    });
+    document.querySelectorAll('[data-i18n-html]').forEach(function(el){
+      var k=el.getAttribute('data-i18n-html');
+      if(d[k]) el.innerHTML=d[k];
+    });
+    document.querySelectorAll('.lang-switch button').forEach(function(b){
+      b.classList.toggle('active', b.getAttribute('data-lang')===lang);
+    });
+    try{localStorage.setItem('sb_lang', lang);}catch(e){}
+  }
+  document.querySelectorAll('.lang-switch button').forEach(function(b){
+    b.addEventListener('click', function(){ apply(b.getAttribute('data-lang')); });
+  });
+  var stored=null;
+  try{stored=localStorage.getItem('sb_lang');}catch(e){}
+  apply((stored==='es'||stored==='en')?stored:'en');
+})();
+</script>
+</body>
+</html>
