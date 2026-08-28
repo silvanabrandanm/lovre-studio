@@ -1,16 +1,6 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-0CNQTFNB8R"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-0CNQTFNB8R');
-</script>
-
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
@@ -1182,8 +1172,6 @@
 }
 </style>
 <script defer src="/_vercel/insights/script.js"></script>
-<link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
-<script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
 </head>
 <body data-screen-label="Home">
 
@@ -1781,10 +1769,6 @@
       })
     }).then(function(res){
       if(!res.ok) throw new Error('send failed');
-
-      if (typeof gtag === 'function') {
-  gtag('event', 'brief_submitted');
-   }
       form.style.display = 'none';
       document.getElementById('bf-done').classList.add('show');
     }).catch(function(){
@@ -1805,7 +1789,8 @@
     <h2 data-i18n-html="cta_h2">Let's talk about your <span class="it">product</span>.</h2>
     <p class="lead" data-i18n="cta_lead">A 30-minute call to understand what you're working on, what's getting in the way, and whether we're the right partner.</p>
     <div class="row">
-<a href="#" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/hello-lovre/30min'}); return false;" class="btn btn-primary" data-i18n-html="cta_btn">Book a call <span class="arr">→</span></a>      <a href="mailto:hello@lovre.studio" class="email">hello@lovre.studio</a>
+      <a href="https://calendly.com/hello-lovre" target="_blank" rel="noopener" class="btn btn-primary" data-i18n-html="cta_btn">Book a call <span class="arr">→</span></a>
+      <a href="mailto:hello@lovre.studio" class="email">hello@lovre.studio</a>
     </div>
   </div>
 </section>
@@ -1814,6 +1799,7 @@
 <footer class="site-footer" data-screen-label="Footer">
   <div class="container footer-inner">
     <a href="#" class="logo"><img src="assets/lovre-logo-128.png" alt="" />Lovre</a>
+    <nav class="links" aria-label="Legal"><a href="/privacy-policy" data-i18n="foot_privacy">Privacy Policy</a></nav>
     <div class="footer-social">
       <a href="https://www.linkedin.com/company/lovre-studio/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.07 2.07 0 1 1 0-4.13 2.07 2.07 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45z"/></svg></a>
       <a href="https://www.instagram.com" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1" fill="currentColor" stroke="none"/></svg></a>
@@ -1959,6 +1945,7 @@
       cta_btn: 'Book a call <span class="arr">→</span>',
 
       // FOOTER
+      foot_privacy: "Privacy Policy",
       foot_services: "Services",
       foot_work: "Work",
       foot_about: "About",
@@ -2126,6 +2113,7 @@
       cta_btn: 'Agendar una llamada <span class="arr">→</span>',
 
       // FOOTER
+      foot_privacy: "Política de Privacidad",
       foot_services: "Servicios",
       foot_work: "Proyectos",
       foot_about: "Estudio",
@@ -2518,31 +2506,6 @@ tick();
     draw();
   }
 })();
-</script>
-
-<script>
-document.addEventListener('click', function(e) {
-  var link = e.target.closest('a[href*="calendly.com/hello-lovre"]');
-  if (!link || typeof Calendly === 'undefined') return;
-
-  e.preventDefault();
-
-  Calendly.initPopupWidget({
-    url: 'https://calendly.com/hello-lovre/30min'
-  });
-});
-
-window.addEventListener('message', function(event) {
-  if (
-    event.origin === 'https://calendly.com' &&
-    event.data &&
-    event.data.event === 'calendly.event_scheduled'
-  ) {
-    if (typeof gtag === 'function') {
-      gtag('event', 'call_booked');
-    }
-  }
-});
 </script>
 </body>
 </html>
