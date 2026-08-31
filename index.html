@@ -1171,6 +1171,20 @@
 .js-reveal.js-in{opacity:1;transform:translateY(0)}
 }
 </style>
+<!-- Google tag (gtag.js) — conditional: only installs if not already present -->
+<script>
+(function(){
+  if(window.gtag) return;
+  window.dataLayer = window.dataLayer || [];
+  window.gtag = function(){window.dataLayer.push(arguments);};
+  var s=document.createElement('script');
+  s.async=true; s.src='https://www.googletagmanager.com/gtag/js?id=G-0CNQTFNB8R';
+  document.head.appendChild(s);
+  window.gtag('js', new Date());
+  window.gtag('config', 'G-0CNQTFNB8R');
+  window.gtag('config', 'AW-18411369413');
+})();
+</script>
 <script defer src="/_vercel/insights/script.js"></script>
 </head>
 <body data-screen-label="Home">
@@ -1729,6 +1743,21 @@
     var f = e.target.closest('.bf-field');
     if(f) f.classList.remove('invalid');
   });
+  // ---- Google Ads conversion: fires ONCE, only on confirmed success ----
+  // Conversion: "Envío de formulario para clientes potenciales (1)"
+  var ADS_SEND_TO = 'AW-18411369413/SU-xCO3qjuscEMXnnMtE';
+  var conversionFired = false;
+  function fireAdsConversion(){
+    if(conversionFired) return;
+    conversionFired = true;
+    if(typeof window.gtag !== 'function') return;
+    window.gtag('event', 'conversion', {'send_to': ADS_SEND_TO});
+  }
+  function handleSubmitSuccess(){
+    form.style.display = 'none';
+    document.getElementById('bf-done').classList.add('show');
+    fireAdsConversion();
+  }
   form.addEventListener('submit', function(e){
     var first = null;
     form.querySelectorAll('.bf-field').forEach(function(f){
@@ -1769,8 +1798,7 @@
       })
     }).then(function(res){
       if(!res.ok) throw new Error('send failed');
-      form.style.display = 'none';
-      document.getElementById('bf-done').classList.add('show');
+      handleSubmitSuccess();
     }).catch(function(){
       submitBtn.disabled = false;
       submitBtn.innerHTML = originalLabel;

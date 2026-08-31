@@ -35,6 +35,20 @@
 .legal-body a[href^="mailto"]:hover{color:var(--teal-dark)}
 @media (max-width:700px){.legal-body section{margin-top:2.25rem;padding-top:1.75rem}}
 </style>
+<!-- Google tag (gtag.js) — conditional: only installs if not already present -->
+<script>
+(function(){
+  if(window.gtag) return;
+  window.dataLayer = window.dataLayer || [];
+  window.gtag = function(){window.dataLayer.push(arguments);};
+  var s=document.createElement('script');
+  s.async=true; s.src='https://www.googletagmanager.com/gtag/js?id=G-0CNQTFNB8R';
+  document.head.appendChild(s);
+  window.gtag('js', new Date());
+  window.gtag('config', 'G-0CNQTFNB8R');
+  window.gtag('config', 'AW-18411369413');
+})();
+</script>
 <script defer src="/_vercel/insights/script.js"></script>
 </head>
 <body data-screen-label="Privacy Policy">
