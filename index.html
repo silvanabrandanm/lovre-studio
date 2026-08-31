@@ -1725,6 +1725,7 @@
 </section>
 <script>
 (function(){
+  console.log('[Lovre] build 2026-08-31 · ads-conversion v2');
   var form = document.getElementById('bf-briefForm');
   if(!form) return;
   function isFilled(field){
@@ -1749,8 +1750,15 @@
   var conversionFired = false;
   function fireAdsConversion(){
     if(conversionFired) return;
+    // Use the already-installed global tag. If gtag() has not been defined yet
+    // (tag script still loading), push to dataLayer instead — the global tag
+    // drains that queue on load. No second tag is installed either way.
+    if(typeof window.gtag !== 'function'){
+      window.dataLayer = window.dataLayer || [];
+      window.gtag = function(){window.dataLayer.push(arguments);};
+    }
     conversionFired = true;
-    if(typeof window.gtag !== 'function') return;
+    console.log('[Lovre] Brief submitted OK — firing Google Ads conversion', ADS_SEND_TO);
     window.gtag('event', 'conversion', {'send_to': ADS_SEND_TO});
   }
   function handleSubmitSuccess(){
